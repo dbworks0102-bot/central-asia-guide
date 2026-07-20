@@ -6,6 +6,16 @@ export const labels = {
   nav: {
     home: "ホーム",
     about: "このサイトについて",
+    articles: "コラム",
+  },
+
+  // 記事（コラム）関連ラベル
+  articles: {
+    listTitle: "コラム",
+    listLead: "ウズベキスタン旅行の計画に役立つ読み物コラムです。",
+    empty: "現在公開中のコラムはありません。",
+    relatedTitle: "あわせて読みたい",
+    backToList: "コラム一覧へ戻る",
   },
 
   // 国別ページのセクション見出し

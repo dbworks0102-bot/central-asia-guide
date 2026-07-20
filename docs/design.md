@@ -282,6 +282,59 @@ DOM非依存の `core/` と `utils/` を中心にテストする。
 
 ---
 
+## 8.5. 記事システム（SEOコラム）設計
+
+`requirements.md` §9.5 に基づく記事システムの設計。既存レイヤー（data / core / ui / utils）を踏襲する。
+
+### 8.5.1 ルーティング（§1 に追加）
+
+| ページ | URL | 概要 |
+|--------|-----|------|
+| コラム一覧 | `/articles` | `status === "published"` の記事のみを `publishDate` 降順で表示 |
+| コラム詳細 | `/articles/:slug` | 該当記事が **published のときのみ**表示。draft・未存在は 404 にフォールバック |
+
+- ルーティングは `src/router.js` に追加。`/articles/:slug` は正規表現 `^/articles/([^/]+)/?$` で解決する。
+- **公開判定は必ず core 層（`getArticles.js`）で行い**、router/ui は published 済みデータのみを受け取る。
+  下書きが一覧・詳細・sitemap のどこにも漏れないことを単一箇所で担保する。
+
+### 8.5.2 データ設計（`src/data/articles.js`）
+
+記事は配列としてエクスポートする純粋データ。`body` は既存の DOM ヘルパー描画に合わせたブロック配列。
+
+```js
+{
+  slug: "uzbekistan-11days-highlights", // URL用一意文字列
+  title, description,                    // meta / OGP 用
+  keywords: ["…"],                       // SEOキーワード軸の記録
+  heroImage: "/images/uzbekistan/hero.jpg", // 既存の実写真のみ
+  publishDate: "2026-07-15",             // ISO日付（YYYY-MM-DD）
+  status: "published",                   // "draft" | "published"
+  body: [                                 // ブロック配列
+    { type: "heading",   text: "…" },
+    { type: "paragraph", text: "…" },
+    { type: "list",      items: ["…"] },
+  ],
+  relatedLinks: [{ label: "…", url: "/" }], // 任意。サイト内部リンク導線
+}
+```
+
+### 8.5.3 モジュール分割
+
+- **core/getArticles.js**：`selectPublished(list)`（published 抽出＋降順ソート・純粋関数）／
+  `findPublished(list, slug)`（published のみ返す・純粋関数）と、実データ用ラッパ
+  `getPublishedArticles()` / `getPublishedArticleBySlug(slug)`。DOM非依存でユニットテスト対象。
+- **ui/renderArticleListPage.js / renderArticleDetailPage.js**：描画のみ。詳細は body ブロックを
+  `heading/paragraph/list` に対応づけて描画し、`relatedLinks` を `data-link` 内部リンクとして出力する。
+- **utils/meta.js**：`buildArticleMeta(article)`（type:"article"）／`buildArticleJsonLd(article)`
+  （`@type:"Article"`、headline / datePublished / image（絶対URL）/ author=Organization）。
+- **utils/formatDate.js**：ISO日付を日本語表記（YYYY年M月D日）に整形する小ヘルパー。
+
+### 8.5.4 sitemap.xml 自動生成
+
+- `scripts/generate-sitemap.js`（Node実行）が **published 記事＋静的ルート（/・/about・/articles）** を
+  対象に絶対URLで `public/sitemap.xml` を生成する。公開判定は core の `getPublishedArticles()` を再利用。
+- `package.json` の `prebuild` で `build` 前に自動実行。`public/robots.txt` に `Sitemap:` 行を追記。
+
 ## 9. 設計上の原則まとめ
 - **単一国特化**：ウズベキスタン専門。他国は別サイトとして扱い、本サイトに抽象化を持ち込まない。
 - **DRY・単一責任**：レイヤー分離（data / core / ui / utils）を厳守。

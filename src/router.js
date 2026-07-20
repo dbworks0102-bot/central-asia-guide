@@ -2,12 +2,21 @@
 // ルート定義: "/" → ウズベキスタンガイド（トップ）, "/about" → About, "*" → 404
 import { clear } from "./utils/dom.js";
 import { getCountryData } from "./core/getCountryData.js";
-import { buildMeta, buildCountryJsonLd, applyMeta } from "./utils/meta.js";
+import { getPublishedArticles, getPublishedArticleBySlug } from "./core/getArticles.js";
+import {
+  buildMeta,
+  buildCountryJsonLd,
+  buildArticleMeta,
+  buildArticleJsonLd,
+  applyMeta,
+} from "./utils/meta.js";
 import { labels } from "./utils/labels.js";
 import { renderHeader } from "./ui/components/renderHeader.js";
 import { renderFooter } from "./ui/components/renderFooter.js";
 import { renderCountryPage } from "./ui/renderCountryPage.js";
 import { renderAboutPage } from "./ui/renderAboutPage.js";
+import { renderArticleListPage } from "./ui/renderArticleListPage.js";
+import { renderArticleDetailPage } from "./ui/renderArticleDetailPage.js";
 import { renderNotFound } from "./ui/renderNotFound.js";
 
 // ウズベキスタン専門サイト：トップページはウズベキスタンのガイドそのもの。
@@ -35,6 +44,33 @@ function resolve(path) {
       meta: buildMeta({ title: labels.nav.about, description: "当サイトの目的と運営方針について。", url: "/about" }),
       jsonLd: null,
     };
+  }
+
+  // コラム一覧：published 記事のみ・publishDate 降順（フィルタは core/getArticles.js）
+  if (path === "/articles") {
+    return {
+      view: renderArticleListPage(getPublishedArticles()),
+      meta: buildMeta({
+        title: labels.articles.listTitle,
+        description: labels.articles.listLead,
+        url: "/articles",
+      }),
+      jsonLd: null,
+    };
+  }
+
+  // コラム詳細：/articles/:slug。published でなければ（draft・未存在とも）下の404へフォールスルー
+  const articleMatch = path.match(/^\/articles\/([^/]+)\/?$/);
+  if (articleMatch) {
+    const slug = decodeURIComponent(articleMatch[1]);
+    const article = getPublishedArticleBySlug(slug);
+    if (article) {
+      return {
+        view: renderArticleDetailPage(article),
+        meta: buildArticleMeta(article),
+        jsonLd: buildArticleJsonLd(article),
+      };
+    }
   }
 
   // フォールバック 404

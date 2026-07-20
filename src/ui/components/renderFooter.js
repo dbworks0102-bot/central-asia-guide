@@ -9,6 +9,7 @@ export function renderFooter() {
       el("p", {}, `© ${year} ${labels.siteName}`),
       el("nav", { class: "footer-nav", "aria-label": "フッターナビゲーション" }, [
         el("a", { href: "/", "data-link": "" }, labels.nav.home),
+        el("a", { href: "/articles", "data-link": "" }, labels.nav.articles),
         el("a", { href: "/about", "data-link": "" }, labels.nav.about),
       ]),
     ]),

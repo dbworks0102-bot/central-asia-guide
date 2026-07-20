@@ -93,6 +93,27 @@
 
 ---
 
+## Step 9. 記事システム（SEOコラム）— 実装済み
+TDD（Red→Green）で実装。公開判定は core 層に集約し、draft が一覧・詳細・sitemap に漏れないことを担保。
+- [x] `tests/unit/articles.test.js`（buildArticleMeta/buildArticleJsonLd・core公開フィルタ・データ整合性）Red→Green
+- [x] `tests/e2e/articles.spec.js`（一覧表示・詳細遷移・直接アクセス・未存在/下書きslug→404）
+- [x] `src/data/articles.js`（記事データ。サンプル1本=published、下書き0件）
+- [x] `src/core/getArticles.js`（selectPublished / findPublished / 実データ用ラッパ）
+- [x] `src/utils/meta.js` 拡張（buildArticleMeta / buildArticleJsonLd）
+- [x] `src/utils/formatDate.js`（ISO日付→日本語表記）
+- [x] `src/ui/renderArticleListPage.js` / `src/ui/renderArticleDetailPage.js`
+- [x] `src/router.js` に `/articles`・`/articles/:slug`（published のみ・draft/未存在は404）を追加
+- [x] ヘッダー/フッターに「コラム」導線を追加、`labels.js` に記事ラベルを追加、`styles.css` に記事スタイルを追加
+- [x] `scripts/generate-sitemap.js`（published＋静的ルートのみ）・`package.json` の `prebuild` 連携
+- [x] `public/robots.txt` に `Sitemap:` 行を追記
+- [x] `npm run test` / `npm run build` がエラーゼロで通ることを確認
+
+### 将来（自動生成パイプライン）
+- [ ] 週1回の無人パイプラインが `status:"draft"` 記事を `src/data/articles.js` に追記
+- [ ] 人間レビュー→承認で `published` へ昇格して公開
+
+---
+
 ## 将来拡張（スコープ外）
 - [ ] キルギス／カザフスタン等は本サイトへ追加せず、独立した別サイトとして検討
 - [ ] 多言語対応・アフィリエイト等の収益化検討

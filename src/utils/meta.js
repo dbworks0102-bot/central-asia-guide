@@ -57,6 +57,31 @@ export function buildCountryMeta(country) {
   });
 }
 
+// 記事データからメタを生成（buildCountryMeta と同じ絶対URL変換ルールに従う）
+export function buildArticleMeta(article) {
+  return buildMeta({
+    title: article.title,
+    description: article.description,
+    url: `/articles/${article.slug}`,
+    image: article.heroImage,
+    type: "article",
+  });
+}
+
+// 記事データから Article 相当の JSON-LD を生成（image は絶対URL必須）
+export function buildArticleJsonLd(article) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: article.title,
+    description: article.description,
+    image: toAbsoluteUrl(article.heroImage),
+    datePublished: article.publishDate,
+    author: { "@type": "Organization", name: SITE_NAME },
+    publisher: { "@type": "Organization", name: SITE_NAME },
+  };
+}
+
 // 国データから TouristDestination 相当の JSON-LD を生成
 export function buildCountryJsonLd(country) {
   return {
@@ -124,4 +149,11 @@ export function applyMeta(meta, jsonLd) {
   }
 }
 
-export default { buildMeta, buildCountryMeta, buildCountryJsonLd, applyMeta };
+export default {
+  buildMeta,
+  buildCountryMeta,
+  buildCountryJsonLd,
+  buildArticleMeta,
+  buildArticleJsonLd,
+  applyMeta,
+};

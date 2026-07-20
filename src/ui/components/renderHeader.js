@@ -8,6 +8,7 @@ export function renderHeader() {
       el("a", { href: "/", "data-link": "", class: "site-logo" }, labels.siteName),
       el("nav", { class: "site-nav", "aria-label": "メインナビゲーション" }, [
         el("a", { href: "/", "data-link": "" }, labels.nav.home),
+        el("a", { href: "/articles", "data-link": "" }, labels.nav.articles),
         el("a", { href: "/about", "data-link": "" }, labels.nav.about),
       ]),
     ]),
