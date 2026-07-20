@@ -7,8 +7,8 @@ test("未定義URLで404ページが表示される", async ({ page }) => {
   await expect(page.getByRole("heading", { level: 1, name: "404" })).toBeVisible();
   await expect(page.getByText("お探しのページは見つかりませんでした", { exact: false })).toBeVisible();
 
-  // トップへ戻るリンクが機能する
+  // トップへ戻るリンクが機能する（トップ＝ウズベキスタンガイド）
   await page.getByRole("link", { name: "トップへ戻る" }).click();
   await expect(page).toHaveURL(/\/$/);
-  await expect(page.getByRole("heading", { level: 1 })).toHaveText("中央アジア観光ガイド");
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText("ウズベキスタン");
 });

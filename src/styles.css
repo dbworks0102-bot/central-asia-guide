@@ -1,4 +1,4 @@
-/* ===== 中央アジア観光ガイド スタイル =====
+/* ===== ウズベキスタン旅行ガイド スタイル =====
    モバイルファースト。ブレークポイント: 600px（タブレット） / 1024px（デスクトップ） */
 
 :root {
@@ -99,71 +99,6 @@ a:hover {
 .lead {
   font-size: 1.02rem;
   color: var(--color-text);
-}
-
-/* ===== トップ：ヒーロー ===== */
-.hero {
-  background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));
-  color: #fff;
-  padding-block: 2.5rem;
-  text-align: center;
-}
-.hero__title {
-  font-size: 1.6rem;
-  margin: 0 0 0.5rem;
-}
-.hero__lead {
-  margin: 0;
-  opacity: 0.92;
-}
-
-/* ===== 国選択グリッド ===== */
-.country-select {
-  padding-block: 2rem;
-}
-.country-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--gap);
-}
-.country-card {
-  display: block;
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: var(--shadow);
-  color: inherit;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-.country-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 18px rgba(15, 42, 63, 0.15);
-  text-decoration: none;
-}
-.country-card__img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  background: var(--color-primary-dark);
-}
-.country-card__body {
-  padding: 1rem;
-}
-.country-card__name {
-  margin: 0 0 0.25rem;
-  font-size: 1.2rem;
-}
-.country-card__tagline {
-  margin: 0 0 0.75rem;
-  color: var(--color-muted);
-  font-size: 0.92rem;
-}
-.country-card__cta {
-  display: inline-block;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--color-primary);
 }
 
 /* ===== 国別ページ ===== */
@@ -359,10 +294,6 @@ a:hover {
   color: var(--color-muted);
 }
 
-.back-link {
-  margin-top: 1.5rem;
-}
-
 /* ===== About / 404 ===== */
 .button {
   display: inline-block;
@@ -411,11 +342,8 @@ a:hover {
 
 /* ===== タブレット（600px〜） ===== */
 @media (min-width: 600px) {
-  .hero__title {
+  .country-hero__title {
     font-size: 2rem;
-  }
-  .country-grid {
-    grid-template-columns: repeat(2, 1fr);
   }
   .attraction-grid {
     grid-template-columns: repeat(2, 1fr);

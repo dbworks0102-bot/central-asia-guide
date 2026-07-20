@@ -2,7 +2,7 @@ import { test, expect } from "@playwright/test";
 
 // モデルコースの日程（itinerary）が表示される
 test("モデルコースの日程が表示される", async ({ page }) => {
-  await page.goto("/uzbekistan");
+  await page.goto("/");
 
   // モデルコースセクション見出し
   await expect(page.getByRole("heading", { name: "おすすめモデルコース" })).toBeVisible();

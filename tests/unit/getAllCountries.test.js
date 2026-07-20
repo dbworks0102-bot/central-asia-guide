@@ -2,10 +2,10 @@ import { describe, it, expect } from "vitest";
 import { getAllCountries } from "../../src/core/getAllCountries.js";
 
 describe("getAllCountries", () => {
-  it("MVP対象の全国分（2件以上）を返す", () => {
+  it("対象国（ウズベキスタンのみ）を返す", () => {
     const list = getAllCountries();
     expect(Array.isArray(list)).toBe(true);
-    expect(list.length).toBeGreaterThanOrEqual(2);
+    expect(list.length).toBe(1);
   });
 
   it("各項目はトップページ表示に必要なフィールドを含む", () => {
@@ -20,9 +20,9 @@ describe("getAllCountries", () => {
     }
   });
 
-  it("ウズベキスタンとキルギスを含む", () => {
+  it("ウズベキスタンを含み、キルギスは含まない（専門サイト化）", () => {
     const ids = getAllCountries().map((c) => c.id);
     expect(ids).toContain("uzbekistan");
-    expect(ids).toContain("kyrgyzstan");
+    expect(ids).not.toContain("kyrgyzstan");
   });
 });

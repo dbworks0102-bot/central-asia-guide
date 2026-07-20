@@ -1,28 +1,31 @@
 // History APIベースの簡易クライアントサイドルーター。
-// ルート定義: "/" → トップ, "/:countryId" → 国別, "/about" → About, "*" → 404
+// ルート定義: "/" → ウズベキスタンガイド（トップ）, "/about" → About, "*" → 404
 import { clear } from "./utils/dom.js";
-import { getAllCountries } from "./core/getAllCountries.js";
 import { getCountryData } from "./core/getCountryData.js";
-import { buildMeta, buildCountryMeta, buildCountryJsonLd, applyMeta } from "./utils/meta.js";
+import { buildMeta, buildCountryJsonLd, applyMeta } from "./utils/meta.js";
 import { labels } from "./utils/labels.js";
 import { renderHeader } from "./ui/components/renderHeader.js";
 import { renderFooter } from "./ui/components/renderFooter.js";
-import { renderTopPage } from "./ui/renderTopPage.js";
 import { renderCountryPage } from "./ui/renderCountryPage.js";
 import { renderAboutPage } from "./ui/renderAboutPage.js";
 import { renderNotFound } from "./ui/renderNotFound.js";
 
+// ウズベキスタン専門サイト：トップページはウズベキスタンのガイドそのもの。
+const HOME_COUNTRY_ID = "uzbekistan";
+
 // path から { view: DOMNode, meta, jsonLd } を解決する
 function resolve(path) {
   if (path === "/" || path === "") {
+    const country = getCountryData(HOME_COUNTRY_ID);
     return {
-      view: renderTopPage(getAllCountries()),
+      view: renderCountryPage(country),
       meta: buildMeta({
         title: labels.siteName,
-        description: "ウズベキスタン・キルギスの観光情報を日本語で。基本情報・治安・ビザ・モデルコース・費用感をまとめて紹介。",
+        description: country.overview,
         url: "/",
+        image: country.heroImage,
       }),
-      jsonLd: null,
+      jsonLd: buildCountryJsonLd(country),
     };
   }
 
@@ -31,17 +34,6 @@ function resolve(path) {
       view: renderAboutPage(),
       meta: buildMeta({ title: labels.nav.about, description: "当サイトの目的と運営方針について。", url: "/about" }),
       jsonLd: null,
-    };
-  }
-
-  // "/:countryId"
-  const slug = path.replace(/^\//, "");
-  const country = getCountryData(slug);
-  if (country) {
-    return {
-      view: renderCountryPage(country),
-      meta: buildCountryMeta(country),
-      jsonLd: buildCountryJsonLd(country),
     };
   }
 

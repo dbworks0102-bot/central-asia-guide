@@ -1,8 +1,8 @@
 import { test, expect } from "@playwright/test";
 
 // ウズベキスタンページで基本情報・治安・ビザ・費用感のセクションが表示される
-test("国別ページに基本情報・治安・ビザ・費用感が表示される", async ({ page }) => {
-  await page.goto("/uzbekistan");
+test("トップ（ウズベキスタンガイド）に基本情報・治安・ビザ・費用感が表示される", async ({ page }) => {
+  await page.goto("/");
 
   // 各セクション見出し
   await expect(page.getByRole("heading", { name: "基本情報" })).toBeVisible();

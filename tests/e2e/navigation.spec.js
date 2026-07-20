@@ -11,21 +11,21 @@ test("ヘッダーナビゲーションで About / トップへ遷移できる",
   await expect(page).toHaveURL(/\/about$/);
   await expect(page.getByRole("heading", { level: 1, name: "このサイトについて" })).toBeVisible();
 
-  // ヘッダーの「ホーム」でトップへ
+  // ヘッダーの「ホーム」でトップ（＝ウズベキスタンガイド）へ
   await header.getByRole("link", { name: "ホーム" }).click();
   await expect(page).toHaveURL(/\/$/);
-  await expect(page.getByRole("heading", { level: 1 })).toHaveText("中央アジア観光ガイド");
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText("ウズベキスタン");
 });
 
 test("ブラウザの戻るボタンが機能する", async ({ page }) => {
   await page.goto("/");
 
-  // 国別ページへ遷移
-  await page.getByRole("link", { name: /ウズベキスタン/ }).click();
-  await expect(page).toHaveURL(/\/uzbekistan$/);
+  // About ページへ遷移
+  await page.locator(".site-header").getByRole("link", { name: "このサイトについて" }).click();
+  await expect(page).toHaveURL(/\/about$/);
 
-  // 戻るとトップページに戻る
+  // 戻るとトップページ（ウズベキスタンガイド）に戻る
   await page.goBack();
   await expect(page).toHaveURL(/\/$/);
-  await expect(page.getByRole("heading", { level: 1 })).toHaveText("中央アジア観光ガイド");
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText("ウズベキスタン");
 });

@@ -108,10 +108,6 @@ export function renderCountryPage(country) {
           country.attractions.map((a) => renderAttraction(a))
         )
       ),
-
-      el("p", { class: "back-link" }, [
-        el("a", { href: "/", "data-link": "" }, labels.common.backToTop),
-      ]),
     ]),
   ]);
 }

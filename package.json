@@ -1,7 +1,7 @@
 {
   "name": "central-asia-guide",
   "version": "1.0.0",
-  "description": "日本人旅行者向け中央アジア観光情報サイト（MVP）",
+  "description": "日本人旅行者向けウズベキスタン専門旅行ガイド",
   "type": "module",
   "scripts": {
     "dev": "vite",

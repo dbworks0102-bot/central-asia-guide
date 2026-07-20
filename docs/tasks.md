@@ -1,7 +1,16 @@
-# タスクリスト — 中央アジア観光サイト（central-asia-guide）
+# タスクリスト — ウズベキスタン旅行ガイド（central-asia-guide）
 
 `docs/design.md` を実装可能な粒度に分解したタスク一覧。開発標準のフロー（Step1〜8）に沿った順序で記載する。
 上から順に着手し、各ステップ完了時にチェックを入れる。
+
+---
+
+## Step 0. ウズベキスタン専門サイトへの方針転換（実施済み）
+- [x] キルギスのデータ・画像・国選択UIを全削除（`data/kyrgyzstan.js`・`ui/renderTopPage.js`・`components/renderCountryCard.js`・`public/images/kyrgyzstan/`）
+- [x] トップ `/` をウズベキスタンのガイド本体（`renderCountryPage`）に変更。`/:countryId` 動的ルートは廃止
+- [x] ブランディング（siteName / tagline / index.html メタ・OGP / package.json description）をウズベキスタン専門に更新
+- [x] ドキュメント（requirements / design / tasks）を単一国アーキテクチャに更新
+- [x] 単体テスト・E2Eテストを単一国前提に更新（Red→Green）
 
 ---
 
@@ -33,8 +42,7 @@
 ### 4-1. データ層
 - [ ] `src/utils/labels.js`（表示ラベル定数）
 - [ ] `src/data/uzbekistan.js`（design.md スキーマ準拠：id/name/overview/basicInfo/safety/currency/bestSeason/budget/preparation/modelCourses/attractions）
-- [ ] `src/data/kyrgyzstan.js`（同上）
-- [ ] `src/data/index.js`（全国データ集約・エクスポート）
+- [ ] `src/data/index.js`（データ集約・エクスポート：countries = [uzbekistan]）
 ### 4-2. コアロジック
 - [ ] `src/core/validateCountry.js`
 - [ ] `src/core/getCountryData.js`
@@ -45,15 +53,13 @@
 ### 4-4. UI 描画層
 - [ ] `src/ui/components/renderHeader.js`
 - [ ] `src/ui/components/renderFooter.js`
-- [ ] `src/ui/components/renderCountryCard.js`
 - [ ] `src/ui/components/renderModelCourse.js`
 - [ ] `src/ui/components/renderAttraction.js`（objectFit:contain時 dominantColor 背景）
-- [ ] `src/ui/renderTopPage.js`（国選択・サイト紹介）
-- [ ] `src/ui/renderCountryPage.js`（概要・治安・ビザ・費用・モデルコース・観光地）
+- [ ] `src/ui/renderCountryPage.js`（トップ `/` 本体：概要・治安・ビザ・費用・モデルコース・観光地）
 - [ ] `src/ui/renderAboutPage.js`
 - [ ] `src/ui/renderNotFound.js`
 ### 4-5. ルーティング・初期化
-- [ ] `src/router.js`（History APIベース簡易ルーター：/・/:countryId・/about・*）
+- [ ] `src/router.js`（History APIベース簡易ルーター：/（ウズベキスタン）・/about・*）
 - [ ] `src/main.js`（初期化・ルーター起動・内部リンク委譲）
 - [ ] CSS（モバイルファースト・ブレークポイント 600/1024px・レスポンシブ画像）
 - [ ] ユニットテストが全て Green になることを確認
@@ -65,8 +71,7 @@
 - [ ] リファクタ後もユニットテストが Green であることを確認
 
 ## Step 6. E2Eテスト（Playwright MCP）
-- [ ] `tests/e2e/topToCountry.spec`（トップ→ウズベキスタン遷移で概要表示）
-- [ ] `tests/e2e/countryPage.spec`（基本情報・治安・ビザ・費用感の表示）
+- [ ] `tests/e2e/countryPage.spec`（トップ `/` に基本情報・治安・ビザ・費用感の表示）
 - [ ] `tests/e2e/modelCourse.spec`（モデルコースの日程表示）
 - [ ] `tests/e2e/attractions.spec`（観光地カード・alt付き画像）
 - [ ] `tests/e2e/navigation.spec`（ヘッダー遷移・ブラウザ戻る）
@@ -88,6 +93,6 @@
 
 ---
 
-## 将来拡張（MVP後・スコープ外）
-- [ ] カザフスタン／タジキスタン／トルクメニスタンのデータ追加
+## 将来拡張（スコープ外）
+- [ ] キルギス／カザフスタン等は本サイトへ追加せず、独立した別サイトとして検討
 - [ ] 多言語対応・アフィリエイト等の収益化検討

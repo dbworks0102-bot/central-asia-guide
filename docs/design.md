@@ -1,30 +1,34 @@
-# 設計書 — 中央アジア観光サイト（central-asia-guide）
+# 設計書 — ウズベキスタン旅行ガイド（central-asia-guide）
 
-本書は `docs/requirements.md` に基づく設計を定義する。実装はまだ行わず、方針とインターフェースを確定させることを目的とする。
+本書は `docs/requirements.md` に基づく設計を定義する。
+
+> 注記：当初は複数国（ウズベキスタン・キルギス）メディアとして設計したが、
+> **ウズベキスタン専門サイト**へ方針転換した。本書は転換後の単一国アーキテクチャを記載する。
 
 ---
 
 ## 1. サイト構成（ページ一覧とURL構造）
 
-MVPでは以下のページを提供する。国の追加は `src/data/` にデータファイルを追加するだけで拡張できる設計とする。
+ウズベキスタン専門サイトとして以下のページを提供する。トップページ `/` がウズベキスタンの
+ガイド本体であり、国選択のステップは持たない。
 
 | ページ | URL | 概要 |
 |--------|-----|------|
-| トップページ | `/` | サイト紹介・国選択（ウズベキスタン／キルギス） |
-| ウズベキスタン国別ページ | `/uzbekistan` | 概要・治安・ビザ・モデルコース・観光地など |
-| キルギス国別ページ | `/kyrgyzstan` | 同上 |
+| トップページ（ウズベキスタンガイド） | `/` | 概要・治安・ビザ・モデルコース・観光地など、ウズベキスタンのガイド本体 |
 | サイトについて／お問い合わせ | `/about` | サイトの目的・運営情報・簡易お問い合わせ導線 |
 | 404 | `/*`（未定義パス） | 未定義URLのフォールバック |
 
-### 将来拡張
-- `/kazakhstan`, `/tajikistan`, `/turkmenistan` を同一テンプレート・同一データ構造で追加可能とする。
-- ページ追加時にコードを変更せず、データ追加＋ルート定義追加のみで完結することを目標にする。
+### 他国について
+- キルギス等の他中央アジア諸国は本サイトの対象外。
+- 拡張する場合は本サイトへ組み込まず、独立した別サイトとして構築する方針とする。
 
 ---
 
-## 2. データ設計（国別コンテンツ）
+## 2. データ設計（国コンテンツ）
 
-国別コンテンツは `src/data/` 配下に **1国1ファイル**（例: `uzbekistan.js`, `kyrgyzstan.js`）でオブジェクトとして定義し、`src/data/index.js` で集約してエクスポートする。
+コンテンツは `src/data/uzbekistan.js` に純粋なオブジェクトとして定義し、`src/data/index.js` で
+集約してエクスポートする（`countries` は単一国の配列 `[uzbekistan]`）。データ層と描画層を
+分離しておくことで、将来モデルコースや観光地の追加・差し替えを容易にする。
 
 ### 2.1 国データのスキーマ
 
@@ -140,23 +144,20 @@ central-asia-guide/
 ├── src/
 │   ├── main.js           # アプリ初期化・ルーター起動
 │   ├── router.js         # 簡易ルーティング（後述）
-│   ├── data/             # 国別データ
-│   │   ├── index.js      # 全国データの集約・エクスポート
-│   │   ├── uzbekistan.js
-│   │   └── kyrgyzstan.js
+│   ├── data/             # 国データ
+│   │   ├── index.js      # データの集約・エクスポート（countries = [uzbekistan]）
+│   │   └── uzbekistan.js
 │   ├── core/             # ビジネスロジック（データ取得・整形）
 │   │   ├── getCountryData.js
 │   │   ├── getAllCountries.js
 │   │   └── validateCountry.js
 │   ├── ui/               # 画面描画・DOM操作
-│   │   ├── renderTopPage.js
-│   │   ├── renderCountryPage.js
+│   │   ├── renderCountryPage.js  # トップ（/）で使用するウズベキスタンのガイド本体
 │   │   ├── renderAboutPage.js
 │   │   ├── renderNotFound.js
 │   │   └── components/   # 再利用描画関数
 │   │       ├── renderHeader.js
 │   │       ├── renderFooter.js
-│   │       ├── renderCountryCard.js
 │   │       ├── renderModelCourse.js
 │   │       └── renderAttraction.js
 │   └── utils/            # 汎用ユーティリティ
@@ -182,11 +183,12 @@ central-asia-guide/
 - **data/**：純粋なデータのみ。ロジックを持たない。
 - **core/**：データ取得・整形・検証。DOMに依存しない（＝ユニットテスト対象）。
   - `getCountryData(id)`：IDから国データを取得。未存在なら `null`。
-  - `getAllCountries()`：トップページ用の一覧（id/name/tagline/heroImage）を返す。
+  - `getAllCountries()`：データ整合性チェック用に対象国の一覧（id/name/tagline/heroImage）を返す。
   - `validateCountry(data)`：必須フィールド検証。boolean＋不足フィールド一覧を返す。
 - **ui/**：受け取ったデータをDOMに描画する純粋な描画関数。副作用はDOM生成のみ。
-  - `renderTopPage(countries)` / `renderCountryPage(country)` / `renderAboutPage()` / `renderNotFound()`。
-  - `components/` はページ間で再利用する部品（ヘッダー・フッター・カード・モデルコース・観光地）。
+  - `renderCountryPage(country)` / `renderAboutPage()` / `renderNotFound()`。トップ `/` は
+    `renderCountryPage` にウズベキスタンのデータを渡して描画する。
+  - `components/` はページ間で再利用する部品（ヘッダー・フッター・モデルコース・観光地）。
 - **utils/**：DOMヘルパー・メタタグ更新・ラベル定数など汎用処理。
 
 ### 依存方向
@@ -202,15 +204,16 @@ main.js → router.js → ui/* → core/* → data/*
 
 **判断：軽量なクライアントサイド・ルーター（History APIベースの簡易SPA）を採用する。**
 
-- 理由：ページ構造がほぼ同一（国別ページはデータ違いのみ）でDRYに描画関数を再利用でき、国追加がデータ追加だけで済むため。ページ遷移も高速でLighthouseスコアに有利。
+- 理由：About・404 を含む数ページを高速に切り替えられ、Lighthouseスコアに有利。SPA構成のまま
+  ページごとにメタ・OGP・構造化データを動的更新できる。
 - 実装方針：`src/router.js` にパス→描画関数のマッピングを定義。`history.pushState` ＋ `popstate` で遷移し、内部リンクは委譲クリックハンドラで処理する。
-- ルート定義（イメージ）：
+- ルート定義：
   ```
-  "/"            → renderTopPage
-  "/:countryId"  → renderCountryPage（getCountryData で解決、無ければ 404）
-  "/about"       → renderAboutPage
-  "*"            → renderNotFound
+  "/"       → renderCountryPage（ウズベキスタンのデータを getCountryData で取得）
+  "/about"  → renderAboutPage
+  "*"       → renderNotFound
   ```
+- 単一国サイトのため `/:countryId` のような動的ルートは持たない（`/uzbekistan` 等は 404）。
 - **SEO配慮**：SPAだがVercelの rewrite で全パスを `index.html` に返し、各遷移で `utils/meta.js` により `<title>`・メタ・OGP・構造化データを動的更新する。Lighthouse/クローラ対策として、必要に応じ将来的にプリレンダリング（vite-plugin-ssg等）を検討する余地を残す。
 - Vercel設定：`vercel.json` に SPA fallback（`rewrites`: すべて `/index.html`）を定義。
 
@@ -246,20 +249,19 @@ DOM非依存の `core/` と `utils/` を中心にテストする。
 
 | 対象 | テスト内容 |
 |------|-----------|
-| `core/getCountryData` | 存在するIDでデータを返す／未存在で `null` を返す |
-| `core/getAllCountries` | 全国分の一覧を返す・必要フィールドを含む |
+| `core/getCountryData` | 存在するID（uzbekistan）でデータを返す／未存在（削除済みkyrgyzstan含む）で `null` を返す |
+| `core/getAllCountries` | 対象国（ウズベキスタンのみ）の一覧を返す・必要フィールドを含む |
 | `core/validateCountry` | 必須フィールド欠損を検出・不足一覧を返す |
 | `utils/meta` | 与えたデータからtitle/OGP/JSON-LDを正しく生成 |
 | `utils/labels` | ラベル定数の整合性 |
-| `data/*`（データ整合性） | 各国データが `validateCountry` を通過する |
+| `data/*`（データ整合性） | ウズベキスタンのデータが `validateCountry` を通過する |
 
 軽量な描画関数（`components/*`）は jsdom 上で「与えたデータから期待するDOM構造を返すか」を必要に応じてテストする。
 
 ### 7.2 E2Eテスト（Playwright MCP）
 | シナリオ | 内容 |
 |---------|------|
-| トップ→国別遷移 | トップで「ウズベキスタン」を選択→ `/uzbekistan` に遷移し概要が表示される |
-| 国別ページ表示 | 基本情報・治安・ビザ・費用感が表示される |
+| トップページ表示 | `/` にウズベキスタンの概要・基本情報・治安・ビザ・費用感が表示される |
 | モデルコース表示 | モデルコースの日程（itinerary）が展開表示される |
 | 観光地表示 | 主要観光地カードが画像・alt付きで表示される |
 | ナビゲーション | ヘッダーからトップ／Aboutへ遷移できる・ブラウザ戻るが機能する |
@@ -281,7 +283,7 @@ DOM非依存の `core/` と `utils/` を中心にテストする。
 ---
 
 ## 9. 設計上の原則まとめ
-- **拡張性**：国追加は「データファイル追加」で完結（コード変更不要）。
+- **単一国特化**：ウズベキスタン専門。他国は別サイトとして扱い、本サイトに抽象化を持ち込まない。
 - **DRY・単一責任**：レイヤー分離（data / core / ui / utils）を厳守。
 - **テスト容易性**：ロジックはDOM非依存に隔離しVitestで担保。
 - **メモリ準拠**：画像背景色ルール・確認不要ルール・開発標準（ドキュメントファースト／TDD／ビルドエラーゼロ）を反映。

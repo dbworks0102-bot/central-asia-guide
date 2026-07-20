@@ -9,10 +9,8 @@ describe("getCountryData", () => {
     expect(uz.name).toBe("ウズベキスタン");
   });
 
-  it("キルギスのデータも取得できる", () => {
-    const kg = getCountryData("kyrgyzstan");
-    expect(kg).not.toBeNull();
-    expect(kg.id).toBe("kyrgyzstan");
+  it("削除済みのキルギスは null を返す（専門サイト化）", () => {
+    expect(getCountryData("kyrgyzstan")).toBeNull();
   });
 
   it("未存在IDでは null を返す", () => {

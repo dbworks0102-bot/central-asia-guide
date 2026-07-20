@@ -1,7 +1,7 @@
 // 表示ラベル定数（DRY: 表示文言を一元管理）
 export const labels = {
-  siteName: "中央アジア観光ガイド",
-  tagline: "シルクロードの至宝、ウズベキスタン・キルギスへ",
+  siteName: "ウズベキスタン旅行ガイド",
+  tagline: "青の都サマルカンドとシルクロードの至宝",
 
   nav: {
     home: "ホーム",
@@ -37,7 +37,6 @@ export const labels = {
     breakdown: "内訳",
     preparationItems: "持ち物・手続き",
     notes: "注意点",
-    selectCountry: "国を選ぶ",
     backToTop: "トップへ戻る",
   },
 };
