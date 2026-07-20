@@ -8,7 +8,7 @@
 ## 渡航準備系
 - [x] ウズベキスタン ビザ 電子ビザ 申請方法 → 下書き済み: uzbekistan-visa-evisa-guide
 - [x] ウズベキスタン 治安 安全対策 → 下書き済み: uzbekistan-safety-travel-tips
-- [ ] ウズベキスタン 服装 気候 季節ごとの持ち物
+- [x] ウズベキスタン 服装 気候 季節ごとの持ち物 → 下書き済み: uzbekistan-clothing-climate-packing-guide
 - [ ] ウズベキスタン 両替 通貨 スム 使い方
 - [ ] ウズベキスタン 空港 入国 税関で気をつけること
 
@@ -25,9 +25,9 @@
 
 ## 都市・観光地系ロングテール
 - [x] サマルカンド レギスタン広場 見どころ → 下書き済み: samarkand-registan-square-highlights
-- [ ] ヒヴァ イチャン・カラ 観光
+- [x] ヒヴァ イチャン・カラ 観光 → 下書き済み: khiva-itchan-kala-highlights
 - [x] ブハラ 旧市街 観光スポット → 下書き済み: bukhara-old-town-attractions
-- [ ] シャーヒズィンダ廟群 見どころ
+- [x] シャーヒズィンダ廟群 見どころ → 下書き済み: shah-i-zinda-mausoleum-highlights
 
 ## 鮮度が高く競合が少ない「今が狙い目」のネタ
 - [ ] タシケント 新規オープン 観光施設 最新情報
