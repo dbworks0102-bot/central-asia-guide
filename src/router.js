@@ -1,45 +1,73 @@
 // History APIベースの簡易クライアントサイドルーター。
 // ルート定義: "/" → ウズベキスタンガイド（トップ）, "/about" → About, "*" → 404
+//
+// コード分割（Step 10-5）：記事関連コード（getArticles / renderArticleListPage /
+// renderArticleDetailPage）と、記事データを内包する routeMeta は動的 import() で分離する。
+// これにより "/" や "/about" しか訪れないユーザーは記事関連コードを初期バンドルで
+// ダウンロードせずに済む（記事コードは /articles・/articles/:slug を訪れたときだけ取得）。
 import { clear } from "./utils/dom.js";
 import { getCountryData } from "./core/getCountryData.js";
-import { getPublishedArticles, getPublishedArticleBySlug } from "./core/getArticles.js";
 import { buildMeta, applyMeta } from "./utils/meta.js";
-import { resolveRouteMeta, HOME_COUNTRY_ID } from "./core/routeMeta.js";
 import { renderHeader } from "./ui/components/renderHeader.js";
 import { renderFooter } from "./ui/components/renderFooter.js";
 import { renderCountryPage } from "./ui/renderCountryPage.js";
 import { renderAboutPage } from "./ui/renderAboutPage.js";
-import { renderArticleListPage } from "./ui/renderArticleListPage.js";
-import { renderArticleDetailPage } from "./ui/renderArticleDetailPage.js";
 import { renderNotFound } from "./ui/renderNotFound.js";
 
-// path に対応するビュー（DOMNode）を解決する。メタ情報は resolveRouteMeta（DRY・core/routeMeta.js）に委譲。
-function resolveView(path) {
-  if (path === "/" || path === "") return renderCountryPage(getCountryData(HOME_COUNTRY_ID));
-  if (path === "/about") return renderAboutPage();
+// 記事ルート（/articles・/articles/:slug）のビューを動的 import で解決する。
+// 記事コード（getArticles・renderArticle*）は本関数が呼ばれたとき＝実際に記事ルートを
+// 訪れたときにだけダウンロードされる。published でない詳細は null を返し、呼び出し側で 404 へ。
+async function resolveArticleView(path) {
   // コラム一覧：published 記事のみ・publishDate 降順（フィルタは core/getArticles.js）
-  if (path === "/articles") return renderArticleListPage(getPublishedArticles());
+  if (path === "/articles") {
+    const [{ getPublishedArticles }, { renderArticleListPage }] = await Promise.all([
+      import("./core/getArticles.js"),
+      import("./ui/renderArticleListPage.js"),
+    ]);
+    return renderArticleListPage(getPublishedArticles());
+  }
 
-  // コラム詳細：/articles/:slug。published なら詳細、そうでなければ 404 へフォールスルー
+  // コラム詳細：/articles/:slug。published なら詳細、そうでなければ null（→ 404 フォールスルー）
   const articleMatch = path.match(/^\/articles\/([^/]+)\/?$/);
   if (articleMatch) {
+    const { getPublishedArticleBySlug } = await import("./core/getArticles.js");
     const article = getPublishedArticleBySlug(decodeURIComponent(articleMatch[1]));
-    if (article) return renderArticleDetailPage(article);
+    if (article) {
+      const { renderArticleDetailPage } = await import("./ui/renderArticleDetailPage.js");
+      return renderArticleDetailPage(article);
+    }
+  }
+
+  return null;
+}
+
+// path に対応するビュー（DOMNode）を解決する。記事ルートのみ動的 import（上記）へ委譲。
+// homeCountryId は resolve() が routeMeta から受け取った定数（再 import を避けるため引き回す）。
+async function resolveView(path, homeCountryId) {
+  if (path === "/" || path === "") return renderCountryPage(getCountryData(homeCountryId));
+  if (path === "/about") return renderAboutPage();
+
+  if (path === "/articles" || /^\/articles\/[^/]+\/?$/.test(path)) {
+    const view = await resolveArticleView(path);
+    if (view) return view;
   }
 
   return renderNotFound();
 }
 
 // path から { view: DOMNode, meta, jsonLd } を解決する。
-// メタは core/routeMeta.js と共有（プリレンダリングと同一ロジック）。null＝404フォールバック。
-function resolve(path) {
+// メタは core/routeMeta.js と共有（プリレンダリングと同一ロジック・DRY）。routeMeta は記事データを
+// 内包するため動的 import し、初期バンドルから切り離す。null＝404フォールバック。
+async function resolve(path) {
+  const { resolveRouteMeta, HOME_COUNTRY_ID } = await import("./core/routeMeta.js");
   const routeMeta = resolveRouteMeta(path);
   const fallbackMeta = {
     meta: buildMeta({ title: "404 Not Found", description: "ページが見つかりませんでした。", url: path }),
     jsonLd: null,
   };
   const { meta, jsonLd } = routeMeta || fallbackMeta;
-  return { view: resolveView(path), meta, jsonLd };
+  const view = await resolveView(path, HOME_COUNTRY_ID);
+  return { view, meta, jsonLd };
 }
 
 export function createRouter(rootEl) {
@@ -54,8 +82,8 @@ export function createRouter(rootEl) {
   rootEl.appendChild(main);
   rootEl.appendChild(footer);
 
-  function render(path) {
-    const { view, meta, jsonLd } = resolve(path);
+  async function render(path) {
+    const { view, meta, jsonLd } = await resolve(path);
     clear(main);
     main.appendChild(view);
     applyMeta(meta, jsonLd);
@@ -65,7 +93,7 @@ export function createRouter(rootEl) {
   function navigate(path, { replace = false } = {}) {
     if (replace) history.replaceState({}, "", path);
     else history.pushState({}, "", path);
-    render(path);
+    return render(path);
   }
 
   // 内部リンク（data-link）を委譲クリックで処理
@@ -83,7 +111,7 @@ export function createRouter(rootEl) {
 
   return {
     start() {
-      render(window.location.pathname);
+      return render(window.location.pathname);
     },
     navigate,
   };

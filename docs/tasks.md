@@ -127,7 +127,7 @@ TDD（Red→Green）で実装。公開判定は core 層に集約し、draft が
 ### 中程度
 - [x] **10-3. `tests/e2e/articles.spec.js`が実在するdraft記事での直接アクセス404を検証していない**：`src/data/articles.js`から`status:"draft"`の記事を動的に1件選ぶテストケースを追加（ハードコードなし・将来publishedへ昇格しても壊れない）。E2E14件全パス確認済み（2026-07-20）
 - [x] **10-4. `design.md`§2.2フィールド対応表に`preparation`の記載漏れ**：`preparation`（items[]/notes[]、渡航準備）の行を追加済み（2026-07-20）
-- [ ] **10-5. 記事本文が単一バンドルに静的importされておりコード分割なし**：記事数が数十本規模になった際のバンドル肥大化・パフォーマンス劣化リスク。対策候補：記事本文のJSON分離＋動的fetch、またはルート単位の`import()`
+- [x] **10-5. 記事本文が単一バンドルに静的importされておりコード分割なし** → ルートレベルの動的`import()`で対応（2026-07-21）。`/articles`・`/articles/:slug`を訪れたときのみ記事関連コード（`getArticles.js`・`renderArticleListPage.js`・`renderArticleDetailPage.js`・記事データを内包する`routeMeta.js`）を取得するよう`src/router.js`を変更。記事8本規模でJSON分離＋fetchは過剰設計と判断し見送り。ビルド後`dist/assets/`でメインチャンク（19.33kB）と記事チャンク（`getArticles`40.65kB等）の分離を確認、メインチャンクへの記事タイトル文字列混入ゼロを`grep`で実機確認。`npm run lint`（0エラー）・`build`（4ページ生成）・`test`（38/38）・`test:e2e`（14/14）も再検証済み
 - [x] **10-6. `inbox/`写真の運用ルール未整理**：`design.md`§8.5.5に「現状の挙動」と「推奨運用」を分けて明文化（採用後の扱い・Drive側削除の非反映・自動削除しない方針）。`weekly-draft-prompt.md`にも参照を追記（2026-07-20）
 
 ### 軽微
