@@ -27,7 +27,7 @@
 - [x] Playwright 導入・設定（`playwright.config.js`）
 - [x] ディレクトリ構成を design.md 準拠で作成（src/data・core・ui・utils, tests/unit・e2e）
 - [x] `index.html` の骨組み（基本メタタグ・viewport・charset・ルートコンテナ）
-- [ ] ESLint/Prettier など基本整備（任意項目のため未着手。Step 10-9参照）
+- [x] ESLint/Prettier など基本整備 → ESLintのみ導入（Step 10-8参照。Prettierは現状の規模では未導入）
 
 ## Step 3. テスト先行（Red）— ユニット
 - [x] `tests/unit/getCountryData.test.js`
@@ -132,8 +132,8 @@ TDD（Red→Green）で実装。公開判定は core 層に集約し、draft が
 
 ### 軽微
 - [x] **10-7.** 直近の週次実行ログが正しくUTF-8で追記されているか再確認 → 確認済み。`docs/pending-review.md`の2026-07-20 22:15/22:24/22:41エントリ（BOM修正後の実行分）は文字化けなく正しく描画されている
-- [ ] **10-8.** lint/pre-commit相当の仕組み導入（Step 2の任意ESLint整備と合わせて検討）
-- [ ] **10-9.** `docs/seo-keywords.md`の手作業チェックボックス管理を、キーワード数が大きく増えた場合に構造化データへ移行する余地の検討
+- [x] **10-8.** lint/pre-commit相当の仕組み導入 → ESLintフラット設定（`eslint.config.js`、`@eslint/js` recommendedのみ・環境別globals）＋Git pre-commitフック（`npm run lint && npm run test`、E2Eは重いため対象外）を追加（2026-07-21）。`npm run lint`（0エラー）・`npm run build`（4ページ生成）・`npm run test`（38/38）・`npm run test:e2e`（14/14）を実機で再検証済み
+- [x] **10-9.** `docs/seo-keywords.md`の手作業チェックボックス管理の構造化データ移行を検討 → **結論：現時点では移行不要**（2026-07-21判断）。現状20項目・5カテゴリ・7件使用済みの規模であり、Markdownチェックボックス形式のまま人間・自動化双方が問題なく読み書きできている。移行の目安として「キーワード項目が100件を超える」「カテゴリを横断した重複検出や優先度付けなど、単純なチェックボックスでは表現できない管理が必要になる」のいずれかに該当した時点で、JSON/YAML等の構造化データへの移行を再検討する。過度な抽象化を避けるという開発標準（CLAUDE.md）に沿い、現時点での実装は見送る。
 
 ---
 
