@@ -242,6 +242,11 @@ a:hover {
   font-weight: 600;
   color: var(--color-primary-dark);
 }
+.budget-note {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--color-text-muted, #666);
+}
 
 /* モデルコース */
 .model-course-list {

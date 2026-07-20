@@ -78,6 +78,7 @@ export function renderCountryPage(country) {
           { class: "bullet-list" },
           country.budget.breakdown.map((b) => el("li", {}, `${b.item}: ${b.cost}`))
         ),
+        ...(country.budget.note ? [el("p", { class: "budget-note" }, country.budget.note)] : []),
       ]),
 
       // 渡航準備
