@@ -3,14 +3,8 @@
 import { clear } from "./utils/dom.js";
 import { getCountryData } from "./core/getCountryData.js";
 import { getPublishedArticles, getPublishedArticleBySlug } from "./core/getArticles.js";
-import {
-  buildMeta,
-  buildCountryJsonLd,
-  buildArticleMeta,
-  buildArticleJsonLd,
-  applyMeta,
-} from "./utils/meta.js";
-import { labels } from "./utils/labels.js";
+import { buildMeta, applyMeta } from "./utils/meta.js";
+import { resolveRouteMeta, HOME_COUNTRY_ID } from "./core/routeMeta.js";
 import { renderHeader } from "./ui/components/renderHeader.js";
 import { renderFooter } from "./ui/components/renderFooter.js";
 import { renderCountryPage } from "./ui/renderCountryPage.js";
@@ -19,66 +13,33 @@ import { renderArticleListPage } from "./ui/renderArticleListPage.js";
 import { renderArticleDetailPage } from "./ui/renderArticleDetailPage.js";
 import { renderNotFound } from "./ui/renderNotFound.js";
 
-// ウズベキスタン専門サイト：トップページはウズベキスタンのガイドそのもの。
-const HOME_COUNTRY_ID = "uzbekistan";
-
-// path から { view: DOMNode, meta, jsonLd } を解決する
-function resolve(path) {
-  if (path === "/" || path === "") {
-    const country = getCountryData(HOME_COUNTRY_ID);
-    return {
-      view: renderCountryPage(country),
-      meta: buildMeta({
-        title: labels.siteName,
-        description: country.overview,
-        url: "/",
-        image: country.heroImage,
-      }),
-      jsonLd: buildCountryJsonLd(country),
-    };
-  }
-
-  if (path === "/about") {
-    return {
-      view: renderAboutPage(),
-      meta: buildMeta({ title: labels.nav.about, description: "当サイトの目的と運営方針について。", url: "/about" }),
-      jsonLd: null,
-    };
-  }
-
+// path に対応するビュー（DOMNode）を解決する。メタ情報は resolveRouteMeta（DRY・core/routeMeta.js）に委譲。
+function resolveView(path) {
+  if (path === "/" || path === "") return renderCountryPage(getCountryData(HOME_COUNTRY_ID));
+  if (path === "/about") return renderAboutPage();
   // コラム一覧：published 記事のみ・publishDate 降順（フィルタは core/getArticles.js）
-  if (path === "/articles") {
-    return {
-      view: renderArticleListPage(getPublishedArticles()),
-      meta: buildMeta({
-        title: labels.articles.listTitle,
-        description: labels.articles.listLead,
-        url: "/articles",
-      }),
-      jsonLd: null,
-    };
-  }
+  if (path === "/articles") return renderArticleListPage(getPublishedArticles());
 
-  // コラム詳細：/articles/:slug。published でなければ（draft・未存在とも）下の404へフォールスルー
+  // コラム詳細：/articles/:slug。published なら詳細、そうでなければ 404 へフォールスルー
   const articleMatch = path.match(/^\/articles\/([^/]+)\/?$/);
   if (articleMatch) {
-    const slug = decodeURIComponent(articleMatch[1]);
-    const article = getPublishedArticleBySlug(slug);
-    if (article) {
-      return {
-        view: renderArticleDetailPage(article),
-        meta: buildArticleMeta(article),
-        jsonLd: buildArticleJsonLd(article),
-      };
-    }
+    const article = getPublishedArticleBySlug(decodeURIComponent(articleMatch[1]));
+    if (article) return renderArticleDetailPage(article);
   }
 
-  // フォールバック 404
-  return {
-    view: renderNotFound(),
+  return renderNotFound();
+}
+
+// path から { view: DOMNode, meta, jsonLd } を解決する。
+// メタは core/routeMeta.js と共有（プリレンダリングと同一ロジック）。null＝404フォールバック。
+function resolve(path) {
+  const routeMeta = resolveRouteMeta(path);
+  const fallbackMeta = {
     meta: buildMeta({ title: "404 Not Found", description: "ページが見つかりませんでした。", url: path }),
     jsonLd: null,
   };
+  const { meta, jsonLd } = routeMeta || fallbackMeta;
+  return { view: resolveView(path), meta, jsonLd };
 }
 
 export function createRouter(rootEl) {

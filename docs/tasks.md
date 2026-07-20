@@ -84,7 +84,7 @@
 - [x] `npm run build` でビルドエラーゼロを確認（2026-07-20再確認済み）
 - [x] `npm run preview` で本番ビルドの表示確認（2026-07-20実施）
 - [ ] Lighthouse でパフォーマンス90以上・SEO・アクセシビリティを確認（未実施）
-- [ ] **OGP/メタタグ/構造化データが各ページで正しく出力されるか確認 → 未達を確認（重大）**：`npm run preview`後にJS非実行で`curl`取得した結果、記事詳細URL（例:`/articles/samarkand-registan-square-highlights`）でも`<title>`/`og:title`/`og:url`がトップページ用の汎用値のままで、記事別メタ（`buildArticleMeta`）が反映されていないことを実機で確認した（2026-07-20）。原因と対策はStep 10-1参照。
+- [x] **OGP/メタタグ/構造化データが各ページで正しく出力されるか確認 → Step 10-1のプリレンダリング実装で解消済み（2026-07-20）**：`npm run build`後の`dist/`静的HTMLに対し`npm run preview`+`curl`で再検証。published記事URLは記事別`<title>`/`og:title`/`og:url`/JSON-LDが正しく出力され、draft記事URLはサイト汎用メタへのSPAフォールバックのままであることを確認した。
 
 ## Step 8. バックアップ・デプロイ
 - [x] Google Drive `gdrive:dev/central-asia-guide` へ差分バックアップ（直近: 2026-07-20実施）
@@ -121,17 +121,17 @@ TDD（Red→Green）で実装。公開判定は core 層に集約し、draft が
 `Agent(model:"fable")`による全体設計レビューで判明した指摘事項。重大→中程度→軽微の順。
 
 ### 重大
-- [ ] **10-1. SPAのCSRにより記事別OGP/構造化データがJS非実行のスクレイパー（SNSシェア等）に反映されない**：`npm run preview`後の`curl`実機検証で未達を確認済み（Step 7参照）。対策候補：プリレンダリング（`vite-plugin-ssg`等）またはビルド時のルート別静的HTML生成の導入
-- [ ] **10-2. 週次自動化の「対象外ファイル改変禁止」「1本のみ生成」制約が技術的に未強制**：`--allowedTools`はツール種別のみ制限しパス制限がない。対策：`weekly-draft.ps1`実行後に`git diff --name-only`を取得し、`src/data/articles.js`・`docs/seo-keywords.md`以外の変更があれば警告/中断する後処理チェックを追加
+- [x] **10-1. SPAのCSRにより記事別OGP/構造化データがJS非実行のスクレイパー（SNSシェア等）に反映されない**：`src/core/routeMeta.js`（メタ生成の一元化）＋`scripts/prerender-meta.js`（`build`後にpublished記事のみ静的HTML生成、draftは除外）を実装。`npm run build`/`test`/`test:e2e`全パス、`curl`でpublished記事別メタ・draft記事フォールバックの両方を実機再検証済み（2026-07-20）
+- [x] **10-2. 週次自動化の「対象外ファイル改変禁止」「1本のみ生成」制約が技術的に未強制**：`weekly-draft.ps1`にclaude実行前後の`git status --porcelain`差分検知を追加。`src/data/articles.js`・`docs/seo-keywords.md`以外の変更があれば`docs/pending-review.md`のログ冒頭に警告を挿入する。git検査はPowerShell本体側で実施し`--allowedTools`にgit権限は追加していない。UTF-8 BOM維持・構文チェック済み（2026-07-20）
 
 ### 中程度
-- [ ] **10-3. `tests/e2e/articles.spec.js`が実在するdraft記事での直接アクセス404を検証していない**（架空slugのみテスト対象）。実在slug（例:`samarkand-registan-square-highlights`）を使ったケースを追加
-- [ ] **10-4. `design.md`§2.2フィールド対応表に`preparation`の記載漏れ**（実装・スキーマ例には存在、対応表のみ抜け）
+- [x] **10-3. `tests/e2e/articles.spec.js`が実在するdraft記事での直接アクセス404を検証していない**：`src/data/articles.js`から`status:"draft"`の記事を動的に1件選ぶテストケースを追加（ハードコードなし・将来publishedへ昇格しても壊れない）。E2E14件全パス確認済み（2026-07-20）
+- [x] **10-4. `design.md`§2.2フィールド対応表に`preparation`の記載漏れ**：`preparation`（items[]/notes[]、渡航準備）の行を追加済み（2026-07-20）
 - [ ] **10-5. 記事本文が単一バンドルに静的importされておりコード分割なし**：記事数が数十本規模になった際のバンドル肥大化・パフォーマンス劣化リスク。対策候補：記事本文のJSON分離＋動的fetch、またはルート単位の`import()`
-- [ ] **10-6. `inbox/`写真の運用ルール未整理**：採用後の移動、Drive側削除時の扱い、未使用候補のクリーンアップ方針を明文化
+- [x] **10-6. `inbox/`写真の運用ルール未整理**：`design.md`§8.5.5に「現状の挙動」と「推奨運用」を分けて明文化（採用後の扱い・Drive側削除の非反映・自動削除しない方針）。`weekly-draft-prompt.md`にも参照を追記（2026-07-20）
 
 ### 軽微
-- [ ] **10-7.** 直近の週次実行ログが正しくUTF-8で追記されているか再確認（過去に文字化けが発生していた形跡があるため）
+- [x] **10-7.** 直近の週次実行ログが正しくUTF-8で追記されているか再確認 → 確認済み。`docs/pending-review.md`の2026-07-20 22:15/22:24/22:41エントリ（BOM修正後の実行分）は文字化けなく正しく描画されている
 - [ ] **10-8.** lint/pre-commit相当の仕組み導入（Step 2の任意ESLint整備と合わせて検討）
 - [ ] **10-9.** `docs/seo-keywords.md`の手作業チェックボックス管理を、キーワード数が大きく増えた場合に構造化データへ移行する余地の検討
 
