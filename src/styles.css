@@ -1,0 +1,441 @@
+/* ===== 中央アジア観光ガイド スタイル =====
+   モバイルファースト。ブレークポイント: 600px（タブレット） / 1024px（デスクトップ） */
+
+:root {
+  --color-primary: #1b6ca8;
+  --color-primary-dark: #0f2a3f;
+  --color-accent: #c8a15a;
+  --color-text: #23303a;
+  --color-muted: #5c6b76;
+  --color-bg: #f7f9fb;
+  --color-surface: #ffffff;
+  --color-border: #e2e8ee;
+  --radius: 10px;
+  --shadow: 0 2px 10px rgba(15, 42, 63, 0.08);
+  --max-width: 1080px;
+  --gap: 1rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Hiragino Sans", "Noto Sans JP", "Yu Gothic", system-ui, sans-serif;
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.7;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+/* ===== ヘッダー ===== */
+.site-header {
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--gap);
+  min-height: 56px;
+}
+.site-logo {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--color-primary-dark);
+}
+.site-nav {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.9rem;
+}
+
+/* ===== メイン ===== */
+.site-main {
+  min-height: 60vh;
+}
+.page {
+  padding-block: 1.5rem 3rem;
+}
+
+.section-title {
+  font-size: 1.3rem;
+  margin: 0 0 0.75rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 2px solid var(--color-accent);
+}
+.sub-title {
+  font-size: 1.05rem;
+  margin: 1rem 0 0.4rem;
+}
+.lead {
+  font-size: 1.02rem;
+  color: var(--color-text);
+}
+
+/* ===== トップ：ヒーロー ===== */
+.hero {
+  background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));
+  color: #fff;
+  padding-block: 2.5rem;
+  text-align: center;
+}
+.hero__title {
+  font-size: 1.6rem;
+  margin: 0 0 0.5rem;
+}
+.hero__lead {
+  margin: 0;
+  opacity: 0.92;
+}
+
+/* ===== 国選択グリッド ===== */
+.country-select {
+  padding-block: 2rem;
+}
+.country-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gap);
+}
+.country-card {
+  display: block;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  color: inherit;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.country-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(15, 42, 63, 0.15);
+  text-decoration: none;
+}
+.country-card__img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  background: var(--color-primary-dark);
+}
+.country-card__body {
+  padding: 1rem;
+}
+.country-card__name {
+  margin: 0 0 0.25rem;
+  font-size: 1.2rem;
+}
+.country-card__tagline {
+  margin: 0 0 0.75rem;
+  color: var(--color-muted);
+  font-size: 0.92rem;
+}
+.country-card__cta {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+/* ===== 国別ページ ===== */
+.country-hero {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0;
+}
+.country-hero__img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  opacity: 0.75;
+}
+.country-hero__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 1rem;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+.country-hero__title {
+  margin: 0;
+  font-size: 1.8rem;
+}
+.country-hero__tagline {
+  margin: 0.25rem 0 0;
+}
+.country-body {
+  padding-top: 1.5rem;
+}
+.country-section {
+  margin-bottom: 2rem;
+}
+
+/* 情報テーブル */
+.info-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--color-surface);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.info-table th,
+.info-table td {
+  text-align: left;
+  padding: 0.65rem 0.9rem;
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: top;
+}
+.info-table th {
+  width: 32%;
+  background: #eef3f7;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.info-table tr:last-child th,
+.info-table tr:last-child td {
+  border-bottom: none;
+}
+
+.bullet-list {
+  margin: 0.4rem 0;
+  padding-left: 1.2rem;
+}
+.bullet-list li {
+  margin-bottom: 0.3rem;
+}
+.safety-level,
+.season-recommended,
+.budget-daily {
+  font-weight: 600;
+  color: var(--color-primary-dark);
+}
+
+/* モデルコース */
+.model-course-list {
+  display: grid;
+  gap: var(--gap);
+}
+.model-course {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  box-shadow: var(--shadow);
+}
+.model-course__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+.model-course__title {
+  margin: 0;
+  font-size: 1.1rem;
+}
+.model-course__days {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #fff;
+  background: var(--color-primary);
+  border-radius: 999px;
+  padding: 0.1rem 0.7rem;
+  white-space: nowrap;
+}
+.model-course__summary {
+  color: var(--color-muted);
+  font-size: 0.92rem;
+}
+.model-course__itinerary {
+  list-style: none;
+  margin: 0.5rem 0 0;
+  padding: 0;
+}
+.itinerary-step {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.6rem 0;
+  border-top: 1px dashed var(--color-border);
+}
+.itinerary-step__day {
+  flex: 0 0 auto;
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--color-accent);
+  min-width: 3.5rem;
+}
+.itinerary-step__title {
+  margin: 0 0 0.15rem;
+  font-size: 0.98rem;
+}
+.itinerary-step__detail {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
+/* 観光地グリッド */
+.attraction-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gap);
+}
+.attraction-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+/* objectFit:contain のため dominantColor 背景を inline style で設定 */
+.attraction-card__media {
+  width: 100%;
+  height: 190px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.attraction-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.attraction-card__body {
+  padding: 0.9rem;
+}
+.attraction-card__name {
+  margin: 0;
+  font-size: 1.05rem;
+}
+.attraction-card__city {
+  display: inline-block;
+  font-size: 0.78rem;
+  color: #fff;
+  background: var(--color-accent);
+  border-radius: 4px;
+  padding: 0.05rem 0.5rem;
+  margin: 0.3rem 0;
+}
+.attraction-card__desc {
+  margin: 0.3rem 0 0;
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
+.back-link {
+  margin-top: 1.5rem;
+}
+
+/* ===== About / 404 ===== */
+.button {
+  display: inline-block;
+  background: var(--color-primary);
+  color: #fff;
+  padding: 0.5rem 1.2rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+}
+.button:hover {
+  text-decoration: none;
+  background: var(--color-primary-dark);
+}
+.page-404 {
+  text-align: center;
+  padding-block: 3rem;
+}
+.notfound__code {
+  font-size: 3.5rem;
+  margin: 0;
+  color: var(--color-primary);
+}
+
+/* ===== フッター ===== */
+.site-footer {
+  background: var(--color-primary-dark);
+  color: #cdd8e0;
+  padding-block: 1.5rem;
+  margin-top: 2rem;
+  font-size: 0.85rem;
+}
+.site-footer .container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  text-align: center;
+}
+.footer-nav {
+  display: flex;
+  gap: 1rem;
+}
+.footer-nav a {
+  color: #cdd8e0;
+}
+
+/* ===== タブレット（600px〜） ===== */
+@media (min-width: 600px) {
+  .hero__title {
+    font-size: 2rem;
+  }
+  .country-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .attraction-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .country-hero__img {
+    height: 300px;
+  }
+  .site-footer .container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+/* ===== デスクトップ（1024px〜） ===== */
+@media (min-width: 1024px) {
+  .attraction-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .model-course-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .country-hero__img {
+    height: 360px;
+  }
+  .hero {
+    padding-block: 3.5rem;
+  }
+}
