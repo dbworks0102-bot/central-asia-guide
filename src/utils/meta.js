@@ -4,6 +4,7 @@
 import { labels } from "./labels.js";
 
 const SITE_NAME = labels.siteName;
+const SITE_URL = "https://tabi-uzbekistan.com";
 const DEFAULT_IMAGE = "/images/ogp.jpg";
 
 // title に必ずサイト名を付与する
@@ -12,17 +13,27 @@ function withSiteName(title) {
   return title === SITE_NAME ? title : `${title} | ${SITE_NAME}`;
 }
 
+// サイトルート相対パスを絶対URLに変換する（OGP/canonicalは絶対URL必須のため）
+function toAbsoluteUrl(path) {
+  if (!path) return path;
+  if (/^https?:\/\//.test(path)) return path;
+  return `${SITE_URL}${path.startsWith("/") ? path : `/${path}`}`;
+}
+
 // 汎用メタ生成
 export function buildMeta({ title, description = "", url = "/", image = DEFAULT_IMAGE, type = "website" } = {}) {
   const fullTitle = withSiteName(title);
+  const absoluteUrl = toAbsoluteUrl(url);
+  const absoluteImage = toAbsoluteUrl(image);
   return {
     title: fullTitle,
     description,
+    canonicalUrl: absoluteUrl,
     og: {
       title: fullTitle,
       description,
-      image,
-      url,
+      image: absoluteImage,
+      url: absoluteUrl,
       type,
       siteName: SITE_NAME,
     },
@@ -30,7 +41,7 @@ export function buildMeta({ title, description = "", url = "/", image = DEFAULT_
       card: "summary_large_image",
       title: fullTitle,
       description,
-      image,
+      image: absoluteImage,
     },
   };
 }
@@ -72,10 +83,22 @@ function setMetaTag(attr, key, content) {
   el.setAttribute("content", content);
 }
 
+function setCanonicalLink(href) {
+  if (typeof document === "undefined") return;
+  let link = document.head.querySelector('link[rel="canonical"]');
+  if (!link) {
+    link = document.createElement("link");
+    link.setAttribute("rel", "canonical");
+    document.head.appendChild(link);
+  }
+  link.setAttribute("href", href);
+}
+
 export function applyMeta(meta, jsonLd) {
   if (typeof document === "undefined") return;
   document.title = meta.title;
   setMetaTag("name", "description", meta.description);
+  setCanonicalLink(meta.canonicalUrl);
 
   setMetaTag("property", "og:title", meta.og.title);
   setMetaTag("property", "og:description", meta.og.description);

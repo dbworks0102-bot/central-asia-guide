@@ -14,7 +14,7 @@ describe("buildMeta", () => {
     expect(m.title).toContain("テストタイトル");
     expect(m.description).toBe("説明文");
     expect(m.og.title).toContain("テストタイトル");
-    expect(m.og.image).toBe("/images/uzbekistan/hero.jpg");
+    expect(m.og.image).toBe("https://tabi-uzbekistan.com/images/uzbekistan/hero.jpg");
     expect(m.og.type).toBe("article");
     expect(m.twitter.card).toBe("summary_large_image");
   });
@@ -30,7 +30,7 @@ describe("buildCountryMeta", () => {
     const uz = getCountryData("uzbekistan");
     const m = buildCountryMeta(uz);
     expect(m.title).toContain("ウズベキスタン");
-    expect(m.og.image).toBe(uz.heroImage);
+    expect(m.og.image).toBe(`https://tabi-uzbekistan.com${uz.heroImage}`);
     expect(m.description.length).toBeGreaterThan(0);
   });
 });
