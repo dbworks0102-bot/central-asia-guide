@@ -89,7 +89,7 @@ export const articles = [
     ],
     heroImage: "/images/uzbekistan/registan.jpg",
     publishDate: "2026-07-20",
-    status: "draft",
+    status: "published",
     body: [
       {
         type: "paragraph",
@@ -148,7 +148,7 @@ export const articles = [
     ],
     heroImage: "/images/uzbekistan/hero.jpg",
     publishDate: "2026-07-20",
-    status: "draft",
+    status: "published",
     body: [
       {
         type: "paragraph",
@@ -194,7 +194,7 @@ export const articles = [
     ],
     heroImage: "/images/uzbekistan/hero.jpg",
     publishDate: "2026-07-20",
-    status: "draft",
+    status: "published",
     body: [
       {
         type: "paragraph",
@@ -244,7 +244,7 @@ export const articles = [
     ],
     heroImage: "/images/uzbekistan/ark-fortress.jpg",
     publishDate: "2026-07-20",
-    status: "draft",
+    status: "published",
     body: [
       {
         type: "paragraph",
@@ -307,7 +307,7 @@ export const articles = [
     ],
     heroImage: "/images/uzbekistan/itchan-kala.jpg",
     publishDate: "2026-07-20",
-    status: "draft",
+    status: "published",
     body: [
       {
         type: "paragraph",
@@ -392,7 +392,7 @@ export const articles = [
     ],
     heroImage: "/images/uzbekistan/shah-i-zinda.jpg",
     publishDate: "2026-07-20",
-    status: "draft",
+    status: "published",
     body: [
       {
         type: "paragraph",
@@ -481,7 +481,7 @@ export const articles = [
     ],
     heroImage: "/images/uzbekistan/hero.jpg",
     publishDate: "2026-07-20",
-    status: "draft",
+    status: "published",
     body: [
       {
         type: "paragraph",
