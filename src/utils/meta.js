@@ -10,7 +10,7 @@ const DEFAULT_IMAGE = "/images/ogp.jpg";
 // title に必ずサイト名を付与する
 function withSiteName(title) {
   if (!title) return SITE_NAME;
-  return title === SITE_NAME ? title : `${title} | ${SITE_NAME}`;
+  return title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`;
 }
 
 // サイトルート相対パスを絶対URLに変換する（OGP/canonicalは絶対URL必須のため）

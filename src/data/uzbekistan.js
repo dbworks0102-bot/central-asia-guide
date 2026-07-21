@@ -116,6 +116,7 @@ export default {
       image: "/images/uzbekistan/registan.jpg",
       description: "3つのメドレセに囲まれたサマルカンドの象徴。青いタイル装飾が圧巻で、夜間ライトアップも美しい。",
       dominantColor: "#6d8bb6",
+      articleSlug: "samarkand-registan-square-highlights",
     },
     {
       id: "shah-i-zinda",
@@ -124,6 +125,7 @@ export default {
       image: "/images/uzbekistan/shah-i-zinda.jpg",
       description: "細い参道の両側に並ぶ青タイルの霊廟群。「生ける王」を意味する聖地。",
       dominantColor: "#5f5553",
+      articleSlug: "shah-i-zinda-mausoleum-highlights",
     },
     {
       id: "ark-fortress",
@@ -132,6 +134,7 @@ export default {
       image: "/images/uzbekistan/ark-fortress.jpg",
       description: "ブハラ王朝の歴代君主が居城とした要塞。日干しレンガの巨大な城壁がそびえ、内部には博物館もある。",
       dominantColor: "#7a8ca9",
+      articleSlug: "bukhara-old-town-attractions",
     },
     {
       id: "itchan-kala",
@@ -140,6 +143,7 @@ export default {
       image: "/images/uzbekistan/itchan-kala.jpg",
       description: "城壁に囲まれた保存状態の良い旧市街。街全体が世界遺産の博物館都市。",
       dominantColor: "#4c4d52",
+      articleSlug: "khiva-itchan-kala-highlights",
     },
   ],
 };

@@ -42,7 +42,8 @@ export function renderArticleDetailPage(article) {
         class: "country-hero__img",
         src: article.heroImage,
         alt: article.title,
-        loading: "lazy",
+        // above-the-fold の LCP 候補のため遅延読み込みしない（Core Web Vitals 対策）
+        loading: "eager",
       }),
       el("div", { class: "country-hero__overlay container" }, [
         el("time", { class: "article-detail__date", datetime: article.publishDate }, formatDate(article.publishDate)),

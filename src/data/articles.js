@@ -71,8 +71,9 @@ export const articles = [
       },
     ],
     relatedLinks: [
-      { label: "ウズベキスタンの基本情報・モデルコース・観光地を見る", url: "/" },
-      { label: "当サイトについて", url: "/about" },
+      { label: "サマルカンド レギスタン広場の見どころガイドを見る", url: "/articles/samarkand-registan-square-highlights" },
+      { label: "ブハラ旧市街の観光スポットガイドを見る", url: "/articles/bukhara-old-town-attractions" },
+      { label: "ヒヴァ イチャン・カラ観光ガイドを見る", url: "/articles/khiva-itchan-kala-highlights" },
     ],
   },
   {
@@ -130,8 +131,9 @@ export const articles = [
       },
     ],
     relatedLinks: [
-      { label: "ウズベキスタンの基本情報・モデルコース・観光地を見る", url: "/" },
-      { label: "当サイトについて", url: "/about" },
+      { label: "シャーヒ・ズィンダ廟群の見どころガイドを見る", url: "/articles/shah-i-zinda-mausoleum-highlights" },
+      { label: "ウズベキスタン11日間モデルコースの見どころダイジェストを見る", url: "/articles/uzbekistan-11days-highlights" },
+      { label: "ウズベキスタンのビザは必要？電子ビザの申請方法を見る", url: "/articles/uzbekistan-visa-evisa-guide" },
     ],
   },
   {
@@ -176,8 +178,9 @@ export const articles = [
       },
     ],
     relatedLinks: [
-      { label: "ウズベキスタンの基本情報・モデルコース・観光地を見る", url: "/" },
-      { label: "当サイトについて", url: "/about" },
+      { label: "ウズベキスタンのビザは必要？電子ビザの申請方法を見る", url: "/articles/uzbekistan-visa-evisa-guide" },
+      { label: "ウズベキスタン旅行の服装ガイドを見る", url: "/articles/uzbekistan-clothing-climate-packing-guide" },
+      { label: "ウズベキスタン11日間モデルコースの見どころダイジェストを見る", url: "/articles/uzbekistan-11days-highlights" },
     ],
   },
   {
@@ -226,8 +229,9 @@ export const articles = [
       },
     ],
     relatedLinks: [
-      { label: "ウズベキスタンの基本情報・モデルコース・観光地を見る", url: "/" },
-      { label: "当サイトについて", url: "/about" },
+      { label: "ウズベキスタンの治安は？渡航前に知っておきたい安全対策を見る", url: "/articles/uzbekistan-safety-travel-tips" },
+      { label: "ウズベキスタン旅行の服装ガイドを見る", url: "/articles/uzbekistan-clothing-climate-packing-guide" },
+      { label: "ウズベキスタン11日間モデルコースの見どころダイジェストを見る", url: "/articles/uzbekistan-11days-highlights" },
     ],
   },
   {
@@ -289,8 +293,9 @@ export const articles = [
       },
     ],
     relatedLinks: [
-      { label: "ウズベキスタンの基本情報・モデルコース・観光地を見る", url: "/" },
-      { label: "当サイトについて", url: "/about" },
+      { label: "サマルカンド レギスタン広場の見どころガイドを見る", url: "/articles/samarkand-registan-square-highlights" },
+      { label: "ヒヴァ イチャン・カラ観光ガイドを見る", url: "/articles/khiva-itchan-kala-highlights" },
+      { label: "ウズベキスタン11日間モデルコースの見どころダイジェストを見る", url: "/articles/uzbekistan-11days-highlights" },
     ],
   },
   {
@@ -374,8 +379,9 @@ export const articles = [
       },
     ],
     relatedLinks: [
-      { label: "ウズベキスタンの基本情報・モデルコース・観光地を見る", url: "/" },
-      { label: "当サイトについて", url: "/about" },
+      { label: "ブハラ旧市街の観光スポットガイドを見る", url: "/articles/bukhara-old-town-attractions" },
+      { label: "シャーヒ・ズィンダ廟群の見どころガイドを見る", url: "/articles/shah-i-zinda-mausoleum-highlights" },
+      { label: "ウズベキスタン11日間モデルコースの見どころダイジェストを見る", url: "/articles/uzbekistan-11days-highlights" },
     ],
   },
   {
@@ -463,8 +469,9 @@ export const articles = [
       },
     ],
     relatedLinks: [
-      { label: "ウズベキスタンの基本情報・モデルコース・観光地を見る", url: "/" },
-      { label: "当サイトについて", url: "/about" },
+      { label: "サマルカンド レギスタン広場の見どころガイドを見る", url: "/articles/samarkand-registan-square-highlights" },
+      { label: "ブハラ旧市街の観光スポットガイドを見る", url: "/articles/bukhara-old-town-attractions" },
+      { label: "ウズベキスタン11日間モデルコースの見どころダイジェストを見る", url: "/articles/uzbekistan-11days-highlights" },
     ],
   },
   {
@@ -549,8 +556,9 @@ export const articles = [
       },
     ],
     relatedLinks: [
-      { label: "ウズベキスタンの基本情報・モデルコース・観光地を見る", url: "/" },
-      { label: "当サイトについて", url: "/about" },
+      { label: "ウズベキスタンの治安は？渡航前に知っておきたい安全対策を見る", url: "/articles/uzbekistan-safety-travel-tips" },
+      { label: "ウズベキスタンのビザは必要？電子ビザの申請方法を見る", url: "/articles/uzbekistan-visa-evisa-guide" },
+      { label: "ウズベキスタン11日間モデルコースの見どころダイジェストを見る", url: "/articles/uzbekistan-11days-highlights" },
     ],
   },
 ];

@@ -23,6 +23,18 @@ export function renderAttraction(attraction) {
       el("h3", { class: "attraction-card__name" }, attraction.name),
       el("span", { class: "attraction-card__city" }, attraction.city),
       el("p", { class: "attraction-card__desc" }, attraction.description),
+      // 対応する詳細記事への内部リンク（SEO内部リンク）。articleSlug がある場合のみ出力。
+      attraction.articleSlug
+        ? el(
+            "a",
+            {
+              href: `/articles/${attraction.articleSlug}`,
+              "data-link": "",
+              class: "attraction-card__link",
+            },
+            "記事で詳しく見る →"
+          )
+        : null,
     ]),
   ]);
 }

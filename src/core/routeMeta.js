@@ -25,7 +25,7 @@ export function resolveRouteMeta(path) {
     const country = getCountryData(HOME_COUNTRY_ID);
     return {
       meta: buildMeta({
-        title: labels.siteName,
+        title: "ウズベキスタン旅行ガイド｜サマルカンド・ブハラ・ヒヴァの観光モデルコース",
         description: country.overview,
         url: "/",
         image: country.heroImage,

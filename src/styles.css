@@ -293,6 +293,17 @@ a:hover {
   font-size: 0.9rem;
   color: var(--color-muted);
 }
+.attraction-card__link {
+  display: inline-block;
+  margin-top: 0.6rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  text-decoration: none;
+}
+.attraction-card__link:hover {
+  text-decoration: underline;
+}
 
 /* ===== コラム（記事）一覧 ===== */
 .article-list {
