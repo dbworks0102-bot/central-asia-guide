@@ -644,7 +644,7 @@ export const articles = [
       "タシュケント 観光 聖地",
       "タシュケント モスク メドレセ",
     ],
-    heroImage: "/images/uzbekistan/hero.jpg",
+    heroImage: "/images/uzbekistan/tashkent-khazrati-imam.jpg",
     publishDate: "2026-07-21",
     status: "draft",
     body: [
@@ -810,7 +810,7 @@ export const articles = [
       "タシュケント 中心部 観光",
       "ムスタキリク広場 タシュケント",
     ],
-    heroImage: "/images/uzbekistan/hero.jpg",
+    heroImage: "/images/uzbekistan/tashkent-amir-timur-square.jpg",
     publishDate: "2026-07-21",
     status: "draft",
     body: [
