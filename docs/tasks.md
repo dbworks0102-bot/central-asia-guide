@@ -141,13 +141,16 @@ TDD（Red→Green）で実装。公開判定は core 層に集約し、draft が
 Step 10完了後、`Agent(model:"fable")`による全体再レビューで判明した指摘事項。重大→中程度→軽微の順。
 
 ### 重大
-- [ ] **11-1. 本番環境（tabi-uzbekistan.com）が最新実装から大きく乖離**：`curl`で実機確認（2026-07-21）— `/`のtitleが`中央アジア観光ガイド｜ウズベキスタン・キルギス`（Step 0で削除したはずの旧ブランディング）のまま、`/about`・`/articles`は404。ローカル`npm run build`+`vite preview`では全て正常（コード側の不具合ではない）。`git log`で確認する限り、Step 0（コミット`ea2bc7f`、ウズベキスタン専門化）すら本番に反映されていない＝Vercelの自動デプロイが長期間機能していない可能性が高い。**Vercelダッシュボードでのプロジェクト⇔GitHubリポジトリ接続・対象ブランチ・デプロイ履歴の確認が必要（ユーザー対応）**。このマシンにVercel CLI未インストールのためClaude側では直接調査・修正不可。
+- [x] **11-1. 本番環境（tabi-uzbekistan.com）が最新実装から大きく乖離** → 解決（2026-07-21）。原因は2つ重なっていた。
+  1. **Vercelデプロイブロック**：コミット作者（`vanva <vanvan7406@gmail.com>`）がVercelプロジェクトのコントリビューターとして認識されず、「Hobby Planはprivateリポジトリでのコラボレーション非対応」でずっとブロックされていた（`ea2bc7f`以降、全push）。リポジトリをPublic化した上で、git commit authorをVercelプロジェクトオーナーのメール（`d.b.works0102@gmail.com`）に変更（`git config --local user.email`）して再pushしたところブロック解除・デプロイ成功（コミット`78cd86a`）。
+  2. **`vercel.json`に`cleanUrls`が無かった**：ブロック解除後も`/about`・`/articles`が200を返すもののtitleがトップページと同一という新たな不具合が判明。Vercelは`cleanUrls: true`が無いと拡張子なしパス（`/about`）を`about.html`へ自動解決しないため、`prerender-meta.js`が生成した`dist/about.html`等が使われずSPAフォールバックの`index.html`が返っていた。ローカル`vite preview`（sirv）は拡張子なしパスを自動解決するため、この差はローカル検証だけでは発見できなかった（11-5の指摘通り）。`vercel.json`に`"cleanUrls": true`を追加（コミット`e3e2714`）して解決。
+  - **最終確認（curl実機、2026-07-21）**：`/`・`/about`・`/articles`・`/articles/uzbekistan-11days-highlights`すべてHTTP 200＋ルートごとに正しい一意のtitleを返すことを確認済み。
 - [ ] **11-2. `src/router.js`のPromise化に伴うナビゲーションのレース条件**：Step 10-5で`render()`/`resolve()`が非同期化されたが、進行中ナビゲーションをキャンセルする仕組み（トークン等）がない。解決速度の異なるルート間（例：未取得の記事チャンクを要する`/articles/xxx`→直後に読み込み済みの`/about`）を連続でクリックすると、後発のrenderが先に完了し、URLと画面/メタの不整合が起こり得る。対応するE2Eテストなし。
 
 ### 中程度
 - [ ] **11-3. 静的ルート一覧の二重管理（DRY違反）**：`scripts/generate-sitemap.js`の`STATIC_ROUTES`と`src/core/routeMeta.js`の`getPrerenderPaths()`内`staticPaths`が同一内容を独立にハードコード。
 - [ ] **11-4. `routeMeta.js`/`prerender-meta.js`にユニットテストが無い**：SEOの中核ロジックだがテストの穴。
-- [ ] **11-5. 本番デプロイの検証がローカル`vite preview`（sirv）止まり**：11-1が判明した通り、ローカル検証だけでは本番の実際の挙動を保証できない。今後は「ローカルbuild確認」と「本番デプロイ後の確認」を分けて記録する。
+- [x] **11-5. 本番デプロイの検証がローカル`vite preview`（sirv）止まり** → 11-1の対応中に実例として顕在化（cleanUrls問題はローカルでは再現しなかった）。今後の運用ルールとして明文化：コード変更のデプロイ後は必ず`curl`等で本番URLを直接確認し、「ローカルbuild確認」と「本番デプロイ後の確認」を別工程として扱う。
 - [ ] **11-6. `buildCountryMeta`のデッドコード化**：`src/utils/meta.js`内、実装から到達しない（`routeMeta.js`は`buildMeta`を直接使用）。誤った`/${country.id}`URLを生成するdead code。
 
 ### 軽微
