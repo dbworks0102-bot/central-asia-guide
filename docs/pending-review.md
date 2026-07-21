@@ -105,3 +105,18 @@
 - **`docs/seo-keywords.md`**: 該当項目にチェック済み・slugを追記
 - **`src/data/articles.js` への追記件数**: 1本
 
+
+## 2026-07-21 レビュー完了・全件公開
+
+上記ログにある下書き記事7本すべて、ユーザーレビュー後に公開承認済み。`src/data/articles.js` の該当7記事の `status` を `"draft"` → `"published"` に変更し、ビルド・テスト（38件）通過を確認のうえコミット（`18a6eb5`）・プッシュ、本番反映もPlaywright/curlで確認済み。
+
+- `samarkand-registan-square-highlights`
+- `uzbekistan-safety-travel-tips`
+- `uzbekistan-visa-evisa-guide`
+- `bukhara-old-town-attractions`
+- `khiva-itchan-kala-highlights`
+- `shah-i-zinda-mausoleum-highlights`
+- `uzbekistan-clothing-climate-packing-guide`
+
+レビュー待ちの下書きは現在なし。
+
