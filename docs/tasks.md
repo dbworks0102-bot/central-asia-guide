@@ -158,6 +158,18 @@ Step 10完了後、`Agent(model:"fable")`による全体再レビューで判明
 
 ---
 
+## Step 12. オンページSEO改善（2026-07-21実施）
+ユーザー要望「サイト自体にSEOを施して、ウズベキスタン関係の上位検索ワードに表示されるように」への対応。コミット`d7b29c1`。
+
+- [x] **12-1. ホームtitleのキーワード強化**：`labels.siteName`のみだった`<title>`に地名・観光ワードを追加（`src/core/routeMeta.js`）。`src/utils/meta.js`の`withSiteName()`をサイト名の部分一致判定に変更し、重複なく長いtitleを許容。
+- [x] **12-2. 記事間の内部リンク強化**：全8記事で完全同一だった`relatedLinks`（`/`・`/about`のみ）を、話題クラスタに基づく記事間クロスリンク（各3本）に置換（`src/data/articles.js`）。
+- [x] **12-3. ホーム観光地カード→記事の内部リンク**：`src/data/uzbekistan.js`の4attractionsに`articleSlug`を追加し、対応記事へのリンクを`renderAttraction.js`に追加。
+- [x] **12-4. LCP対策**：記事詳細ページのヒーロー画像の`loading="lazy"`を`"eager"`に変更（`src/ui/renderArticleDetailPage.js`）。
+- [x] **12-5. 週次下書き生成の文字数基準を強化**：ユーザー指示「今後の作成記事は2000文字以上」を受け、`scripts/weekly-draft-prompt.md`の基準を「目安2,000〜3,000文字」から「必ず2,000文字以上」に変更。
+- [ ] **12-6. 既存の短い5記事の拡充**：`samarkand-registan-square-highlights`・`uzbekistan-safety-travel-tips`・`uzbekistan-visa-evisa-guide`・`khiva-itchan-kala-highlights`・`uzbekistan-clothing-climate-packing-guide`は実測本文が約700〜1000文字しかなく（`docs/pending-review.md`の自己申告文字数と乖離）、2000文字以上に拡充する対応をユーザーが承認済み（未着手）。
+
+---
+
 ## 将来拡張（スコープ外）
 - [ ] キルギス／カザフスタン等は本サイトへ追加せず、独立した別サイトとして検討
 - [ ] 多言語対応・アフィリエイト等の収益化検討
