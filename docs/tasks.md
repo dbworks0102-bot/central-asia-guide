@@ -166,7 +166,11 @@ Step 10完了後、`Agent(model:"fable")`による全体再レビューで判明
 - [x] **12-3. ホーム観光地カード→記事の内部リンク**：`src/data/uzbekistan.js`の4attractionsに`articleSlug`を追加し、対応記事へのリンクを`renderAttraction.js`に追加。
 - [x] **12-4. LCP対策**：記事詳細ページのヒーロー画像の`loading="lazy"`を`"eager"`に変更（`src/ui/renderArticleDetailPage.js`）。
 - [x] **12-5. 週次下書き生成の文字数基準を強化**：ユーザー指示「今後の作成記事は2000文字以上」を受け、`scripts/weekly-draft-prompt.md`の基準を「目安2,000〜3,000文字」から「必ず2,000文字以上」に変更。
-- [ ] **12-6. 既存の短い5記事の拡充**：`samarkand-registan-square-highlights`・`uzbekistan-safety-travel-tips`・`uzbekistan-visa-evisa-guide`・`khiva-itchan-kala-highlights`・`uzbekistan-clothing-climate-packing-guide`は実測本文が約700〜1000文字しかなく（`docs/pending-review.md`の自己申告文字数と乖離）、2000文字以上に拡充する対応をユーザーが承認済み（未着手）。
+- [x] **12-6. 既存の短い5記事の拡充** → 解決（2026-07-21、コミット`c1ff0e4`）。5記事のうち実測で確認したところ`khiva-itchan-kala-highlights`（2,193字）・`uzbekistan-clothing-climate-packing-guide`（2,165字）は着手前から既に2,000字を超えており対象外。残り3記事を拡充：
+  - `samarkand-registan-square-highlights`：689字→2,205字（メドレセ個別解説・入場料・服装マナー等を追加）
+  - `uzbekistan-safety-travel-tips`：626字→2,233字（都市別治安傾向・タクシー・両替・衛生・緊急連絡先を追加。外務省危険情報2026-05-13更新版で裏取り）
+  - `uzbekistan-visa-evisa-guide`：837字→2,161字（パスポート残存期間・滞在登録手続き等を追加。「30日未満」表記の誤りを本文・descriptionとも「30日以内」に統一）
+  - 追加事実はすべてWebSearchで裏取り済み。lint/test(38)/build/e2e(13)全通過、本番反映もcurl+Playwrightで確認済み。
 
 ---
 
