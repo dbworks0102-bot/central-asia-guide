@@ -28,6 +28,11 @@
 - [x] ヒヴァ イチャン・カラ 観光 → 下書き済み: khiva-itchan-kala-highlights
 - [x] ブハラ 旧市街 観光スポット → 下書き済み: bukhara-old-town-attractions
 - [x] シャーヒズィンダ廟群 見どころ → 下書き済み: shah-i-zinda-mausoleum-highlights
+- [x] タシュケント ハズラティ・イマーム 複合施設 オスマン・コーラン → 下書き済み: tashkent-khazrati-imam-complex-highlights
+- [x] タシュケント チョルスー・バザール 市場 歩き方 → 下書き済み: tashkent-chorsu-bazaar-highlights
+- [x] タシュケント アミール・ティムール広場 独立広場 → 下書き済み: tashkent-amir-timur-square-highlights
+- [x] タシュケント 地下鉄 装飾駅 めぐり → 下書き済み: tashkent-metro-stations-highlights
+- [x] タシュケント 国立応用美術博物館 伝統工芸 → 下書き済み: tashkent-applied-arts-museum-highlights
 
 ## 鮮度が高く競合が少ない「今が狙い目」のネタ
 - [ ] タシケント 新規オープン 観光施設 最新情報
