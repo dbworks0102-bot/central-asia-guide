@@ -19,7 +19,7 @@ export function renderAboutPage() {
     el("h2", { class: "sub-title" }, "お問い合わせ"),
     el("p", {}, [
       "ご意見・誤り報告は ",
-      el("a", { href: "mailto:info@example.com" }, "info@example.com"),
+      el("a", { href: "mailto:d.b.works0102@gmail.com" }, "d.b.works0102@gmail.com"),
       " までお寄せください。",
     ]),
   ]);
