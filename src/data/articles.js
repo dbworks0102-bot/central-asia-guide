@@ -962,7 +962,7 @@ export const articles = [
       "スザニ イカット タシュケント",
       "タシュケント 博物館 観光",
     ],
-    heroImage: "/images/uzbekistan/hero.jpg",
+    heroImage: "/images/uzbekistan/tashkent-applied-arts-museum.jpg",
     publishDate: "2026-07-21",
     status: "draft",
     body: [
