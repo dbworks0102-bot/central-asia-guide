@@ -34,6 +34,13 @@
 - [x] タシュケント 地下鉄 装飾駅 めぐり → 下書き済み: tashkent-metro-stations-highlights
 - [x] タシュケント 国立応用美術博物館 伝統工芸 → 下書き済み: tashkent-applied-arts-museum-highlights
 
+## グルメ系ロングテール
+- [x] タシュケント プロフ 名店 国民食 地域差 → 下書き済み: tashkent-plov-restaurants-highlights
+- [x] タシュケント チョルスー・バザール 食べ歩き 屋台 グルメ → 下書き済み: tashkent-chorsu-food-stalls-highlights
+- [x] ウズベキスタン ノン パン 模様 タンドール 文化 → 下書き済み: tashkent-non-bread-culture-highlights
+- [x] タシュケント チャイハナ お茶 文化 作法 → 下書き済み: tashkent-teahouse-culture-highlights
+- [x] タシュケント 食事 レストラン 値段 チップ マナー → 下書き済み: tashkent-dining-guide-highlights
+
 ## 鮮度が高く競合が少ない「今が狙い目」のネタ
 - [ ] タシケント 新規オープン 観光施設 最新情報
 - [ ] ウズベキスタン 直行便 就航状況 最新
