@@ -48,6 +48,13 @@
 - [x] タシュケント バザール 値切り 買い物 マナー → 下書き済み: tashkent-bazaar-bargaining-tips-highlights
 - [x] タシュケント お土産 梱包 割れ物 税関 持ち帰り → 下書き済み: tashkent-souvenir-packing-customs-highlights
 
+## 移動手段系ロングテール
+- [x] タシュケント空港 市内 アクセス タクシー 両替 SIM → 下書き済み: tashkent-airport-transfer-guide-highlights
+- [x] タシュケント 地下鉄 乗り方 切符 ATTOカード 路線 → 下書き済み: tashkent-metro-how-to-ride-highlights
+- [x] タシュケント タクシー 配車アプリ Yandex Go 使い方 → 下書き済み: tashkent-taxi-app-guide-highlights
+- [x] タシュケント 鉄道 アフラシャブ号 サマルカンド ブハラ 切符 → 下書き済み: tashkent-train-travel-guide-highlights
+- [x] タシュケント 路線バス トロリーバス 乗り方 → 下書き済み: tashkent-bus-transport-guide-highlights
+
 ## 鮮度が高く競合が少ない「今が狙い目」のネタ
 - [ ] タシュケント 新規オープン 観光施設 最新情報
 - [ ] ウズベキスタン 直行便 就航状況 最新
