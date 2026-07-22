@@ -20,7 +20,7 @@
 
 ## モデルコース・周遊系
 - [ ] ウズベキスタン 周遊 モデルコース 日数別
-- [ ] タシケント サマルカンド ブハラ 移動手段 鉄道
+- [ ] タシュケント サマルカンド ブハラ 移動手段 鉄道
 - [ ] ウズベキスタン 弾丸旅行 短期日程の組み方
 
 ## 都市・観光地系ロングテール
@@ -41,6 +41,13 @@
 - [x] タシュケント チャイハナ お茶 文化 作法 → 下書き済み: tashkent-teahouse-culture-highlights
 - [x] タシュケント 食事 レストラン 値段 チップ マナー → 下書き済み: tashkent-dining-guide-highlights
 
+## お土産系ロングテール
+- [x] タシュケント お土産 買い物 定番 ランキング → 下書き済み: tashkent-souvenir-shopping-guide-highlights
+- [x] タシュケント 伝統工芸品 スザニ 陶器 買い方 → 下書き済み: tashkent-traditional-crafts-shopping-highlights
+- [x] タシュケント 食べ物 お土産 スパイス ドライフルーツ → 下書き済み: tashkent-food-souvenirs-spices-highlights
+- [x] タシュケント バザール 値切り 買い物 マナー → 下書き済み: tashkent-bazaar-bargaining-tips-highlights
+- [x] タシュケント お土産 梱包 割れ物 税関 持ち帰り → 下書き済み: tashkent-souvenir-packing-customs-highlights
+
 ## 鮮度が高く競合が少ない「今が狙い目」のネタ
-- [ ] タシケント 新規オープン 観光施設 最新情報
+- [ ] タシュケント 新規オープン 観光施設 最新情報
 - [ ] ウズベキスタン 直行便 就航状況 最新
