@@ -28,6 +28,9 @@
 - [x] ヒヴァ イチャン・カラ 観光 → 下書き済み: khiva-itchan-kala-highlights
 - [x] ブハラ 旧市街 観光スポット → 下書き済み: bukhara-old-town-attractions
 - [x] シャーヒズィンダ廟群 見どころ → 下書き済み: shah-i-zinda-mausoleum-highlights
+- [x] サマルカンド グル・アミール廟 ティムール 見どころ → 下書き済み: samarkand-gur-e-amir-mausoleum-highlights
+- [x] サマルカンド ビビハニム・モスク 見どころ → 下書き済み: samarkand-bibi-khanym-mosque-highlights
+- [x] サマルカンド ウルグベク天文台 六分儀 見どころ → 下書き済み: samarkand-ulugbek-observatory-highlights
 - [x] タシュケント ハズラティ・イマーム 複合施設 オスマン・コーラン → 下書き済み: tashkent-khazrati-imam-complex-highlights
 - [x] タシュケント チョルスー・バザール 市場 歩き方 → 下書き済み: tashkent-chorsu-bazaar-highlights
 - [x] タシュケント アミール・ティムール広場 独立広場 → 下書き済み: tashkent-amir-timur-square-highlights
