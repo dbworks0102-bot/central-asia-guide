@@ -53,6 +53,11 @@
 - [x] サマルカンド ノン 丸パン 模様 タンドール 日持ち → 下書き済み: samarkand-bread-non-highlights
 - [x] サマルカンド 食事 レストラン 店選び 値段 チップ マナー → 下書き済み: samarkand-restaurant-dining-guide-highlights
 - [x] サマルカンド 菓子 スイーツ ハルヴァ ナヴァト ドライフルーツ → 下書き済み: samarkand-sweets-dessert-highlights
+- [x] ブハラ プロフ 郷土料理 バフシュ 緑のプロフ ブハラ系ユダヤ人 → 下書き済み: bukhara-plov-osh-highlights
+- [x] ブハラ 市場 食べ歩き タキ 交易ドーム ライタバザール 屋台 → 下書き済み: bukhara-bazaar-street-food-highlights
+- [x] ブハラ ノン 丸パン オビ・ノン チェキチ 模様 ゴマ ニゲラ → 下書き済み: bukhara-non-bread-highlights
+- [x] ブハラ 食事 レストラン 旧マドラサ ラビハウズ 店選び チップ マナー → 下書き済み: bukhara-restaurant-dining-guide-highlights
+- [x] ブハラ 菓子 スイーツ ハルヴァイタル 液状ハルヴァ ニショルダ ナヴァト → 下書き済み: bukhara-sweets-dessert-highlights
 
 ## お土産系ロングテール
 - [x] タシュケント お土産 買い物 定番 ランキング → 下書き済み: tashkent-souvenir-shopping-guide-highlights
