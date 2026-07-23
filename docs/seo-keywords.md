@@ -55,6 +55,11 @@
 - [x] タシュケント 食べ物 お土産 スパイス ドライフルーツ → 下書き済み: tashkent-food-souvenirs-spices-highlights
 - [x] タシュケント バザール 値切り 買い物 マナー → 下書き済み: tashkent-bazaar-bargaining-tips-highlights
 - [x] タシュケント お土産 梱包 割れ物 税関 持ち帰り → 下書き済み: tashkent-souvenir-packing-customs-highlights
+- [x] サマルカンド お土産 定番 買い物スポット 青の都 → 下書き済み: samarkand-souvenir-shopping-guide-highlights
+- [x] サマルカンド 陶器 伝統工芸品 スザニ 木工 → 下書き済み: samarkand-ceramics-crafts-highlights
+- [x] サマルカンド 食べ物 お土産 ドライフルーツ ナッツ 蜂蜜 持ち帰り → 下書き済み: samarkand-food-souvenirs-highlights
+- [x] レギスタン広場 周辺 土産物店 メドレセ 工房 → 下書き済み: samarkand-registan-souvenir-shops-highlights
+- [x] サマルカンドペーパー 手漉き紙 コニギル 細密画 ミニアチュール → 下書き済み: samarkand-paper-miniature-crafts-highlights
 
 ## 移動手段系ロングテール
 - [x] タシュケント空港 市内 アクセス タクシー 両替 SIM → 下書き済み: tashkent-airport-transfer-guide-highlights
