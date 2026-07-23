@@ -70,6 +70,11 @@
 - [x] サマルカンド 食べ物 お土産 ドライフルーツ ナッツ 蜂蜜 持ち帰り → 下書き済み: samarkand-food-souvenirs-highlights
 - [x] レギスタン広場 周辺 土産物店 メドレセ 工房 → 下書き済み: samarkand-registan-souvenir-shops-highlights
 - [x] サマルカンドペーパー 手漉き紙 コニギル 細密画 ミニアチュール → 下書き済み: samarkand-paper-miniature-crafts-highlights
+- [x] ブハラ お土産 定番 買い物スポット 交易ドーム 旧市街 → 下書き済み: bukhara-souvenir-shopping-guide-highlights
+- [x] ブハラ 伝統工芸品 金糸刺繍 ズラバフ 絨毯 銅細工 → 下書き済み: bukhara-traditional-crafts-highlights
+- [x] ブハラ 食べ物 お土産 スパイス ドライフルーツ ナヴァト 持ち帰り → 下書き済み: bukhara-food-souvenirs-highlights
+- [x] ブハラ 交易ドーム タキ 職人街 タキ・ザルガロン 工房めぐり → 下書き済み: bukhara-trading-domes-craft-shops-highlights
+- [x] ブハラ お土産 値切り 交渉 梱包 税関 持ち帰り → 下書き済み: bukhara-souvenir-bargaining-customs-highlights
 
 ## 移動手段系ロングテール
 - [x] タシュケント空港 市内 アクセス タクシー 両替 SIM → 下書き済み: tashkent-airport-transfer-guide-highlights
