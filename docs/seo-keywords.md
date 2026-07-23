@@ -43,6 +43,11 @@
 - [x] ウズベキスタン ノン パン 模様 タンドール 文化 → 下書き済み: tashkent-non-bread-culture-highlights
 - [x] タシュケント チャイハナ お茶 文化 作法 → 下書き済み: tashkent-teahouse-culture-highlights
 - [x] タシュケント 食事 レストラン 値段 チップ マナー → 下書き済み: tashkent-dining-guide-highlights
+- [x] サマルカンド プロフ 特徴 タシュケント風 違い にんじん → 下書き済み: samarkand-plov-highlights
+- [x] シヨブ・バザール 食べ歩き ドライフルーツ ナッツ 蜂蜜 → 下書き済み: samarkand-siyob-bazaar-food-highlights
+- [x] サマルカンド ノン 丸パン 模様 タンドール 日持ち → 下書き済み: samarkand-bread-non-highlights
+- [x] サマルカンド 食事 レストラン 店選び 値段 チップ マナー → 下書き済み: samarkand-restaurant-dining-guide-highlights
+- [x] サマルカンド 菓子 スイーツ ハルヴァ ナヴァト ドライフルーツ → 下書き済み: samarkand-sweets-dessert-highlights
 
 ## お土産系ロングテール
 - [x] タシュケント お土産 買い物 定番 ランキング → 下書き済み: tashkent-souvenir-shopping-guide-highlights
