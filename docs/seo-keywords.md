@@ -104,6 +104,11 @@
 - [x] サマルカンド 結婚式 伝統 婚約 披露宴 プロフ 衣装 → 下書き済み: samarkand-wedding-traditions-highlights
 - [x] サマルカンド 若者 カフェ SNS 大学 現代 → 下書き済み: samarkand-youth-culture-cafe-highlights
 - [x] サマルカンド イスラーム 生活 礼拝 巡礼 ズィヤーラト イマーム・ブハリ → 下書き済み: samarkand-religious-life-highlights
+- [x] ブハラ 職人 家庭 工房 暮らし 銅細工 金糸刺繍 後継 → 下書き済み: bukhara-artisan-family-life-highlights
+- [x] ブハラ 旧市街 世界遺産 暮らし 中庭 ハウリ 住民 観光 共存 → 下書き済み: bukhara-old-town-living-highlights
+- [x] マハッラ ブハラ 地域コミュニティ 近所付き合い ハウズ 職人街 冠婚葬祭 → 下書き済み: bukhara-mahalla-community-highlights
+- [x] ブハラ 結婚式 伝統 婚約 披露宴 金糸刺繍 通過儀礼 → 下書き済み: bukhara-wedding-traditions-highlights
+- [x] ブハラ イスラーム 生活 礼拝 スーフィズム ナクシュバンディー ユダヤ人 共存 → 下書き済み: bukhara-religious-life-highlights
 
 ## 鮮度が高く競合が少ない「今が狙い目」のネタ
 - [ ] タシュケント 新規オープン 観光施設 最新情報
