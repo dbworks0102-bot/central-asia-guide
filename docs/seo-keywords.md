@@ -27,6 +27,11 @@
 - [x] サマルカンド レギスタン広場 見どころ → 下書き済み: samarkand-registan-square-highlights
 - [x] ヒヴァ イチャン・カラ 観光 → 下書き済み: khiva-itchan-kala-highlights
 - [x] ブハラ 旧市街 観光スポット → 下書き済み: bukhara-old-town-attractions
+- [x] ブハラ アルク城塞 見どころ → 下書き済み: bukhara-ark-fortress-highlights
+- [x] ブハラ カラーン・ミナレット ポイ・カリャン 見どころ → 下書き済み: bukhara-kalyan-minaret-highlights
+- [x] ブハラ ラビハウズ 見どころ → 下書き済み: bukhara-lyabi-hauz-highlights
+- [x] ブハラ イスマーイール・サーマーニー廟 見どころ → 下書き済み: bukhara-ismail-samani-mausoleum-highlights
+- [x] ブハラ シトライ・モヒ・ホサ 夏の離宮 見どころ → 下書き済み: bukhara-sitorai-mokhi-khosa-highlights
 - [x] シャーヒズィンダ廟群 見どころ → 下書き済み: shah-i-zinda-mausoleum-highlights
 - [x] サマルカンド グル・アミール廟 ティムール 見どころ → 下書き済み: samarkand-gur-e-amir-mausoleum-highlights
 - [x] サマルカンド ビビハニム・モスク 見どころ → 下書き済み: samarkand-bibi-khanym-mosque-highlights
