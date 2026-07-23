@@ -87,6 +87,11 @@
 - [x] サマルカンド 観光 徒歩 移動 回り方 レギスタン シャーヒズィンダ → 下書き済み: samarkand-walking-sightseeing-highlights
 - [x] サマルカンド 市内バス マルシュルートカ 公共交通 料金 → 下書き済み: samarkand-city-bus-transport-highlights
 - [x] サマルカンド 日帰り シャフリサブス ブハラ 乗合タクシー 近郊 → 下書き済み: samarkand-day-trip-transport-highlights
+- [x] ブハラ駅 アクセス カガン 旧市街 12km タクシー 乗合 → 下書き済み: bukhara-train-station-access-highlights
+- [x] ブハラ 旧市街 徒歩 観光 車両制限 モデルルート 回り方 → 下書き済み: bukhara-old-town-walking-guide-highlights
+- [x] ブハラ タクシー 配車アプリ Yandex Go 相場 車両制限 → 下書き済み: bukhara-taxi-app-transport-highlights
+- [x] ブハラ 都市間 移動 サマルカンド ヒヴァ タシュケント 鉄道 シェアタクシー 飛行機 → 下書き済み: bukhara-intercity-transport-highlights
+- [x] ブハラ 日帰り 近郊 ギジュドゥヴァン 陶器村 ヴォバケント 乗合タクシー → 下書き済み: bukhara-day-trip-transport-highlights
 
 ## 地域住民の生活系ロングテール
 - [x] タシュケント 生活 一日 通勤 仕事 家庭 リズム → 下書き済み: tashkent-daily-life-schedule-highlights
