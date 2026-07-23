@@ -167,6 +167,8 @@ export const articles = [
       { label: "サマルカンド 食事・レストランガイドを見る", url: "/articles/samarkand-restaurant-dining-guide-highlights" },
       { label: "サマルカンド お土産ガイド：定番品と買い物スポットを見る", url: "/articles/samarkand-souvenir-shopping-guide-highlights" },
       { label: "レギスタン広場周辺のお土産・買い物ガイドを見る", url: "/articles/samarkand-registan-souvenir-shops-highlights" },
+      { label: "サマルカンド駅への到着・市内アクセスガイドを見る", url: "/articles/samarkand-train-station-access-highlights" },
+      { label: "サマルカンド観光地間の徒歩移動ガイドを見る", url: "/articles/samarkand-walking-sightseeing-highlights" },
       { label: "ウズベキスタン11日間モデルコースの見どころダイジェストを見る", url: "/articles/uzbekistan-11days-highlights" },
       { label: "ウズベキスタンのビザは必要？電子ビザの申請方法を見る", url: "/articles/uzbekistan-visa-evisa-guide" },
     ],
@@ -372,6 +374,7 @@ export const articles = [
     ],
     relatedLinks: [
       { label: "サマルカンド レギスタン広場の見どころガイドを見る", url: "/articles/samarkand-registan-square-highlights" },
+      { label: "サマルカンドから近郊・他都市への移動手段ガイドを見る", url: "/articles/samarkand-day-trip-transport-highlights" },
       { label: "ヒヴァ イチャン・カラ観光ガイドを見る", url: "/articles/khiva-itchan-kala-highlights" },
       { label: "ウズベキスタン11日間モデルコースの見どころダイジェストを見る", url: "/articles/uzbekistan-11days-highlights" },
     ],
@@ -552,6 +555,7 @@ export const articles = [
       { label: "ビビハニム・モスクの見どころガイドを見る", url: "/articles/samarkand-bibi-khanym-mosque-highlights" },
       { label: "ウルグベク天文台の見どころガイドを見る", url: "/articles/samarkand-ulugbek-observatory-highlights" },
       { label: "ブハラ旧市街の観光スポットガイドを見る", url: "/articles/bukhara-old-town-attractions" },
+      { label: "サマルカンド観光地間の徒歩移動ガイドを見る", url: "/articles/samarkand-walking-sightseeing-highlights" },
       { label: "ウズベキスタン11日間モデルコースの見どころダイジェストを見る", url: "/articles/uzbekistan-11days-highlights" },
     ],
   },
@@ -2001,6 +2005,7 @@ export const articles = [
       { label: "タシュケント地下鉄の乗り方ガイドを見る", url: "/articles/tashkent-metro-how-to-ride-highlights" },
       { label: "タシュケント発・鉄道旅行ガイドを見る", url: "/articles/tashkent-train-travel-guide-highlights" },
       { label: "タシュケントの路線バス・トロリーバス乗り方ガイドを見る", url: "/articles/tashkent-bus-transport-guide-highlights" },
+      { label: "サマルカンド市内のタクシー・配車移動ガイドを見る", url: "/articles/samarkand-city-taxi-transport-highlights" },
     ],
   },
   {
@@ -2064,6 +2069,7 @@ export const articles = [
       { label: "タシュケント地下鉄の乗り方ガイドを見る", url: "/articles/tashkent-metro-how-to-ride-highlights" },
       { label: "タシュケントの配車アプリ・タクシー活用ガイドを見る", url: "/articles/tashkent-taxi-app-guide-highlights" },
       { label: "タシュケントの路線バス・トロリーバス乗り方ガイドを見る", url: "/articles/tashkent-bus-transport-guide-highlights" },
+      { label: "サマルカンド駅への到着・市内アクセスガイドを見る", url: "/articles/samarkand-train-station-access-highlights" },
     ],
   },
   {
@@ -2122,6 +2128,7 @@ export const articles = [
       { label: "タシュケント地下鉄の乗り方ガイドを見る", url: "/articles/tashkent-metro-how-to-ride-highlights" },
       { label: "タシュケントの配車アプリ・タクシー活用ガイドを見る", url: "/articles/tashkent-taxi-app-guide-highlights" },
       { label: "タシュケント発・鉄道旅行ガイドを見る", url: "/articles/tashkent-train-travel-guide-highlights" },
+      { label: "サマルカンド市内バス・路線交通の乗り方ガイドを見る", url: "/articles/samarkand-city-bus-transport-highlights" },
     ],
   },
   {
@@ -2486,6 +2493,7 @@ export const articles = [
       { label: "ウルグベク天文台の見どころガイドを見る", url: "/articles/samarkand-ulugbek-observatory-highlights" },
       { label: "シャーヒ・ズィンダ廟群の見どころガイドを見る", url: "/articles/shah-i-zinda-mausoleum-highlights" },
       { label: "サマルカンド 食事・レストランガイドを見る", url: "/articles/samarkand-restaurant-dining-guide-highlights" },
+      { label: "サマルカンド観光地間の徒歩移動ガイドを見る", url: "/articles/samarkand-walking-sightseeing-highlights" },
     ],
   },
   {
@@ -2555,6 +2563,7 @@ export const articles = [
       { label: "ウルグベク天文台の見どころガイドを見る", url: "/articles/samarkand-ulugbek-observatory-highlights" },
       { label: "シャーヒ・ズィンダ廟群の見どころガイドを見る", url: "/articles/shah-i-zinda-mausoleum-highlights" },
       { label: "シヨブ・バザール食べ歩きガイド（ドライフルーツとナッツ）を見る", url: "/articles/samarkand-siyob-bazaar-food-highlights" },
+      { label: "サマルカンド観光地間の徒歩移動ガイドを見る", url: "/articles/samarkand-walking-sightseeing-highlights" },
     ],
   },
   {
@@ -3451,6 +3460,310 @@ export const articles = [
       { label: "サマルカンド 陶器・伝統工芸品ガイドを見る", url: "/articles/samarkand-ceramics-crafts-highlights" },
       { label: "レギスタン広場周辺のお土産・買い物ガイドを見る", url: "/articles/samarkand-registan-souvenir-shops-highlights" },
       { label: "サマルカンド レギスタン広場の見どころガイドを見る", url: "/articles/samarkand-registan-square-highlights" },
+    ],
+  },
+  {
+    slug: "samarkand-train-station-access-highlights",
+    title: "サマルカンド駅への到着・市内アクセスガイド｜アフラシャブ号と駅からの移動",
+    description:
+      "高速鉄道アフラシャブ号でサマルカンドに到着してから市内中心部へ向かうまでの移動を解説。駅の場所や到着後の流れ、駅から観光エリアへのタクシー移動、帰りの切符手配のコツまで実用的にまとめました。",
+    keywords: [
+      "サマルカンド駅 アクセス",
+      "サマルカンド 鉄道 到着",
+      "アフラシャブ号 サマルカンド",
+      "サマルカンド駅 市内 タクシー",
+      "サマルカンド 駅 行き方",
+    ],
+    heroImage: "/images/uzbekistan/samarkand-train-station-access.jpg",
+    publishDate: "2026-07-24",
+    status: "draft",
+    body: [
+      {
+        type: "paragraph",
+        text: "タシュケントから高速鉄道でサマルカンドを目指す旅行者にとって、青の都での旅は「サマルカンド駅に降り立つ瞬間」から始まります。この記事では、タシュケント発の乗車手順ではなく、サマルカンドに到着してから市内中心部の観光エリアへ向かうまでの流れに絞って解説します。駅の位置関係や到着後にやること、駅から宿や観光地への移動手段、そして帰りの切符を確保するコツまで、到着側の目線で実用的にまとめました。",
+      },
+      { type: "heading", text: "サマルカンド駅の位置と中心部との距離感" },
+      {
+        type: "paragraph",
+        text: "サマルカンドの鉄道駅は市の北西側にあり、レギスタン広場をはじめとする主要観光エリアからは少し離れています。徒歩で向かうには距離があるため、駅から中心部へはタクシーなどの車移動が基本になります。駅前には客待ちの車が集まっており、到着した列車の乗客に合わせて賑わうのが常です。まずは「駅は観光の中心からやや外れた場所にある」と押さえておくと、到着後の移動計画が立てやすくなります。",
+      },
+      { type: "heading", text: "アフラシャブ号での到着の流れ" },
+      {
+        type: "paragraph",
+        text: "タシュケントやブハラ方面から高速鉄道アフラシャブ号で到着すると、指定された号車から降り、ホームを通って駅舎の外へ出る流れになります。到着時は多くの乗客が一斉に改札やタクシー乗り場へ向かうため、駅前は一時的に混み合います。大きな荷物がある場合は、人の流れが落ち着くのを少し待ってから移動を始めると、落ち着いて交渉や配車ができます。降車後はまず駅舎を出て、駅前広場の様子を確認しましょう。",
+      },
+      { type: "heading", text: "駅から市内・宿へのタクシー移動" },
+      {
+        type: "paragraph",
+        text: "駅から宿泊先や観光エリアへは、タクシーで向かうのが最も手軽です。駅前で客待ちしているタクシーは料金交渉制のことが多く、外国人には高めの金額を提示されがちなので、乗る前に必ず行き先と料金を確定させましょう。相場感をつかむには、配車アプリで同じ区間の料金を確認してから交渉するのが有効です。配車アプリが使える通信環境があれば、アプリで呼んだ方が料金が明朗で安心です。市内のタクシー事情は別記事のタクシー・配車移動ガイドで詳しく解説しています。",
+      },
+      { type: "heading", text: "到着後にまず整えておきたいこと" },
+      {
+        type: "paragraph",
+        text: "到着後は、移動をスムーズにするために通信と現金を最初に整えておくと安心です。配車アプリや地図アプリを使うにはインターネット接続が必要なので、SIMやeSIMを準備しておきましょう。また、駅前タクシーや小さな買い物では現金が役立つため、少額のスムを手元に用意しておくと困りません。宿の場所を地図アプリに登録し、行き先をウズベク語やロシア語の表記でも用意しておくと、ドライバーに伝えやすくなります。",
+      },
+      { type: "heading", text: "帰りの切符・次の都市への移動を見据える" },
+      {
+        type: "paragraph",
+        text: "サマルカンドは周遊旅行の拠点になりやすい都市です。ブハラやタシュケントへ鉄道で移動する予定があるなら、到着した時点で帰りや次の区間の切符も意識しておくと安心です。アフラシャブ号は人気の時間帯が早く売り切れることがあるため、オンライン予約や駅窓口で早めに座席を確保しておきましょう。到着時に駅の窓口や掲示で発着時刻を確認しておくと、次の移動計画が立てやすくなります。",
+      },
+      { type: "heading", text: "まとめ" },
+      {
+        type: "paragraph",
+        text: "サマルカンド駅は中心部からやや離れているため、到着後はタクシーや配車アプリでの移動が基本になります。通信と少額の現金を最初に整え、料金を確定させてから乗車するのが安心の流れです。次の都市への切符も早めに確保しておけば、青の都を拠点とした周遊がぐっとスムーズになります。市内での移動は、タクシー・徒歩・バスの各記事もあわせて参考にしてください。",
+      },
+    ],
+    relatedLinks: [
+      { label: "サマルカンド市内のタクシー・配車移動ガイドを見る", url: "/articles/samarkand-city-taxi-transport-highlights" },
+      { label: "サマルカンド観光地間の徒歩移動ガイドを見る", url: "/articles/samarkand-walking-sightseeing-highlights" },
+      { label: "サマルカンド市内バス・路線交通の乗り方ガイドを見る", url: "/articles/samarkand-city-bus-transport-highlights" },
+      { label: "サマルカンドから近郊・他都市への移動手段ガイドを見る", url: "/articles/samarkand-day-trip-transport-highlights" },
+      { label: "タシュケント発・鉄道旅行ガイドを見る", url: "/articles/tashkent-train-travel-guide-highlights" },
+      { label: "サマルカンド レギスタン広場の見どころガイドを見る", url: "/articles/samarkand-registan-square-highlights" },
+      { label: "ウズベキスタン11日間モデルコースの見どころダイジェストを見る", url: "/articles/uzbekistan-11days-highlights" },
+    ],
+  },
+  {
+    slug: "samarkand-city-taxi-transport-highlights",
+    title: "サマルカンド市内のタクシー・配車移動ガイド",
+    description:
+      "サマルカンド市内をタクシーや配車アプリで移動するための実用ガイド。配車アプリの使い勝手や流しのタクシーとの料金交渉、駅・宿・観光地間の移動のコツ、支払いや行き先の伝え方をまとめました。",
+    keywords: [
+      "サマルカンド タクシー",
+      "サマルカンド 配車アプリ",
+      "サマルカンド Yandex Go",
+      "サマルカンド 市内 移動 タクシー",
+      "サマルカンド タクシー 相場",
+    ],
+    heroImage: "/images/uzbekistan/samarkand-city-taxi.jpg",
+    publishDate: "2026-07-24",
+    status: "draft",
+    body: [
+      {
+        type: "paragraph",
+        text: "サマルカンドの観光スポットは中心部に集まっているものの、駅や離れたエリアへの移動、暑い日や夜間の移動では車が頼りになります。中でも手軽なのがタクシーです。この記事では、サマルカンド市内をタクシーや配車アプリで移動する際の使い勝手や料金の考え方、流しのタクシーとの交渉のコツ、支払いや行き先の伝え方まで、初めての人がつまずきやすい点を実用的にまとめました。",
+      },
+      { type: "heading", text: "配車アプリが使えると安心" },
+      {
+        type: "paragraph",
+        text: "サマルカンドでも配車アプリのYandex Goが利用でき、乗車前に料金が確定するため、言葉が通じなくても安心して使えます。地図上で行き先のピンを指定するだけで手配でき、ドライバーの車種やナンバーもアプリで確認できます。タシュケントほど台数が多くない時間帯や場所もありますが、中心部やホテル周辺では比較的つかまりやすいのが実情です。利用にはネット接続が必要なので、SIMやeSIMを準備しておきましょう。",
+      },
+      { type: "heading", text: "流しのタクシーとの料金交渉" },
+      {
+        type: "paragraph",
+        text: "サマルカンドでは、一般の乗用車が客を乗せる流しのタクシーも日常的に使われています。メーターはなく料金はすべて交渉制のため、乗る前に必ず行き先と金額を口頭で確定させることが重要です。外国人観光客には相場より高い額を提示されることが多いので、配車アプリで同じ区間のおおよその料金を確認してから交渉に臨むと、適正な価格の目安が持てます。あいまいなまま乗車すると、降車時のトラブルにつながります。",
+      },
+      { type: "heading", text: "駅・宿・観光地間の移動での使い方" },
+      {
+        type: "paragraph",
+        text: "タクシーが特に活躍するのは、中心部からやや離れた鉄道駅との往復や、シャーヒ・ズィンダ廟群やウルグベク天文台など少し距離のあるスポットへの移動です。主要観光地が集まる中心部は徒歩でも回れますが、炎天下や夜、荷物が多いときはタクシーを組み合わせると体力を温存できます。近距離であれば料金も手頃なので、歩きと車を上手に使い分けるのがサマルカンド観光を快適にするコツです。",
+      },
+      { type: "heading", text: "支払い方法と現金の用意" },
+      {
+        type: "paragraph",
+        text: "配車アプリでは現金払いのほかカード決済に対応する場合もありますが、海外発行カードが登録できないこともあるため、現金を用意しておくと確実です。流しのタクシーは基本的に現金払いなので、小額紙幣を多めに持っておくと、おつりのやり取りがスムーズです。高額紙幣しかないとおつりがないと言われることもあるため、こまめに小額紙幣を確保しておきましょう。",
+      },
+      { type: "heading", text: "行き先の伝え方のコツ" },
+      {
+        type: "paragraph",
+        text: "配車アプリなら地図上のピンで目的地を指定できるため、言葉の壁をほとんど感じずに済みます。流しのタクシーを使う場合は、行き先の名称をウズベク語やロシア語で表示しておく、地図アプリの画面を見せるといった方法が有効です。レギスタン広場や主要ホテルなど有名な地点は伝わりやすいので、目的地をスクリーンショットやメモで用意しておくと安心です。",
+      },
+      { type: "heading", text: "まとめ" },
+      {
+        type: "paragraph",
+        text: "サマルカンド市内の移動は、料金が明朗な配車アプリを基本に、流しのタクシーを使う場合は乗車前に料金を確定させるのが安心の原則です。現金の小額紙幣とネット接続を用意しておけば、駅からの移動も観光地間の移動も快適になります。中心部の徒歩移動や、離れたエリアへのバス利用とも組み合わせて、効率よく青の都を巡ってください。",
+      },
+    ],
+    relatedLinks: [
+      { label: "サマルカンド駅への到着・市内アクセスガイドを見る", url: "/articles/samarkand-train-station-access-highlights" },
+      { label: "サマルカンド観光地間の徒歩移動ガイドを見る", url: "/articles/samarkand-walking-sightseeing-highlights" },
+      { label: "サマルカンド市内バス・路線交通の乗り方ガイドを見る", url: "/articles/samarkand-city-bus-transport-highlights" },
+      { label: "サマルカンドから近郊・他都市への移動手段ガイドを見る", url: "/articles/samarkand-day-trip-transport-highlights" },
+      { label: "タシュケントの配車アプリ・タクシー活用ガイドを見る", url: "/articles/tashkent-taxi-app-guide-highlights" },
+      { label: "サマルカンド レギスタン広場の見どころガイドを見る", url: "/articles/samarkand-registan-square-highlights" },
+    ],
+  },
+  {
+    slug: "samarkand-walking-sightseeing-highlights",
+    title: "サマルカンド観光地間の徒歩移動・回り方ガイド｜レギスタンからシャーヒ・ズィンダまで",
+    description:
+      "サマルカンドの主要観光地を徒歩で巡るための実用ガイド。レギスタン広場・グル・アミール廟・ビビハニム・モスク・シヨブバザール・シャーヒ・ズィンダ廟群の距離感と徒歩ルート、歩きとタクシーの使い分け、暑さ対策までまとめました。",
+    keywords: [
+      "サマルカンド 観光 徒歩",
+      "サマルカンド 観光地 移動",
+      "レギスタン シャーヒズィンダ 距離",
+      "サマルカンド 徒歩ルート",
+      "サマルカンド 観光 回り方",
+    ],
+    heroImage: "/images/uzbekistan/hero.jpg",
+    publishDate: "2026-07-24",
+    status: "draft",
+    body: [
+      {
+        type: "paragraph",
+        text: "サマルカンドの魅力は、主要な世界遺産が比較的まとまったエリアに点在していて、徒歩でも巡りやすいことです。レギスタン広場を起点に、グル・アミール廟やビビハニム・モスク、シヨブバザール、シャーヒ・ズィンダ廟群までは、歩いて回れる距離感でつながっています。この記事では、それぞれの観光地の位置関係と徒歩ルート、歩きとタクシーの使い分け、そして夏場の暑さ対策まで、街歩きを快適にするコツをまとめました。",
+      },
+      { type: "heading", text: "主要観光地はコンパクトにまとまっている" },
+      {
+        type: "paragraph",
+        text: "サマルカンド観光の中心となるレギスタン広場、グル・アミール廟、ビビハニム・モスク、シヨブバザールは、いずれも徒歩圏内に収まっています。広場から少し足を延ばせばシャーヒ・ズィンダ廟群やアフラシャブの丘にも歩いて行けます。全体として「中心部は歩いて回れる」規模感で、観光整備された歩行者向けの道も通っているため、地図アプリを片手にすれば迷いにくいのが特徴です。",
+      },
+      { type: "heading", text: "レギスタン広場〜グル・アミール廟" },
+      {
+        type: "paragraph",
+        text: "サマルカンドの象徴レギスタン広場と、ティムールが眠るグル・アミール廟は、歩いて10分ほどの近さです。青の都の二大ハイライトが至近距離にあるため、この2か所は同じ半日でまとめて巡るのが定番です。途中には緑地や歩道が整い、散策そのものも楽しめます。まず広場を昼夜で味わい、その足でグル・アミール廟へ向かう流れが効率的です。",
+      },
+      { type: "heading", text: "レギスタン広場〜ビビハニム・モスク〜シヨブバザール" },
+      {
+        type: "paragraph",
+        text: "レギスタン広場から北東へ歩くと、巨大なビビハニム・モスクと、その隣に広がる活気あるシヨブバザールに着きます。広場からは徒歩15分前後の距離で、歩行者向けの通りを進めば、みやげ物店やカフェを眺めながら向かえます。モスクを見学したあとにバザールで食べ歩きやドライフルーツの買い物を楽しみ、休憩を挟むという回り方が自然です。この一帯は歩いて巡るのに最適なエリアです。",
+      },
+      { type: "heading", text: "シヨブバザール〜シャーヒ・ズィンダ廟群" },
+      {
+        type: "paragraph",
+        text: "シヨブバザールからさらに北へ進むと、青タイルの霊廟が連なるシャーヒ・ズィンダ廟群に至ります。バザールからは徒歩10分ほどで、こちらも歩いて向かえる範囲です。廟群の先にはウルグベク天文台やアフラシャブの丘もありますが、天文台方面は距離があるため、暑い時期や時間が限られる場合はタクシーを組み合わせると効率的です。徒歩と車の切り替え地点として、この付近を意識しておくとよいでしょう。",
+      },
+      { type: "heading", text: "歩きとタクシーの使い分け・暑さ対策" },
+      {
+        type: "paragraph",
+        text: "中心部の主要スポットは徒歩で回れますが、鉄道駅やウルグベク天文台など少し離れた場所へはタクシーが便利です。特に夏のサマルカンドは日中40℃前後まで気温が上がるため、炎天下の長距離を歩くのは避け、朝夕の涼しい時間帯に歩くのがおすすめです。日中の移動はタクシーを使い、涼しい時間に街歩きを楽しむとメリハリがつきます。歩きやすい靴、帽子、日焼け止め、こまめな水分補給を忘れずに、石畳の道に備えましょう。",
+      },
+      { type: "heading", text: "まとめ" },
+      {
+        type: "paragraph",
+        text: "サマルカンドは主要観光地がコンパクトにまとまっており、レギスタン広場を起点に徒歩で巡れるのが大きな魅力です。近い区間は歩き、離れた駅や天文台方面はタクシーと、上手に使い分ければ体力を残しながら効率よく回れます。夏場は暑さ対策を万全にして、涼しい時間帯の街歩きで青の都をじっくり味わってください。各観光地の見どころは、それぞれの詳細ガイドもあわせて参考にどうぞ。",
+      },
+    ],
+    relatedLinks: [
+      { label: "サマルカンド駅への到着・市内アクセスガイドを見る", url: "/articles/samarkand-train-station-access-highlights" },
+      { label: "サマルカンド市内のタクシー・配車移動ガイドを見る", url: "/articles/samarkand-city-taxi-transport-highlights" },
+      { label: "サマルカンド市内バス・路線交通の乗り方ガイドを見る", url: "/articles/samarkand-city-bus-transport-highlights" },
+      { label: "サマルカンドから近郊・他都市への移動手段ガイドを見る", url: "/articles/samarkand-day-trip-transport-highlights" },
+      { label: "サマルカンド レギスタン広場の見どころガイドを見る", url: "/articles/samarkand-registan-square-highlights" },
+      { label: "グル・アミール廟の見どころガイドを見る", url: "/articles/samarkand-gur-e-amir-mausoleum-highlights" },
+      { label: "ビビハニム・モスクの見どころガイドを見る", url: "/articles/samarkand-bibi-khanym-mosque-highlights" },
+      { label: "シャーヒ・ズィンダ廟群の見どころガイドを見る", url: "/articles/shah-i-zinda-mausoleum-highlights" },
+    ],
+  },
+  {
+    slug: "samarkand-city-bus-transport-highlights",
+    title: "サマルカンド市内バス・路線交通の乗り方ガイド",
+    description:
+      "サマルカンドの市内バスや乗合ミニバス（マルシュルートカ）を使いこなすための実用ガイド。運賃の払い方、路線の調べ方、乗車の手順、タクシーや徒歩との使い分けを旅行者向けにまとめました。",
+    keywords: [
+      "サマルカンド バス 乗り方",
+      "サマルカンド 市内バス",
+      "サマルカンド マルシュルートカ",
+      "サマルカンド 公共交通",
+      "サマルカンド バス 料金",
+    ],
+    heroImage: "/images/uzbekistan/samarkand-city-bus.jpg",
+    publishDate: "2026-07-24",
+    status: "draft",
+    body: [
+      {
+        type: "paragraph",
+        text: "サマルカンドには地下鉄がなく、市内の公共交通は路線バスや乗合ミニバスが担っています。観光の中心部は徒歩で回れますが、離れたエリアや地元の暮らしを感じながら移動したいときには、運賃の安いバスが役立ちます。この記事では、旅行者でも使いこなせるよう、サマルカンドのバスの種類や運賃の払い方、路線の調べ方、乗車の手順、そしてタクシーや徒歩との使い分けを実用的にまとめました。",
+      },
+      { type: "heading", text: "サマルカンドのバスの種類" },
+      {
+        type: "paragraph",
+        text: "サマルカンドの市内交通には、一般的な路線バスと、小型の乗合ミニバス（マルシュルートカ）、そして架線から電気を得て走るトロリーバスがあります。いずれも市内を広くカバーしており、中心部と郊外、住宅地を結んでいます。車体には路線番号が表示され、主要な通りを走っています。運賃は距離にかかわらず1乗車ごとの均一制が基本で、地元の人の重要な足になっています。",
+      },
+      { type: "heading", text: "運賃の払い方" },
+      {
+        type: "paragraph",
+        text: "バスの運賃は、乗車時に支払う均一料金です。現金で運転手や車掌に支払う方式のほか、交通系ICカードや非接触決済に対応する車両も増えています。旅行者としては、まず小額紙幣を用意しておくと、どの方式でも困りません。運賃は改定されることがあるため、最新の金額は乗車時に確認しましょう。地元の乗客の払い方を見ておくと、支払いのタイミングがつかみやすくなります。",
+      },
+      { type: "heading", text: "路線の調べ方" },
+      {
+        type: "paragraph",
+        text: "慣れないうちは、多くの路線の中から目的のバスを見つけるのが難しく感じられます。そこで頼りになるのが地図アプリの経路検索です。Yandex MapsやGoogleマップで目的地を入力すると、乗るべきバスの番号や乗り場、到着までの目安時間が表示されます。リアルタイムで現在地が分かるアプリもあり、あとどのくらいで来るかを確認しながら待てるため、言葉が分からなくても目的のバスに乗りやすくなります。",
+      },
+      { type: "heading", text: "乗車の手順" },
+      {
+        type: "paragraph",
+        text: "乗り方はシンプルです。地図アプリで調べた番号のバスが近づいたら手を挙げて乗車の意思を示し、乗り込んだら運賃を支払います。降りたいバス停が近づいたら、車内のボタンを押すか運転手に声をかけて停めてもらいます。バス停の名称表示が分かりにくいこともあるため、地図アプリで現在地を確認しながら、降りるタイミングを逃さないようにするのがコツです。乗合ミニバスは停留所以外でも乗降できることがあります。",
+      },
+      { type: "heading", text: "タクシー・徒歩との使い分け" },
+      {
+        type: "paragraph",
+        text: "バスは運賃が安く路線も広い一方で、渋滞に影響されやすく、慣れない旅行者には路線の把握に少し手間がかかります。主要観光地が集まる中心部は徒歩で十分回れるため、バスが特に役立つのは中心部から離れたエリアや、地元の日常を感じたいときです。時間を優先したい場面や荷物が多いときはタクシー、短距離は徒歩と、目的に応じて組み合わせると、サマルカンドの移動が効率的になります。",
+      },
+      { type: "heading", text: "まとめ" },
+      {
+        type: "paragraph",
+        text: "サマルカンドの市内バスや乗合ミニバスは、地図アプリと小額紙幣さえ用意すれば、旅行者でも十分に使いこなせる安価な移動手段です。中心部の徒歩観光を軸に、離れたエリアへはバスやタクシーを組み合わせると、行動範囲が広がります。地元の人が使う交通に乗ってみると、観光地とはひと味違うサマルカンドの日常も感じられるはずです。",
+      },
+    ],
+    relatedLinks: [
+      { label: "サマルカンド駅への到着・市内アクセスガイドを見る", url: "/articles/samarkand-train-station-access-highlights" },
+      { label: "サマルカンド市内のタクシー・配車移動ガイドを見る", url: "/articles/samarkand-city-taxi-transport-highlights" },
+      { label: "サマルカンド観光地間の徒歩移動ガイドを見る", url: "/articles/samarkand-walking-sightseeing-highlights" },
+      { label: "サマルカンドから近郊・他都市への移動手段ガイドを見る", url: "/articles/samarkand-day-trip-transport-highlights" },
+      { label: "タシュケントの路線バス・トロリーバス乗り方ガイドを見る", url: "/articles/tashkent-bus-transport-guide-highlights" },
+      { label: "サマルカンド レギスタン広場の見どころガイドを見る", url: "/articles/samarkand-registan-square-highlights" },
+    ],
+  },
+  {
+    slug: "samarkand-day-trip-transport-highlights",
+    title: "サマルカンドから近郊・他都市への移動手段ガイド｜シャフリサブス・ブハラへの日帰り",
+    description:
+      "サマルカンドを拠点に、シャフリサブスやブハラ、タシュケントへ日帰り・移動するための交通ガイド。高速鉄道アフラシャブ号や乗合タクシー、チャーター車の選び方と、日帰りプランを組むコツをまとめました。",
+    keywords: [
+      "サマルカンド 日帰り 移動",
+      "サマルカンド シャフリサブス 行き方",
+      "サマルカンド ブハラ 列車",
+      "サマルカンド 近郊 交通",
+      "サマルカンド 乗合タクシー",
+    ],
+    heroImage: "/images/uzbekistan/samarkand-day-trip-transport.jpg",
+    publishDate: "2026-07-24",
+    status: "draft",
+    body: [
+      {
+        type: "paragraph",
+        text: "サマルカンドは、シルクロードの各都市への移動拠点として理想的な立地にあります。ティムール生誕の地シャフリサブスや、隊商都市ブハラ、首都タシュケントへは、鉄道や車を使えば日帰りや1泊で足を延ばせます。この記事では、サマルカンドを起点に近郊・他都市へ向かうための移動手段を、鉄道・乗合タクシー・チャーター車といった選択肢ごとに整理し、日帰りプランを無理なく組むコツとあわせてまとめました。",
+      },
+      { type: "heading", text: "サマルカンドは周遊の拠点にしやすい" },
+      {
+        type: "paragraph",
+        text: "サマルカンドは国土のほぼ中央に位置し、東はタシュケント、西はブハラ、南はシャフリサブスと、主要な観光都市への中間点にあたります。高速鉄道の主要駅でもあるため、鉄道を軸に日帰り観光の起点にしやすいのが強みです。滞在の拠点をサマルカンドに置き、そこから放射状に足を延ばす旅程を組むと、荷物を宿に置いたまま身軽に周辺を巡れます。",
+      },
+      { type: "heading", text: "ブハラへ：高速鉄道アフラシャブ号" },
+      {
+        type: "paragraph",
+        text: "サマルカンドからブハラへは、高速鉄道アフラシャブ号を使えば1〜2時間ほどで結ばれ、日帰りも十分可能です。朝の便で向かい、旧市街を観光して夕方の便で戻る行程が定番です。人気の時間帯は早めに満席になるため、日帰りを計画するなら往復の切符を事前に確保しておくと安心です。鉄道は速く快適で、都市間の長距離移動では車より負担が少ないのが利点です。切符手配の詳細は鉄道旅行ガイドもあわせて参考にしてください。",
+      },
+      { type: "heading", text: "シャフリサブスへ：峠越えの車移動" },
+      {
+        type: "paragraph",
+        text: "ティムールの故郷シャフリサブスへは、山越えの道を車で越えて向かうのが一般的です。乗合タクシーやチャーターした車を利用し、片道おおよそ1〜2時間ほどで到着します。峠道を通るため、乗合タクシーの発着場所や所要時間はあらかじめ確認しておくと安心です。数人で乗り合わせるならチャーター車の方が時間の融通が利き、寄り道もしやすくなります。日帰りで往復するなら、朝早めに出発すると現地でゆっくり過ごせます。",
+      },
+      { type: "heading", text: "乗合タクシー・チャーター車の選び方" },
+      {
+        type: "paragraph",
+        text: "近郊都市への移動では、乗合タクシー（相乗り）とチャーター車（貸切）のどちらを使うかで、料金と快適さが変わります。乗合タクシーは人数が集まると出発する仕組みで料金は安めですが、待ち時間が読みにくいのが難点です。チャーター車は割高になるものの、出発時刻や立ち寄り先を自由に決められ、グループなら一人あたりの負担も抑えられます。いずれの場合も、乗る前に行き先・料金・戻りの時間を明確にしておくことがトラブル回避の鍵です。",
+      },
+      { type: "heading", text: "日帰りプランを組むコツ" },
+      {
+        type: "paragraph",
+        text: "日帰りで近郊を巡るなら、朝早く出発して夕方までに戻る余裕のある行程を組むのが基本です。鉄道利用の場合は、帰りの便の時刻から逆算して現地の滞在時間を決めておくと、乗り遅れを防げます。車移動の場合は、渋滞や峠道の状況で所要時間が変わることを見込み、戻りの時間に余裕を持たせましょう。真夏は日中の暑さが厳しいため、屋外観光は午前と夕方に寄せると快適です。",
+      },
+      { type: "heading", text: "まとめ" },
+      {
+        type: "paragraph",
+        text: "サマルカンドは、鉄道と車を組み合わせれば、ブハラ・シャフリサブス・タシュケントといった各都市へ無理なく足を延ばせる絶好の拠点です。ブハラへは高速鉄道、シャフリサブスへは峠越えの車と、行き先に応じて手段を選び、往復の時刻や料金を事前に確定させておけば安心です。宿を拠点に身軽な日帰りを重ねて、シルクロードの多彩な街を効率よく楽しんでください。",
+      },
+    ],
+    relatedLinks: [
+      { label: "サマルカンド駅への到着・市内アクセスガイドを見る", url: "/articles/samarkand-train-station-access-highlights" },
+      { label: "サマルカンド市内のタクシー・配車移動ガイドを見る", url: "/articles/samarkand-city-taxi-transport-highlights" },
+      { label: "サマルカンド観光地間の徒歩移動ガイドを見る", url: "/articles/samarkand-walking-sightseeing-highlights" },
+      { label: "サマルカンド市内バス・路線交通の乗り方ガイドを見る", url: "/articles/samarkand-city-bus-transport-highlights" },
+      { label: "ブハラ 旧市街の観光スポットガイドを見る", url: "/articles/bukhara-old-town-attractions" },
+      { label: "タシュケント発・鉄道旅行ガイドを見る", url: "/articles/tashkent-train-travel-guide-highlights" },
+      { label: "ウズベキスタン11日間モデルコースの見どころダイジェストを見る", url: "/articles/uzbekistan-11days-highlights" },
     ],
   },
 ];

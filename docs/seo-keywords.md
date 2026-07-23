@@ -67,6 +67,11 @@
 - [x] タシュケント タクシー 配車アプリ Yandex Go 使い方 → 下書き済み: tashkent-taxi-app-guide-highlights
 - [x] タシュケント 鉄道 アフラシャブ号 サマルカンド ブハラ 切符 → 下書き済み: tashkent-train-travel-guide-highlights
 - [x] タシュケント 路線バス トロリーバス 乗り方 → 下書き済み: tashkent-bus-transport-guide-highlights
+- [x] サマルカンド駅 アクセス 鉄道 到着 アフラシャブ号 市内 → 下書き済み: samarkand-train-station-access-highlights
+- [x] サマルカンド タクシー 配車アプリ Yandex Go 相場 → 下書き済み: samarkand-city-taxi-transport-highlights
+- [x] サマルカンド 観光 徒歩 移動 回り方 レギスタン シャーヒズィンダ → 下書き済み: samarkand-walking-sightseeing-highlights
+- [x] サマルカンド 市内バス マルシュルートカ 公共交通 料金 → 下書き済み: samarkand-city-bus-transport-highlights
+- [x] サマルカンド 日帰り シャフリサブス ブハラ 乗合タクシー 近郊 → 下書き済み: samarkand-day-trip-transport-highlights
 
 ## 地域住民の生活系ロングテール
 - [x] タシュケント 生活 一日 通勤 仕事 家庭 リズム → 下書き済み: tashkent-daily-life-schedule-highlights
