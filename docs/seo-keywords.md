@@ -79,6 +79,11 @@
 - [x] ウズベキスタン 結婚式 伝統 婚約 披露宴 プロフ 衣装 → 下書き済み: tashkent-wedding-traditions-highlights
 - [x] タシュケント 若者 カフェ SNS コワーキング 現代 → 下書き済み: tashkent-youth-culture-cafe-highlights
 - [x] ウズベキスタン イスラーム 生活 礼拝 金曜礼拝 ラマダン → 下書き済み: tashkent-religious-life-highlights
+- [x] サマルカンド 生活 一日 通勤 仕事 家庭 リズム → 下書き済み: samarkand-daily-life-schedule-highlights
+- [x] マハッラ サマルカンド 地域コミュニティ 近所付き合い 冠婚葬祭 → 下書き済み: samarkand-mahalla-community-highlights
+- [x] サマルカンド 結婚式 伝統 婚約 披露宴 プロフ 衣装 → 下書き済み: samarkand-wedding-traditions-highlights
+- [x] サマルカンド 若者 カフェ SNS 大学 現代 → 下書き済み: samarkand-youth-culture-cafe-highlights
+- [x] サマルカンド イスラーム 生活 礼拝 巡礼 ズィヤーラト イマーム・ブハリ → 下書き済み: samarkand-religious-life-highlights
 
 ## 鮮度が高く競合が少ない「今が狙い目」のネタ
 - [ ] タシュケント 新規オープン 観光施設 最新情報
