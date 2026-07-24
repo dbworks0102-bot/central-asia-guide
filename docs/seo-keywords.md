@@ -63,6 +63,11 @@
 - [x] ブハラ ノン 丸パン オビ・ノン チェキチ 模様 ゴマ ニゲラ → 下書き済み: bukhara-non-bread-highlights
 - [x] ブハラ 食事 レストラン 旧マドラサ ラビハウズ 店選び チップ マナー → 下書き済み: bukhara-restaurant-dining-guide-highlights
 - [x] ブハラ 菓子 スイーツ ハルヴァイタル 液状ハルヴァ ニショルダ ナヴァト → 下書き済み: bukhara-sweets-dessert-highlights
+- [x] ヒヴァ シヴィト・オシ ホラズム 緑の麺 ディル 郷土料理 → 下書き済み: khiva-shivit-oshi-highlights
+- [x] ヒヴァ プロフ ホラズム風 黄にんじん オシュ 郷土料理 → 下書き済み: khiva-plov-osh-highlights
+- [x] ヒヴァ ノン 丸パン タンドール チェキチ パティル → 下書き済み: khiva-non-bread-highlights
+- [x] ヒヴァ 食事 レストラン イチャン・カラ メニュー 店選び → 下書き済み: khiva-restaurant-dining-guide-highlights
+- [x] ヒヴァ バザール 食べ歩き 屋台 サムサ シャシリク 夜市 → 下書き済み: khiva-bazaar-street-food-highlights
 
 ## お土産系ロングテール
 - [x] タシュケント お土産 買い物 定番 ランキング → 下書き済み: tashkent-souvenir-shopping-guide-highlights
