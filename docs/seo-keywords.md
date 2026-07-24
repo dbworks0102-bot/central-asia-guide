@@ -26,6 +26,11 @@
 ## 都市・観光地系ロングテール
 - [x] サマルカンド レギスタン広場 見どころ → 下書き済み: samarkand-registan-square-highlights
 - [x] ヒヴァ イチャン・カラ 観光 → 下書き済み: khiva-itchan-kala-highlights
+- [x] ヒヴァ 城壁 城門 アタ・ダルヴァザ イチャン・カラ 外郭 → 下書き済み: khiva-itchan-kala-walls-gates-highlights
+- [x] ヒヴァ クフナ・アルク 旧宮殿 要塞 夏のモスク 見張り台 → 下書き済み: khiva-kuhna-ark-highlights
+- [x] ヒヴァ タシュ・ハウリ宮殿 ハーン 居城 青タイル ハレム → 下書き済み: khiva-tash-hauli-palace-highlights
+- [x] ヒヴァ パフラヴァン・マフムード廟 守護聖人 ターコイズ ドーム 巡礼 → 下書き済み: khiva-pahlavan-mahmud-mausoleum-highlights
+- [x] ヒヴァ ジュマ・モスク 木彫り柱 金曜モスク 213本 → 下書き済み: khiva-juma-mosque-highlights
 - [x] ブハラ 旧市街 観光スポット → 下書き済み: bukhara-old-town-attractions
 - [x] ブハラ アルク城塞 見どころ → 下書き済み: bukhara-ark-fortress-highlights
 - [x] ブハラ カラーン・ミナレット ポイ・カリャン 見どころ → 下書き済み: bukhara-kalyan-minaret-highlights
