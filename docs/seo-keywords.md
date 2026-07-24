@@ -85,6 +85,11 @@
 - [x] ブハラ 食べ物 お土産 スパイス ドライフルーツ ナヴァト 持ち帰り → 下書き済み: bukhara-food-souvenirs-highlights
 - [x] ブハラ 交易ドーム タキ 職人街 タキ・ザルガロン 工房めぐり → 下書き済み: bukhara-trading-domes-craft-shops-highlights
 - [x] ブハラ お土産 値切り 交渉 梱包 税関 持ち帰り → 下書き済み: bukhara-souvenir-bargaining-customs-highlights
+- [x] ヒヴァ お土産 買い物 定番 イチャン・カラ → 下書き済み: khiva-souvenir-shopping-guide-highlights
+- [x] ヒヴァ 木彫り 伝統工芸品 スザニ 絨毯 チェス → 下書き済み: khiva-traditional-crafts-highlights
+- [x] ヒヴァ 食べ物 お土産 干しメロン ホラズム → 下書き済み: khiva-food-souvenirs-highlights
+- [x] ヒヴァ 旧市街 土産物店 工房 マドラサ キャラバンサライ → 下書き済み: khiva-old-town-souvenir-shops-highlights
+- [x] ヒヴァ お土産 値切り 交渉 梱包 税関 持ち帰り → 下書き済み: khiva-souvenir-bargaining-customs-highlights
 
 ## 移動手段系ロングテール
 - [x] タシュケント空港 市内 アクセス タクシー 両替 SIM → 下書き済み: tashkent-airport-transfer-guide-highlights
