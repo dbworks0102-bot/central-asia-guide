@@ -107,6 +107,11 @@
 - [x] ブハラ タクシー 配車アプリ Yandex Go 相場 車両制限 → 下書き済み: bukhara-taxi-app-transport-highlights
 - [x] ブハラ 都市間 移動 サマルカンド ヒヴァ タシュケント 鉄道 シェアタクシー 飛行機 → 下書き済み: bukhara-intercity-transport-highlights
 - [x] ブハラ 日帰り 近郊 ギジュドゥヴァン 陶器村 ヴォバケント 乗合タクシー → 下書き済み: bukhara-day-trip-transport-highlights
+- [x] ウルゲンチ空港 ヒヴァ 市内 アクセス タクシー 送迎 → 下書き済み: khiva-urgench-airport-access-highlights
+- [x] ヒヴァ タクシー 配車アプリ Yandex Go 相場 城壁内 → 下書き済み: khiva-taxi-app-transport-highlights
+- [x] ヒヴァ イチャン・カラ 徒歩 観光 車両制限 モデルルート → 下書き済み: khiva-itchan-kala-walking-guide-highlights
+- [x] ヒヴァ 都市間 移動 ブハラ サマルカンド タシュケント ウルゲンチ駅 鉄道 → 下書き済み: khiva-intercity-transport-highlights
+- [x] ヒヴァ 砂漠要塞 アヤズ・カラ トプラク・カラ 日帰り ツアー → 下書き済み: khiva-desert-fortresses-daytrip-highlights
 
 ## 地域住民の生活系ロングテール
 - [x] タシュケント 生活 一日 通勤 仕事 家庭 リズム → 下書き済み: tashkent-daily-life-schedule-highlights
