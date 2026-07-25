@@ -47,6 +47,13 @@
 - [x] タシュケント 地下鉄 装飾駅 めぐり → 下書き済み: tashkent-metro-stations-highlights
 - [x] タシュケント 国立応用美術博物館 伝統工芸 → 下書き済み: tashkent-applied-arts-museum-highlights
 
+## ファルガナ渓谷 観光地系ロングテール
+- [x] ファルガナ渓谷 観光スポット 伝統工芸 コーカンド マルギラン リシタン → 下書き済み: fergana-valley-attractions
+- [x] コーカンド フダヤル・ハン宮殿 コーカンド・ハン国 見どころ → 下書き済み: kokand-khudayar-khan-palace-highlights
+- [x] マルギラン ヨドゴルリク絹工場 アトラス織 絹 製造工程 → 下書き済み: margilan-yodgorlik-silk-factory-highlights
+- [x] リシタン 陶器 工房 イシュコル釉 青と緑 焼き物 → 下書き済み: rishtan-ceramics-workshops-highlights
+- [x] マルギラン クムテパ・バザール 絹布 生地 伝統市場 → 下書き済み: margilan-kumtepa-bazaar-highlights
+
 ## グルメ系ロングテール
 - [x] タシュケント プロフ 名店 国民食 地域差 → 下書き済み: tashkent-plov-restaurants-highlights
 - [x] タシュケント チョルスー・バザール 食べ歩き 屋台 グルメ → 下書き済み: tashkent-chorsu-food-stalls-highlights
