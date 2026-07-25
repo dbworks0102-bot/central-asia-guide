@@ -129,6 +129,11 @@
 - [x] マハッラ ブハラ 地域コミュニティ 近所付き合い ハウズ 職人街 冠婚葬祭 → 下書き済み: bukhara-mahalla-community-highlights
 - [x] ブハラ 結婚式 伝統 婚約 披露宴 金糸刺繍 通過儀礼 → 下書き済み: bukhara-wedding-traditions-highlights
 - [x] ブハラ イスラーム 生活 礼拝 スーフィズム ナクシュバンディー ユダヤ人 共存 → 下書き済み: bukhara-religious-life-highlights
+- [x] ヒヴァ イチャン・カラ 城壁の内側 暮らし 世界遺産 住民 → 下書き済み: khiva-itchan-kala-living-highlights
+- [x] ヒヴァ ディシャン・カラ 新市街 城壁外 住民 一日 生活リズム → 下書き済み: khiva-dishan-kala-daily-life-highlights
+- [x] ヒヴァ オアシス 砂漠 ホラズム 水 用水路 気候 暮らし → 下書き済み: khiva-oasis-desert-life-highlights
+- [x] マハッラ ヒヴァ 地域コミュニティ 近所付き合い モスク 冠婚葬祭 → 下書き済み: khiva-mahalla-community-highlights
+- [x] ヒヴァ 観光業 住民 ガイド 土産物店 職人 ゲストハウス 暮らし → 下書き済み: khiva-tourism-livelihood-life-highlights
 
 ## 鮮度が高く競合が少ない「今が狙い目」のネタ
 - [ ] タシュケント 新規オープン 観光施設 最新情報
