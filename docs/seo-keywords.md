@@ -76,6 +76,13 @@
 - [x] ヒヴァ 食事 レストラン イチャン・カラ メニュー 店選び → 下書き済み: khiva-restaurant-dining-guide-highlights
 - [x] ヒヴァ バザール 食べ歩き 屋台 サムサ シャシリク 夜市 → 下書き済み: khiva-bazaar-street-food-highlights
 
+## ファルガナ渓谷 グルメ系ロングテール
+- [x] フェルガナ プロフ 発祥の地 デヴジラ米 綿実油 赤い人参 → 下書き済み: fergana-valley-plov-highlights
+- [x] ファルガナ渓谷 ナン パン オビ・ノン パティル 穀倉地帯 タンドール → 下書き済み: fergana-valley-non-bread-highlights
+- [x] ファルガナ渓谷 果物 果樹地帯 メロン ブドウ あんず 柘榴 → 下書き済み: fergana-valley-fruits-orchards-highlights
+- [x] ファルガナ渓谷 食堂 食べ歩き コーカンド マルギラン サムサ シャシリク → 下書き済み: fergana-valley-street-food-highlights
+- [x] ファルガナ渓谷 チャイハナ お茶 緑茶 コック・チョイ 社交場 → 下書き済み: fergana-valley-chaikhana-tea-highlights
+
 ## お土産系ロングテール
 - [x] タシュケント お土産 買い物 定番 ランキング → 下書き済み: tashkent-souvenir-shopping-guide-highlights
 - [x] タシュケント 伝統工芸品 スザニ 陶器 買い方 → 下書き済み: tashkent-traditional-crafts-shopping-highlights
