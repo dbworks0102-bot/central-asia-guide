@@ -163,6 +163,13 @@
 - [x] マハッラ ヒヴァ 地域コミュニティ 近所付き合い モスク 冠婚葬祭 → 下書き済み: khiva-mahalla-community-highlights
 - [x] ヒヴァ 観光業 住民 ガイド 土産物店 職人 ゲストハウス 暮らし → 下書き済み: khiva-tourism-livelihood-life-highlights
 
+## ファルガナ渓谷 地域住民の生活系ロングテール
+- [x] ファルガナ渓谷 生活 一日 農業盆地 通勤 仕事 家庭 リズム → 下書き済み: fergana-valley-daily-life-schedule-highlights
+- [x] マハッラ ファルガナ渓谷 地域コミュニティ 近所付き合い ハシャル 農村 職人町 → 下書き済み: fergana-valley-mahalla-community-highlights
+- [x] ファルガナ渓谷 職人 家庭 マルギラン絹織り リシタン陶器 家業 継承 → 下書き済み: fergana-valley-artisan-family-life-highlights
+- [x] ファルガナ渓谷 農業 暮らし 綿花 果樹 穀倉地帯 収穫期 共同体 → 下書き済み: fergana-valley-agricultural-community-highlights
+- [x] ファルガナ渓谷 イスラーム 生活 礼拝 金曜礼拝 大家族 伝統 → 下書き済み: fergana-valley-religious-life-highlights
+
 ## 鮮度が高く競合が少ない「今が狙い目」のネタ
 - [ ] タシュケント 新規オープン 観光施設 最新情報
 - [ ] ウズベキスタン 直行便 就航状況 最新
