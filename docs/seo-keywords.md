@@ -126,6 +126,13 @@
 - [x] ファルガナ渓谷 食べ物 お土産 ドライフルーツ ナッツ 蜂蜜 日持ち → 下書き済み: fergana-valley-food-souvenirs-highlights
 - [x] チュスト ピチョク ナイフ お土産 ドッピ帽 木彫り 預け荷物 → 下書き済み: fergana-valley-knife-crafts-souvenir-highlights
 
+## ヌクス お土産系ロングテール
+- [x] ヌクス お土産 カラカルパク工芸 サヴィツキー美術館 アラル海 記念品 → 下書き済み: nukus-souvenir-shopping-guide-highlights
+- [x] サヴィツキー美術館 ミュージアムショップ 図録 絵葉書 複製画 前衛美術 → 下書き済み: nukus-savitsky-museum-shop-souvenir-highlights
+- [x] カラカルパク 民族工芸 刺繍 じゅうたん フェルト 銀細工 → 下書き済み: nukus-karakalpak-crafts-souvenir-highlights
+- [x] ヌクス 食べ物 お土産 ドライフルーツ 蜂蜜 地元菓子 持ち帰り → 下書き済み: nukus-food-souvenirs-highlights
+- [x] アラル海 記念品 写真集 書籍 絵葉書 モイナク 歴史 → 下書き済み: nukus-aral-sea-memorial-souvenir-highlights
+
 ## 移動手段系ロングテール
 - [x] タシュケント空港 市内 アクセス タクシー 両替 SIM → 下書き済み: tashkent-airport-transfer-guide-highlights
 - [x] タシュケント 地下鉄 乗り方 切符 ATTOカード 路線 → 下書き済み: tashkent-metro-how-to-ride-highlights
