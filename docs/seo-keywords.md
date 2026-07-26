@@ -105,6 +105,13 @@
 - [x] ヒヴァ 旧市街 土産物店 工房 マドラサ キャラバンサライ → 下書き済み: khiva-old-town-souvenir-shops-highlights
 - [x] ヒヴァ お土産 値切り 交渉 梱包 税関 持ち帰り → 下書き済み: khiva-souvenir-bargaining-customs-highlights
 
+## ファルガナ渓谷 お土産系ロングテール
+- [x] ファルガナ渓谷 お土産 買い物 定番 コーカンド マルギラン リシタン → 下書き済み: fergana-valley-souvenir-shopping-guide-highlights
+- [x] マルギラン アトラス シルク お土産 本物 見分け方 → 下書き済み: fergana-valley-atlas-silk-souvenir-highlights
+- [x] リシタン 陶器 お土産 イシコール釉 手描き 梱包 → 下書き済み: fergana-valley-rishtan-ceramics-souvenir-highlights
+- [x] ファルガナ渓谷 食べ物 お土産 ドライフルーツ ナッツ 蜂蜜 日持ち → 下書き済み: fergana-valley-food-souvenirs-highlights
+- [x] チュスト ピチョク ナイフ お土産 ドッピ帽 木彫り 預け荷物 → 下書き済み: fergana-valley-knife-crafts-souvenir-highlights
+
 ## 移動手段系ロングテール
 - [x] タシュケント空港 市内 アクセス タクシー 両替 SIM → 下書き済み: tashkent-airport-transfer-guide-highlights
 - [x] タシュケント 地下鉄 乗り方 切符 ATTOカード 路線 → 下書き済み: tashkent-metro-how-to-ride-highlights
