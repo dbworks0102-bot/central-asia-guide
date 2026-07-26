@@ -47,6 +47,13 @@
 - [x] タシュケント 地下鉄 装飾駅 めぐり → 下書き済み: tashkent-metro-stations-highlights
 - [x] タシュケント 国立応用美術博物館 伝統工芸 → 下書き済み: tashkent-applied-arts-museum-highlights
 
+## ヌクス 観光地系ロングテール
+- [x] ヌクス カラカルパクスタン 観光 アラル海 前衛美術 砂漠要塞 → 下書き済み: nukus-attractions
+- [x] サヴィツキー美術館 砂漠のルーヴル ロシア・アヴァンギャルド 前衛美術 → 下書き済み: nukus-savitsky-museum-highlights
+- [x] モイナク 船の墓場 アラル海 縮小 旧漁港 → 下書き済み: moynaq-aral-sea-ship-graveyard-highlights
+- [x] アヤズ・カラ トプラク・カラ 古代ホレズム 要塞群 エリク・カラ → 下書き済み: ayaz-kala-toprak-kala-fortresses-highlights
+- [x] ヌクス 街歩き 州立博物館 拠点 アクセス → 下書き済み: nukus-city-walk-highlights
+
 ## ファルガナ渓谷 観光地系ロングテール
 - [x] ファルガナ渓谷 観光スポット 伝統工芸 コーカンド マルギラン リシタン → 下書き済み: fergana-valley-attractions
 - [x] コーカンド フダヤル・ハン宮殿 コーカンド・ハン国 見どころ → 下書き済み: kokand-khudayar-khan-palace-highlights
