@@ -198,6 +198,13 @@
 - [x] ファルガナ渓谷 農業 暮らし 綿花 果樹 穀倉地帯 収穫期 共同体 → 下書き済み: fergana-valley-agricultural-community-highlights
 - [x] ファルガナ渓谷 イスラーム 生活 礼拝 金曜礼拝 大家族 伝統 → 下書き済み: fergana-valley-religious-life-highlights
 
+## ヌクス 地域住民の生活系ロングテール
+- [x] ヌクス カラカルパクスタン 自治共和国 暮らし 生活 全体像 → 下書き済み: nukus-karakalpakstan-daily-life-highlights
+- [x] カラカルパク族 言語 民族 アイデンティティ 民族衣装 伝統 → 下書き済み: nukus-karakalpak-ethnic-identity-highlights
+- [x] アラル海 縮小 暮らし 変化 漁業 農業 転換 適応 → 下書き済み: nukus-aral-sea-livelihood-change-highlights
+- [x] カラカルパクスタン 砂漠 気候 暮らし 知恵 住居 水 → 下書き済み: nukus-desert-climate-living-wisdom-highlights
+- [x] ヌクス 地方都市 日常 市場 学校 家族 素顔 生活 → 下書き済み: nukus-provincial-town-daily-life-highlights
+
 ## 鮮度が高く競合が少ない「今が狙い目」のネタ
 - [ ] タシュケント 新規オープン 観光施設 最新情報
 - [ ] ウズベキスタン 直行便 就航状況 最新
