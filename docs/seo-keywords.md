@@ -90,6 +90,13 @@
 - [x] ファルガナ渓谷 食堂 食べ歩き コーカンド マルギラン サムサ シャシリク → 下書き済み: fergana-valley-street-food-highlights
 - [x] ファルガナ渓谷 チャイハナ お茶 緑茶 コック・チョイ 社交場 → 下書き済み: fergana-valley-chaikhana-tea-highlights
 
+## ヌクス グルメ系ロングテール
+- [x] カラカルパク料理 ヌクス 食文化 遊牧 漁労 農耕 → 下書き済み: nukus-karakalpak-cuisine-highlights
+- [x] カラカルパク 伝統料理 トゥルマ ベシュバルマク風 肉 生地 → 下書き済み: nukus-karakalpak-traditional-dishes-highlights
+- [x] アラル海 沿岸 魚食 モイナク 缶詰 燻製魚 → 下書き済み: nukus-aral-sea-fish-cuisine-highlights
+- [x] ヌクス 市場 バザール メロン スイカ ドライフルーツ ナン → 下書き済み: nukus-bazaar-local-produce-highlights
+- [x] ヌクス チャイハナ ナン お茶 緑茶 もてなし → 下書き済み: nukus-chaikhana-non-bread-highlights
+
 ## お土産系ロングテール
 - [x] タシュケント お土産 買い物 定番 ランキング → 下書き済み: tashkent-souvenir-shopping-guide-highlights
 - [x] タシュケント 伝統工芸品 スザニ 陶器 買い方 → 下書き済み: tashkent-traditional-crafts-shopping-highlights
