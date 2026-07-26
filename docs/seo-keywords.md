@@ -134,6 +134,13 @@
 - [x] ヒヴァ 都市間 移動 ブハラ サマルカンド タシュケント ウルゲンチ駅 鉄道 → 下書き済み: khiva-intercity-transport-highlights
 - [x] ヒヴァ 砂漠要塞 アヤズ・カラ トプラク・カラ 日帰り ツアー → 下書き済み: khiva-desert-fortresses-daytrip-highlights
 
+## ファルガナ渓谷 移動手段系ロングテール
+- [x] ファルガナ渓谷 行き方 回り方 カムチク峠 渓谷内 移動 総合 → 下書き済み: fergana-valley-transport-guide-highlights
+- [x] タシュケント ファルガナ アクセス カムチク峠 国内線 鉄道 比較 → 下書き済み: fergana-valley-tashkent-access-highlights
+- [x] ファルガナ渓谷 都市間 コーカンド マルギラン リシタン 乗合タクシー → 下書き済み: fergana-valley-intercity-transport-highlights
+- [x] フェルガナ コーカンド 市内 タクシー 配車アプリ Yandex Go 徒歩 → 下書き済み: fergana-valley-city-taxi-app-highlights
+- [x] ファルガナ渓谷 工房 日帰り リシタン陶器 マルギラン絹工場 チャーター車 → 下書き済み: fergana-valley-craft-villages-daytrip-highlights
+
 ## 地域住民の生活系ロングテール
 - [x] タシュケント 生活 一日 通勤 仕事 家庭 リズム → 下書き済み: tashkent-daily-life-schedule-highlights
 - [x] マハッラ ウズベキスタン 地域コミュニティ 近所付き合い 冠婚葬祭 → 下書き済み: tashkent-mahalla-community-highlights
