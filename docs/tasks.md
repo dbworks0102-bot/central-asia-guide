@@ -201,7 +201,32 @@ Step 10完了後、`Agent(model:"fable")`による全体再レビューで判明
 - [x] `scripts/auto-publish.ps1`：`node scripts/auto-publish.mjs`実行→`npm run lint`/`test`/`build`をゲートとして通過→`git add src/data/articles.js`・`git commit`・`git push`まで完全自動実行。いずれかのゲートで失敗した場合は`git checkout -- src/data/articles.js`で変更を破棄し、commit/pushは行わずログのみ記録。結果（成功・失敗いずれも）は`docs/publish-log.md`にタイムスタンプ付きで追記。エンコーディングは`weekly-draft.ps1`と同じ方式（`chcp 65001`＋cmd.exe経由リダイレクト、UTF-8 BOM無しでファイル出力）
 - [x] `eslint.config.js`のNode環境グローバル対象パターンに`scripts/**/*.mjs`を追加（`.mjs`が未対象で`process`/`console`のno-undefエラーが発生していたバグを修正）
 - [x] 実機で1回実行して検証：初回は上記eslintバグでlintゲートに失敗し正しく変更を破棄・ログ記録することを確認。修正後に再実行し、`tashkent-khazrati-imam-complex-highlights`が正常にpublished化→lint/test/build通過→commit`d605a47`→pushまで成功することを確認
-- [ ] Windowsタスクスケジューラに3日間隔（`New-ScheduledTaskTrigger -Daily -DaysInterval 3`）のトリガーで`auto-publish.ps1`を登録（タスク名`central-asia-guide-auto-publish`、既存の`central-asia-guide-weekly-draft`と同じPrincipal/Settings方針を踏襲）
+- [x] Windowsタスクスケジューラに3日間隔（`New-ScheduledTaskTrigger -Daily -DaysInterval 3`）のトリガーで`auto-publish.ps1`を登録済み（タスク名`central-asia-guide-auto-publish`、次回実行2026-07-30 09:00、既存の`central-asia-guide-weekly-draft`と同じPrincipal/Settings方針を踏襲）
+
+---
+
+## Step 14. 週次アクセス解析＋自動SEO改善パイプライン（着手中・2026-07-27）
+ユーザー要望「週に一度アクセス解析を行って、SEO対策やサイト構成について自動で改善させていって」への対応。
+`AskUserQuestion`でユーザーに確認し、**解析基盤はGoogle Search Console**、**改善の適用はauto-publishと同じく完全自動
+（人間の確認なしでcommit・push・本番反映）**という方針が決定した。
+
+- [x] `scripts/fetch-search-console-data.mjs`：サービスアカウント認証でSearch Console API（`searchAnalytics.query`）から
+  直近28日分のpage別・query別データを取得し、純粋関数`summarizeSearchConsoleData()`で低CTRページ・掲載順位が低い
+  キーワード機会を抽出、`scripts/.seo-data/latest.json`に保存
+- [x] `tests/unit/fetch-search-console-data.test.js`：`summarizeSearchConsoleData()`の抽出ロジックを検証
+- [x] `scripts/weekly-seo-prompt.md`：`claude -p`ヘッドレス実行用プロンプト。低CTRページのtitle/description改善、
+  掲載順位が低い高インプレッションキーワードの`docs/seo-keywords.md`への追加（既存の週次下書き生成パイプラインが
+  後で拾う）、公開済み記事間の内部リンク補強のみを許可。`status`・本文構造・スラッグは変更禁止、1回の実行で
+  変更するのは最大5記事までに制限
+- [x] `scripts/weekly-seo.ps1`：データ取得→`claude -p`実行→`weekly-draft.ps1`と同じ想定外ファイル検知→
+  `npm run lint`/`test`/`build`ゲート→`git add`（`src/data/articles.js`・`docs/seo-keywords.md`のみ）・
+  `git commit`・`git push`まで完全自動実行。想定外ファイル変更またはゲート失敗時は該当2ファイルの変更のみ破棄し
+  commit/pushは行わない。結果は`docs/seo-improvement-log.md`にタイムスタンプ付きで追記
+- [x] `package.json`に`google-auth-library`を追加、`.gitignore`に`scripts/.secrets/`・`scripts/.seo-data/`を追加
+  （サービスアカウント鍵と生の解析データはリポジトリに含めない）
+- [ ] **要ユーザー作業（ブロッカー）**：Google Search Consoleでのドメイン所有権確認・Google Cloudでのサービス
+  アカウント作成とSearch Console API有効化・鍵ファイルの配置。詳細手順は`docs/design.md`§8.5.7参照
+- [ ] Windowsタスクスケジューラへの週次登録（タスク名`central-asia-guide-weekly-seo`、認証設定完了後に実施）
 
 ---
 

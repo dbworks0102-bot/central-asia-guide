@@ -398,6 +398,55 @@ Google Drive の指定フォルダから `public/images/uzbekistan/inbox/` へ�
   下書き生成そのものには引き続き使うが、**published化の最終判断を人間が行うという前提はこの機能に限り明示的に撤回**されている。
   これはメモリの恒常方針ではなく、2026-07-27のこの会話内でのユーザーの個別判断として記録する。
 
+#### 8.5.7 週次アクセス解析＋自動SEO改善（`scripts/fetch-search-console-data.mjs` / `scripts/weekly-seo-prompt.md` / `scripts/weekly-seo.ps1`）
+
+ユーザー要望「週に一度アクセス解析を行って、SEO対策やサイト構成について自動で改善させていって」（2026-07-27）を受けて
+導入。`AskUserQuestion`で解析基盤とし**Google Search Console**を選択、改善適用は§8.5.6（3日ローテーション自動公開）と
+同じく**完全自動（人間の確認なし）**という方針が決定した。既存の週次下書き生成（`weekly-draft.ps1`、人間レビュー前提）
+とは独立した別パイプラインだが、キーワード機会の受け渡しで両者は連携する。
+
+- **データ取得**：`scripts/fetch-search-console-data.mjs`がサービスアカウント認証（`google-auth-library`）で
+  Search Console API（`searchAnalytics.query`）を呼び出し、直近28日分（直近3日は未確定データのため除外）の
+  page別・query別データを取得する。純粋関数`summarizeSearchConsoleData(pageRows, queryRows)`が
+  「掲載回数20以上かつCTR2%未満の低CTRページ上位10件」「掲載回数10以上かつ平均掲載順位10位以下（2ページ目以降）の
+  キーワード上位15件」を抽出し、`scripts/.seo-data/latest.json`に保存する（この関数のみユニットテスト対象。
+  API呼び出し自体はネットワーク依存のためテスト対象外）。
+- **認証情報の配置**：サービスアカウント鍵は`scripts/.secrets/search-console-service-account.json`に置く想定
+  （`.gitignore`済み・リポジトリには含めない）。取得した生データ（`scripts/.seo-data/latest.json`）も同様に
+  `.gitignore`済みで、週次実行のたびに上書きされる一時データという位置づけ（履歴として残す必要はない）。
+- **改善内容の生成**：`scripts/weekly-seo-prompt.md`は`weekly-draft-prompt.md`と同じ「`claude -p`ヘッドレス実行」
+  方式を踏襲する。許可する変更は3種類のみに限定：
+  1. 低CTRページに対応する公開済み記事の`title`/`description`の改善（事実の捏造禁止、既存の検証済み情報の範囲内）
+  2. 掲載順位が低い高インプレッションキーワードを`docs/seo-keywords.md`の未使用項目として追加
+     （既存の週次下書き生成パイプラインが次回以降に拾って新規記事を作る導線。このパイプライン自身は新規記事本文は作らない）
+  3. 公開済み記事同士の`relatedLinks`補強（既存リンクの削除はしない、draft記事へはリンクしない）
+  `status`・`slug`・`publishDate`・`heroImage`・本文の構造的書き換えは禁止。1回の実行で変更する記事数は
+  最大5件までとし、影響範囲を意図的に絞る。
+- **完全自動の範囲とセーフティネット**：`weekly-seo.ps1`は`weekly-draft.ps1`由来の「claude実行前後の
+  `git status --porcelain`差分検知」と、`auto-publish.ps1`由来の「lint/test/buildゲート＋失敗時のrevert」を
+  組み合わせる。
+  1. データ取得失敗（認証情報未配置・API未有効化・ネットワークエラー等）→ commit/pushせずログのみ記録して終了
+  2. `claude -p`が`src/data/articles.js`・`docs/seo-keywords.md`以外のファイルを変更→想定外とみなし、
+     この2ファイルの変更のみ`git checkout --`で破棄（他の想定外ファイルは人間確認のため削除せず残す）、
+     commit/pushせずログのみ記録
+  3. 変更なし（今週は改善余地なしと判断）→ 何もせず正常終了
+  4. `npm run lint`/`test`/`build`のいずれか失敗→ 2.と同様に対象2ファイルの変更を破棄
+  5. 全ゲート通過→ 対象2ファイルのみ`git add`・`git commit`・`git push`。Vercelが自動デプロイする
+  結果は成功・失敗いずれも`docs/seo-improvement-log.md`にタイムスタンプ付きで追記する。
+- **要ユーザー作業（実装だけでは完結しない部分）**：Search Console側のドメイン所有権確認とサービスアカウントへの
+  権限付与はGoogleアカウントの操作を伴うため、Claude単独では完結できない。ユーザーに依頼した手順：
+  1. Google Search Consoleで`tabi-uzbekistan.com`のプロパティを追加し、DNS TXTレコード（またはHTMLタグ等）で
+     所有権を確認する
+  2. Google Cloud Consoleでプロジェクトを作成（または既存のものを利用）し、Search Console API（Webmasters API）を有効化
+  3. サービスアカウントを作成しJSON鍵をダウンロード、`scripts/.secrets/search-console-service-account.json`に配置
+  4. Search Consoleのプロパティ設定→ユーザーと権限で、3.のサービスアカウントのメールアドレスを
+     「制限付き」（読み取りで十分）ユーザーとして追加
+  これらが完了するまで`weekly-seo.ps1`はステップ1（データ取得）で失敗し、失敗ログが記録される安全な状態を保つ。
+- **方針転換の位置づけ**：§8.5.6と同様、「published記事の内容変更を人間の確認なしに本番反映する」という運用は
+  この機能に限りユーザーが個別に許可したものであり、恒常方針への変更ではない。ただし本機能は変更範囲を
+  title/description/内部リンク/キーワードキューの追加のみに限定し、本文の事実的記述や構造には一切手を加えない設計と
+  することで、完全自動でもリスクを抑えている。
+
 ## 9. 設計上の原則まとめ
 - **単一国特化**：ウズベキスタン専門。他国は別サイトとして扱い、本サイトに抽象化を持ち込まない。
 - **DRY・単一責任**：レイヤー分離（data / core / ui / utils）を厳守。

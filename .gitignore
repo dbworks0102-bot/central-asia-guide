@@ -6,3 +6,5 @@ test-results
 playwright-report
 .vercel
 public/images/uzbekistan/inbox
+scripts/.secrets
+scripts/.seo-data

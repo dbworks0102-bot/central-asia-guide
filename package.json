@@ -17,6 +17,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "google-auth-library": "^10.9.1"
+  },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@playwright/test": "^1.61.1",
