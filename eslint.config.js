@@ -34,7 +34,7 @@ export default [
 
   // ビルドスクリプト・各種設定ファイル（Node 環境）
   {
-    files: ["scripts/**/*.js", "*.config.js"],
+    files: ["scripts/**/*.js", "scripts/**/*.mjs", "*.config.js"],
     languageOptions: {
       globals: {
         ...globals.node,

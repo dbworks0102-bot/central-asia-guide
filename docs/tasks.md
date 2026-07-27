@@ -174,6 +174,37 @@ Step 10完了後、`Agent(model:"fable")`による全体再レビューで判明
 
 ---
 
+## Step 13. 大規模記事拡充プロジェクト — 全完了（2026-07-26）
+6都市（タシュケント・サマルカンド・ブハラ・ヒヴァ・ファルガナ渓谷・ヌクス）×5テーマ（①観光地②グルメ③お土産④移動手段⑤地域住民の生活）で各5記事以上を作成する計画（2026-07-21開始）が完了。総記事数156件（うちdraft 148件・published 8件）。
+
+- [x] タシュケント：①〜⑤全テーマ完了
+- [x] サマルカンド：①〜⑤全テーマ完了
+- [x] ブハラ：①〜⑤全テーマ完了
+- [x] ヒヴァ：①〜⑤全テーマ完了
+- [x] ファルガナ渓谷：①〜⑤全テーマ完了
+- [x] ヌクス：①〜⑤全テーマ完了（最終バッチ=コミット`b545568`「地域住民の生活」）
+
+各バッチは`Agent(model:"opus")`に下書き作成を委譲し、Fable自身が独立に検証（`git status`／重複slugチェック／総数チェック／`node -e "require(...)"`構文チェック／`git diff`全文読解／関連リンク存在チェック／新規画像チェック／lint・test・build再実行）してからコミットする運用を徹底。詳細は`docs/seo-keywords.md`の各都市別セクションを参照。
+
+**次のアクション**：
+- [x] 148件のdraft記事の人間レビュー→published昇格 → **2026-07-27にユーザー判断で自動公開ローテーションへ方針転換**（下記参照）。個別の人間レビューは行わず、レビュー結果（`docs/pending-review.md`「2026-07-27 大規模レビュー」）は要修正1件（`khiva-taxi-app-transport-highlights`）の除外根拠としてのみ使用
+- [ ] サマルカンド／ヒヴァ／ブハラの未使用inbox写真（記事に未採用のもの）の扱い方針決定
+
+### 3日ローテーション自動公開パイプライン — 実装済み（2026-07-27）
+148件のdraft記事レビュー（`docs/pending-review.md`「2026-07-27 大規模レビュー」）を踏まえ、
+ユーザーへ`AskUserQuestion`で確認のうえ、**「全148件を順番に公開（軽微指摘は許容）」「status変更→commit→push→本番反映まで完全自動（人間の確認ゲートなし）」**
+という方針が決定した。これは従来のメモリ記載「自動公開は一切行わない」を、このユーザー判断により明示的に上書きするもの。
+
+- [x] `scripts/auto-publish.mjs`：`src/data/articles.js`の出現順（＝作成順：タシュケント→サマルカンド→ブハラ→ヒヴァ→ファルガナ→ヌクス）で最初に見つかった`status:"draft"`を`published`へ切り替える純粋関数`publishNextDraft(sourceText, skipSlugs, today)`＋CLIエントリポイント。フォーマット・コメントを壊さないよう文字列ブロック置換のみで行う（AST変換なし）
+- [x] `SKIP_SLUGS`（除外リスト）に要修正記事`khiva-taxi-app-transport-highlights`を設定。本文修正後にここから外せば通常どおりローテーションに戻る
+- [x] `tests/unit/auto-publish.test.js`：出現順選択・skipSlugsでの読み飛ばし・対象なし時のnull返却を検証（4/4パス）
+- [x] `scripts/auto-publish.ps1`：`node scripts/auto-publish.mjs`実行→`npm run lint`/`test`/`build`をゲートとして通過→`git add src/data/articles.js`・`git commit`・`git push`まで完全自動実行。いずれかのゲートで失敗した場合は`git checkout -- src/data/articles.js`で変更を破棄し、commit/pushは行わずログのみ記録。結果（成功・失敗いずれも）は`docs/publish-log.md`にタイムスタンプ付きで追記。エンコーディングは`weekly-draft.ps1`と同じ方式（`chcp 65001`＋cmd.exe経由リダイレクト、UTF-8 BOM無しでファイル出力）
+- [x] `eslint.config.js`のNode環境グローバル対象パターンに`scripts/**/*.mjs`を追加（`.mjs`が未対象で`process`/`console`のno-undefエラーが発生していたバグを修正）
+- [x] 実機で1回実行して検証：初回は上記eslintバグでlintゲートに失敗し正しく変更を破棄・ログ記録することを確認。修正後に再実行し、`tashkent-khazrati-imam-complex-highlights`が正常にpublished化→lint/test/build通過→commit`d605a47`→pushまで成功することを確認
+- [ ] Windowsタスクスケジューラに3日間隔（`New-ScheduledTaskTrigger -Daily -DaysInterval 3`）のトリガーで`auto-publish.ps1`を登録（タスク名`central-asia-guide-auto-publish`、既存の`central-asia-guide-weekly-draft`と同じPrincipal/Settings方針を踏襲）
+
+---
+
 ## 将来拡張（スコープ外）
 - [ ] キルギス／カザフスタン等は本サイトへ追加せず、独立した別サイトとして検討
 - [ ] 多言語対応・アフィリエイト等の収益化検討

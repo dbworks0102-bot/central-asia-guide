@@ -353,6 +353,12 @@ Google Drive の指定フォルダから `public/images/uzbekistan/inbox/` へ�
   内容の分かるファイル名にリネームしたうえで `heroImage` の参照先も更新することを推奨する。こうすると
   `inbox/` を「まだ採用判断していない新着候補だけ」の状態に保て、次回以降のレビュー対象を絞り込める。
   ※この移動・リネームは人間が行う運用作業であり、パイプラインは自動では行わない。
+- **実施例（2026-07-26）**：ヒヴァの採用済み8枚はリネーム後の作業用コピーが `public/images/uzbekistan/` 直下に
+  既に存在し、`inbox/khiva/` 側には無加工のオリジナル（`PXL_*.jpg`）がハッシュ完全一致のまま重複して残っていた。
+  これらはファイル名（`PXL_*.jpg`）のままでは内容が分からないため、直下へは置かず
+  `public/images/uzbekistan/adopted-originals/<city>/` へ退避する運用とした（`inbox/` の「未採用候補のみ」
+  という趣旨は維持しつつ、無加工オリジナルの保管場所を分離）。ブハラ2枚・サマルカンド11枚は採用時にリサイズ／
+  加工されておりハッシュが一致しないため、機械的な元ファイル特定はできず、`inbox/` 内に残したまま（削除・移動なし）。
 
 #### 2. Google Drive 側でユーザーが写真を削除した場合
 
@@ -370,6 +376,27 @@ Google Drive の指定フォルダから `public/images/uzbekistan/inbox/` へ�
   溜まってきた場合は、人間が内容を確認したうえで、`inbox/` からの手動削除、または採用予定として `inbox/` 外へ
   退避のいずれかを判断する。誤って必要な写真を消さないよう、削除前には Google Drive 側にオリジナルが残っているか
   確認することが望ましい。
+
+#### 8.5.6 3日ローテーション自動公開（`scripts/auto-publish.mjs` / `scripts/auto-publish.ps1`）
+
+148件のdraft記事レビュー（2026-07-27実施）後、ユーザーの明示判断（`AskUserQuestion`回答）により、
+**148件を作成順（`src/data/articles.js`の出現順）に3日1本、人間の確認なしで完全自動公開する**運用を導入した。
+これは§8.5.5に隣接する自動化だが、週次下書き生成とは独立した別パイプラインである。
+
+- **選定ロジック**：`publishNextDraft(sourceText, skipSlugs, today)`（純粋関数）が、`articles.js`をスラッグ出現順に走査し、
+  `SKIP_SLUGS`に含まれず`status:"draft"`である最初の記事1件を選ぶ。該当ブロックの`publishDate`と`status`のみを
+  文字列置換で書き換え、他記事・コメント・フォーマットは一切変更しない。対象なしは`null`（CLIでは`"NONE"`）を返す。
+- **除外リスト**：`SKIP_SLUGS`は現在`["khiva-taxi-app-transport-highlights"]`のみ（`docs/pending-review.md`
+  「2026-07-27 大規模レビュー」で東門の名称誤り＝要修正と判定された記事）。本文修正後にリストから外せば
+  通常どおりローテーションへ復帰する。他の軽微な指摘（文字数不足・hero画像の重複・表現の重複等）は
+  ユーザー判断により公開をブロックする理由としない。
+- **完全自動の範囲**：`auto-publish.ps1`が`node scripts/auto-publish.mjs`実行→`npm run lint`/`test`/`build`を
+  ゲートとして通過→`git add src/data/articles.js`・`git commit`・`git push`まで、人間の確認を挟まず実行する。
+  いずれかのゲートで失敗した場合のみ`git checkout -- src/data/articles.js`で変更を破棄し、commit/pushは行わない。
+  成功・失敗いずれも`docs/publish-log.md`にタイムスタンプ付きで追記する。
+- **方針転換の位置づけ**：以前の運用（週次下書き生成→`docs/pending-review.md`へ集約→人間レビュー→手動published化）は
+  下書き生成そのものには引き続き使うが、**published化の最終判断を人間が行うという前提はこの機能に限り明示的に撤回**されている。
+  これはメモリの恒常方針ではなく、2026-07-27のこの会話内でのユーザーの個別判断として記録する。
 
 ## 9. 設計上の原則まとめ
 - **単一国特化**：ウズベキスタン専門。他国は別サイトとして扱い、本サイトに抽象化を持ち込まない。
