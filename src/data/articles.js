@@ -690,8 +690,8 @@ export const articles = [
       "タシュケント モスク メドレセ",
     ],
     heroImage: "/images/uzbekistan/tashkent-khazrati-imam.jpg",
-    publishDate: "2026-07-21",
-    status: "draft",
+    publishDate: "2026-07-27",
+    status: "published",
     body: [
       {
         type: "paragraph",
