@@ -11,7 +11,7 @@ import { GoogleAuth } from "google-auth-library";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const KEY_PATH = resolve(__dirname, ".secrets/search-console-service-account.json");
 const OUTPUT_PATH = resolve(__dirname, ".seo-data/latest.json");
-const SITE_URL = "https://tabi-uzbekistan.com/";
+const SITE_URL = "sc-domain:tabi-uzbekistan.com";
 
 const LOW_CTR_MIN_IMPRESSIONS = 20;
 const LOW_CTR_MAX_CTR = 0.02;
