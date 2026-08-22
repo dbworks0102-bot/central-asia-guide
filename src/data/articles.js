@@ -771,8 +771,8 @@ export const articles = [
       "タシュケント ドライフルーツ 市場",
     ],
     heroImage: "/images/uzbekistan/hero.jpg",
-    publishDate: "2026-07-21",
-    status: "draft",
+    publishDate: "2026-08-22",
+    status: "published",
     body: [
       {
         type: "paragraph",
