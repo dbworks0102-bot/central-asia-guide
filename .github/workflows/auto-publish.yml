@@ -1,0 +1,80 @@
+name: Auto Publish
+
+# 3日に1本の自動公開ローテーション。ローカルWindowsタスクスケジューラ版
+# （scripts/auto-publish.ps1）はPCの電源/ログイン状態に依存し実行漏れが発生したため、
+# AIを使わない機械的な処理のみのこのスクリプトはGitHub Actionsに移行した。
+# ローカル版のcentral-asia-guide-auto-publishタスクは無効化済み（重複公開防止）。
+
+on:
+  schedule:
+    - cron: "0 0 * * *" # 毎日09:00 JST。ただし直近のAuto-publishコミットから3日未満ならスキップする
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  auto-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Check rotation interval
+        id: gate
+        run: |
+          LAST_TS=$(git log --grep="^Auto-publish:" -1 --format=%ct || true)
+          if [ -z "$LAST_TS" ]; then
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          NOW_TS=$(date +%s)
+          DAYS=$(( (NOW_TS - LAST_TS) / 86400 ))
+          echo "Days since last Auto-publish commit: $DAYS"
+          if [ "$DAYS" -lt 3 ]; then
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Install dependencies
+        if: steps.gate.outputs.skip != 'true'
+        run: npm ci
+
+      - name: Select next draft
+        if: steps.gate.outputs.skip != 'true'
+        id: select
+        run: |
+          SLUG=$(node scripts/auto-publish.mjs)
+          echo "slug=$SLUG" >> "$GITHUB_OUTPUT"
+          echo "Selected: $SLUG"
+
+      - name: Lint
+        if: steps.gate.outputs.skip != 'true' && steps.select.outputs.slug != 'NONE'
+        run: npm run lint
+
+      - name: Test
+        if: steps.gate.outputs.skip != 'true' && steps.select.outputs.slug != 'NONE'
+        run: npm run test
+
+      - name: Build
+        if: steps.gate.outputs.skip != 'true' && steps.select.outputs.slug != 'NONE'
+        run: npm run build
+
+      - name: Revert on failure
+        if: failure() && steps.gate.outputs.skip != 'true' && steps.select.outputs.slug != 'NONE'
+        run: git checkout -- src/data/articles.js
+
+      - name: Commit and push
+        if: steps.gate.outputs.skip != 'true' && steps.select.outputs.slug != 'NONE'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/data/articles.js
+          git commit -m "Auto-publish: ${{ steps.select.outputs.slug }}（3日ローテーション自動公開）"
+          git push
