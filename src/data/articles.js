@@ -857,8 +857,8 @@ export const articles = [
       "ムスタキリク広場 タシュケント",
     ],
     heroImage: "/images/uzbekistan/tashkent-amir-timur-square.jpg",
-    publishDate: "2026-07-21",
-    status: "draft",
+    publishDate: "2026-08-26",
+    status: "published",
     body: [
       {
         type: "paragraph",
