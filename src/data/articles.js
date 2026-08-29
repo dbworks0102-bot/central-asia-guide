@@ -933,8 +933,8 @@ export const articles = [
       "タシュケント 地下鉄 撮影",
     ],
     heroImage: "/images/uzbekistan/hero.jpg",
-    publishDate: "2026-07-21",
-    status: "draft",
+    publishDate: "2026-08-29",
+    status: "published",
     body: [
       {
         type: "paragraph",
