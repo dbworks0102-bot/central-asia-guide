@@ -1009,8 +1009,8 @@ export const articles = [
       "タシュケント 博物館 観光",
     ],
     heroImage: "/images/uzbekistan/tashkent-applied-arts-museum.jpg",
-    publishDate: "2026-07-21",
-    status: "draft",
+    publishDate: "2026-09-02",
+    status: "published",
     body: [
       {
         type: "paragraph",
