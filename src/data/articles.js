@@ -1095,8 +1095,8 @@ export const articles = [
       "ウズベキスタン 炊き込みご飯 オシュ",
     ],
     heroImage: "/images/uzbekistan/hero.jpg",
-    publishDate: "2026-07-21",
-    status: "draft",
+    publishDate: "2026-09-06",
+    status: "published",
     body: [
       {
         type: "paragraph",
