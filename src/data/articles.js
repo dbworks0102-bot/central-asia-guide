@@ -1190,8 +1190,8 @@ export const articles = [
       "タシュケント 市場 食べ歩き マナー",
     ],
     heroImage: "/images/uzbekistan/hero.jpg",
-    publishDate: "2026-07-21",
-    status: "draft",
+    publishDate: "2026-09-09",
+    status: "published",
     body: [
       {
         type: "paragraph",
