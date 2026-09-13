@@ -1263,8 +1263,8 @@ export const articles = [
       "ウズベキスタン パン マナー",
     ],
     heroImage: "/images/uzbekistan/tashkent-non-bread.jpg",
-    publishDate: "2026-07-21",
-    status: "draft",
+    publishDate: "2026-09-13",
+    status: "published",
     body: [
       {
         type: "paragraph",
