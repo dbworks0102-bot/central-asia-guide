@@ -1335,8 +1335,8 @@ export const articles = [
       "タシュケント 茶房 おすすめ",
     ],
     heroImage: "/images/uzbekistan/hero.jpg",
-    publishDate: "2026-07-21",
-    status: "draft",
+    publishDate: "2026-09-16",
+    status: "published",
     body: [
       {
         type: "paragraph",
