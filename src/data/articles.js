@@ -1408,8 +1408,8 @@ export const articles = [
       "タシュケント 食事 マナー",
     ],
     heroImage: "/images/uzbekistan/tashkent-uzbek-dish.jpg",
-    publishDate: "2026-07-21",
-    status: "draft",
+    publishDate: "2026-09-20",
+    status: "published",
     body: [
       {
         type: "paragraph",
