@@ -1489,8 +1489,8 @@ export const articles = [
       "タシュケント お土産 選び方",
     ],
     heroImage: "/images/uzbekistan/tashkent-souvenir-shopping.jpg",
-    publishDate: "2026-07-22",
-    status: "draft",
+    publishDate: "2026-09-24",
+    status: "published",
     body: [
       {
         type: "paragraph",
