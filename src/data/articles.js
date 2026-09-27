@@ -1573,8 +1573,8 @@ export const articles = [
       "タシュケント 工芸品 相場",
     ],
     heroImage: "/images/uzbekistan/tashkent-traditional-crafts.jpg",
-    publishDate: "2026-07-22",
-    status: "draft",
+    publishDate: "2026-09-27",
+    status: "published",
     body: [
       {
         type: "paragraph",
