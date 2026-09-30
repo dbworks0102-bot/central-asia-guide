@@ -1646,8 +1646,8 @@ export const articles = [
       "ウズベキスタン お土産 持ち帰り 注意",
     ],
     heroImage: "/images/uzbekistan/hero.jpg",
-    publishDate: "2026-07-22",
-    status: "draft",
+    publishDate: "2026-09-30",
+    status: "published",
     body: [
       {
         type: "paragraph",
