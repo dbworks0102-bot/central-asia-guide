@@ -1720,8 +1720,8 @@ export const articles = [
       "タシュケント 買い物 マナー",
     ],
     heroImage: "/images/uzbekistan/tashkent-bazaar-shopping.jpg",
-    publishDate: "2026-07-22",
-    status: "draft",
+    publishDate: "2026-10-04",
+    status: "published",
     body: [
       {
         type: "paragraph",
