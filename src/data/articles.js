@@ -1794,8 +1794,8 @@ export const articles = [
       "ウズベキスタン 日本 郵送",
     ],
     heroImage: "/images/uzbekistan/tashkent-souvenir-packing.jpg",
-    publishDate: "2026-07-22",
-    status: "draft",
+    publishDate: "2026-10-07",
+    status: "published",
     body: [
       {
         type: "paragraph",
