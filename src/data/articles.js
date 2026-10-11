@@ -1867,8 +1867,8 @@ export const articles = [
       "タシュケント国際空港 行き方",
     ],
     heroImage: "/images/uzbekistan/tashkent-airport-transfer.jpg",
-    publishDate: "2026-07-23",
-    status: "draft",
+    publishDate: "2026-10-11",
+    status: "published",
     body: [
       {
         type: "paragraph",
