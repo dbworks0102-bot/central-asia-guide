@@ -1935,8 +1935,8 @@ export const articles = [
       "ATTOカード タシュケント",
     ],
     heroImage: "/images/uzbekistan/hero.jpg",
-    publishDate: "2026-07-23",
-    status: "draft",
+    publishDate: "2026-10-15",
+    status: "published",
     body: [
       {
         type: "paragraph",
