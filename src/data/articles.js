@@ -1994,8 +1994,8 @@ export const articles = [
       "タシュケント 移動 タクシー",
     ],
     heroImage: "/images/uzbekistan/hero.jpg",
-    publishDate: "2026-07-23",
-    status: "draft",
+    publishDate: "2026-10-19",
+    status: "published",
     body: [
       {
         type: "paragraph",
