@@ -2053,8 +2053,8 @@ export const articles = [
       "タシュケント ブハラ 列車",
     ],
     heroImage: "/images/uzbekistan/tashkent-train-travel.jpg",
-    publishDate: "2026-07-23",
-    status: "draft",
+    publishDate: "2026-10-22",
+    status: "published",
     body: [
       {
         type: "paragraph",
