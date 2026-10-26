@@ -2118,8 +2118,8 @@ export const articles = [
       "ATTOカード バス",
     ],
     heroImage: "/images/uzbekistan/hero.jpg",
-    publishDate: "2026-07-23",
-    status: "draft",
+    publishDate: "2026-10-26",
+    status: "published",
     body: [
       {
         type: "paragraph",
