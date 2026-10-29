@@ -2177,8 +2177,8 @@ export const articles = [
       "タシュケント 家庭 夕食",
     ],
     heroImage: "/images/uzbekistan/tashkent-daily-life.jpg",
-    publishDate: "2026-07-24",
-    status: "draft",
+    publishDate: "2026-10-29",
+    status: "published",
     body: [
       {
         type: "paragraph",
