@@ -2235,8 +2235,8 @@ export const articles = [
       "タシュケント 住宅街 路地",
     ],
     heroImage: "/images/uzbekistan/hero.jpg",
-    publishDate: "2026-07-24",
-    status: "draft",
+    publishDate: "2026-11-01",
+    status: "published",
     body: [
       {
         type: "paragraph",
