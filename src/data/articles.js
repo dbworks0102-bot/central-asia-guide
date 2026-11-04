@@ -2293,8 +2293,8 @@ export const articles = [
       "ウズベキスタン お祝い 衣装",
     ],
     heroImage: "/images/uzbekistan/hero.jpg",
-    publishDate: "2026-07-24",
-    status: "draft",
+    publishDate: "2026-11-04",
+    status: "published",
     body: [
       {
         type: "paragraph",
