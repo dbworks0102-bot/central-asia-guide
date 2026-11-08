@@ -2351,8 +2351,8 @@ export const articles = [
       "タシュケント 現代 都市 若者",
     ],
     heroImage: "/images/uzbekistan/tashkent-youth-cafe.jpg",
-    publishDate: "2026-07-24",
-    status: "draft",
+    publishDate: "2026-11-08",
+    status: "published",
     body: [
       {
         type: "paragraph",
