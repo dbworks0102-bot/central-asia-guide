@@ -2409,8 +2409,8 @@ export const articles = [
       "タシュケント 宗教 習慣",
     ],
     heroImage: "/images/uzbekistan/hero.jpg",
-    publishDate: "2026-07-24",
-    status: "draft",
+    publishDate: "2026-11-11",
+    status: "published",
     body: [
       {
         type: "paragraph",
