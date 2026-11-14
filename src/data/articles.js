@@ -2467,8 +2467,8 @@ export const articles = [
       "サマルカンド 青いドーム",
     ],
     heroImage: "/images/uzbekistan/hero.jpg",
-    publishDate: "2026-07-24",
-    status: "draft",
+    publishDate: "2026-11-14",
+    status: "published",
     body: [
       {
         type: "paragraph",
