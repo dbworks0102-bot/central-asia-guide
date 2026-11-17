@@ -2542,8 +2542,8 @@ export const articles = [
       "サマルカンド コーラン台",
     ],
     heroImage: "/images/uzbekistan/samarkand-bibi-khanym-mosque.jpg",
-    publishDate: "2026-07-24",
-    status: "draft",
+    publishDate: "2026-11-17",
+    status: "published",
     body: [
       {
         type: "paragraph",
