@@ -2613,8 +2613,8 @@ export const articles = [
       "ウルグベク 博物館",
     ],
     heroImage: "/images/uzbekistan/samarkand-ulugbek-observatory.jpg",
-    publishDate: "2026-07-24",
-    status: "draft",
+    publishDate: "2026-11-21",
+    status: "published",
     body: [
       {
         type: "paragraph",
