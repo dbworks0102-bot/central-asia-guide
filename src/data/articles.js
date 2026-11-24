@@ -2682,8 +2682,8 @@ export const articles = [
       "サマルカンド プロフ にんじん 米",
     ],
     heroImage: "/images/uzbekistan/hero.jpg",
-    publishDate: "2026-07-24",
-    status: "draft",
+    publishDate: "2026-11-24",
+    status: "published",
     body: [
       {
         type: "paragraph",
