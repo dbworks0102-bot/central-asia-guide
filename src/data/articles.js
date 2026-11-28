@@ -2779,8 +2779,8 @@ export const articles = [
       "ビビハニム 市場 名物",
     ],
     heroImage: "/images/uzbekistan/samarkand-siyob-bazaar-dried-fruits.jpg",
-    publishDate: "2026-07-24",
-    status: "draft",
+    publishDate: "2026-11-28",
+    status: "published",
     body: [
       {
         type: "paragraph",
